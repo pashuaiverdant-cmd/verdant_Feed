@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Fraunces', serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* Earthy Agricultural Palette */
+  --background: 45 30% 96%;      /* Warm oatmeal white */
+  --foreground: 120 40% 10%;     /* Deep forest green text */
+  
+  --primary: 138 58% 30%;        /* Lush crop green */
+  --primary-foreground: 45 30% 96%;
+  
+  --secondary: 35 40% 90%;       /* Light beige */
+  --secondary-foreground: 25 30% 20%; /* Brown earth tone */
+  
+  --muted: 120 10% 92%;
+  --muted-foreground: 120 10% 40%;
+  
+  --accent: 35 90% 45%;          /* Harvest gold/amber */
+  --accent-foreground: 45 30% 96%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 120 15% 85%;
+  --input: 120 15% 85%;
+  --ring: 138 58% 30%;
+  
+  --radius: 0.75rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight text-primary;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 rounded-lg px-6 py-3 font-semibold;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-primary/30;
+  }
+}
