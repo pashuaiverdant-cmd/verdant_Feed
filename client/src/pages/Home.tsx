@@ -145,30 +145,45 @@ export default function Home() {
 
             {/* 🔁 MOVING IMAGE BANNER */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
+              initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="relative hidden md:block overflow-hidden rounded-2xl shadow-2xl border border-white/15 h-[520px]"
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="
+    relative overflow-hidden rounded-2xl shadow-2xl border border-white/120
+    h-[320px] sm:h-[360px] md:h-[520px]
+    bg-black/15
+  "
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/20 z-10" />
+              {/* overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/25 z-10" />
 
+              {/* ✅ moving track */}
               <motion.div
-                className="flex h-full"
-                animate={{ x: ["0%", "-200%"] }}
-                transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+                className="absolute inset-0 flex will-change-transform"
+                // ✅ IMPORTANT: since we duplicate images, move only HALF the track for a perfect loop
+                animate={{ x: ["0%", "-50%"] }}
+                transition={{ repeat: Infinity, duration: 26, ease: "linear" }}
               >
                 {[...heroImages, ...heroImages].map((img, i) => (
-                  <img
-                    key={i}
-                    src={img}
-                    alt="Healthy livestock"
-                    className="w-full min-w-full h-full object-cover"
-                  />
+                  <div key={i} className="h-full shrink-0 basis-full md:basis-1/2">
+                    <img
+                      src={img}
+                      alt="Healthy livestock"
+                      className="h-full w-full object-cover object-center"
+                      loading="lazy"
+                      draggable={false}
+                    />
+                  </div>
                 ))}
               </motion.div>
 
-              {/* Growth Card */}
-              <div className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur p-6 rounded-xl shadow-xl z-20 ring-1 ring-black/5">
+              {/* Growth Card (responsive placement) */}
+              <div
+                className="
+      absolute z-20 bg-white/95 backdrop-blur p-5 md:p-6 rounded-xl shadow-xl ring-1 ring-black/5
+      left-4 bottom-4 md:-left-6 md:-bottom-6
+    "
+              >
                 <div className="flex items-center space-x-3">
                   <div className="bg-green-100 p-2 rounded-full">
                     <TrendingUp className="h-6 w-6 text-green-600" />
@@ -180,6 +195,7 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
+
           </div>
         </div>
       </section>
@@ -386,7 +402,7 @@ function FarmerCarousel() {
         />
 
         <div className="relative md:w-2/3">
-          
+
           <p className="text-lg text-muted-foreground mb-6">{farmer.story}</p>
 
           <h4 className="text-xl font-bold text-primary">{farmer.name}</h4>

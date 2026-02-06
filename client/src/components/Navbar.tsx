@@ -14,6 +14,7 @@ export function Navbar() {
     { href: "/blog", label: "Blog" },
     { href: "/diet-planner", label: "Diet Planner" },
     { href: "/about", label: "About Us" },
+    { href: "/Genetics", label: "Genetics" },
   ];
 
   const isActive = (path: string) => location === path;
