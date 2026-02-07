@@ -106,21 +106,30 @@ export default function Home() {
               {/* overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/30 z-10" />
 
-              {/* ✅ moving track (FIXED LOOP + FIT) */}
+              {/* ✅ REAL SLIDER FIX (NO GAPS) */}
               <motion.div
                 className="absolute inset-0 flex will-change-transform"
-                animate={{ x: ["0%", "-100%"] }}
+                style={{ transform: "translate3d(0,0,0)" }}
+                animate={{ x: ["0%", "-50%"] }}
                 transition={{ repeat: Infinity, duration: 26, ease: "linear" }}
               >
                 {[...heroImages, ...heroImages].map((img, i) => (
-                  <div
-                    key={i}
-                    className="h-full shrink-0 basis-full flex items-center justify-center bg-black/15"
-                  >
+                  <div key={i} className="relative h-full shrink-0 basis-full overflow-hidden">
+                    {/* ✅ background fill (removes “contain gaps”) */}
+                    <img
+                      src={img}
+                      alt=""
+                      aria-hidden="true"
+                      className="absolute inset-0 h-full w-full object-cover blur-2xl scale-110 opacity-60"
+                      draggable={false}
+                    />
+                    <div className="absolute inset-0 bg-black/15" />
+
+                    {/* ✅ foreground (full image visible) */}
                     <img
                       src={img}
                       alt="Healthy livestock"
-                      className="h-full w-full object-contain md:object-cover md:object-center"
+                      className="relative z-10 h-full w-full object-contain"
                       loading="lazy"
                       draggable={false}
                     />
