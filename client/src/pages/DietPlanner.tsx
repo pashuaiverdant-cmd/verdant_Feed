@@ -25,6 +25,77 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
+type BreedOption = {
+  value: string;     // used in logic
+  label: string;     // shown in UI (includes region)
+  region: string;
+};
+
+const breedOptions: Record<FormValues["cattleType"], BreedOption[]> = {
+  Cow: [
+    { value: "Gir", label: "Gir — Gujarat", region: "Gujarat" },
+    { value: "Sahiwal", label: "Sahiwal — Punjab/Haryana", region: "Punjab/Haryana" },
+    { value: "Tharparkar", label: "Tharparkar — Rajasthan", region: "Rajasthan" },
+    { value: "Red Sindhi", label: "Red Sindhi — North/West India", region: "North/West India" },
+    { value: "Rathi", label: "Rathi — Rajasthan", region: "Rajasthan" },
+    { value: "Hariana", label: "Hariana — Haryana", region: "Haryana" },
+    { value: "Kankrej", label: "Kankrej — Gujarat/Rajasthan", region: "Gujarat/Rajasthan" },
+    { value: "Ongole", label: "Ongole — Andhra Pradesh", region: "Andhra Pradesh" },
+    { value: "Deoni", label: "Deoni — Maharashtra/Karnataka", region: "Maharashtra/Karnataka" },
+    { value: "Kangayam", label: "Kangayam — Tamil Nadu", region: "Tamil Nadu" },
+    { value: "Hallikar", label: "Hallikar — Karnataka", region: "Karnataka" },
+    { value: "Gaolao", label: "Gaolao — MP/Maharashtra", region: "MP/Maharashtra" },
+    { value: "Khillari", label: "Khillari — Maharashtra/Karnataka", region: "Maharashtra/Karnataka" },
+    { value: "Vechur", label: "Vechur — Kerala", region: "Kerala" },
+    { value: "Punganur", label: "Punganur — Andhra Pradesh", region: "Andhra Pradesh" },
+    { value: "Dangi", label: "Dangi — Maharashtra", region: "Maharashtra" },
+    { value: "Nagori", label: "Nagori — Rajasthan", region: "Rajasthan" },
+    { value: "Other", label: "Other — (Any Region)", region: "Any" },
+  ],
+  Buffalo: [
+    { value: "Murrah", label: "Murrah — Haryana/Punjab", region: "Haryana/Punjab" },
+    { value: "Mehsana", label: "Mehsana — Gujarat", region: "Gujarat" },
+    { value: "Jaffarabadi", label: "Jaffarabadi — Gujarat", region: "Gujarat" },
+    { value: "Surti", label: "Surti — Gujarat", region: "Gujarat" },
+    { value: "Bhadawari", label: "Bhadawari — UP/MP", region: "UP/MP" },
+    { value: "Nagpuri", label: "Nagpuri — Maharashtra", region: "Maharashtra" },
+    { value: "Nili Ravi", label: "Nili Ravi — Punjab", region: "Punjab" },
+    { value: "Pandharpuri", label: "Pandharpuri — Maharashtra", region: "Maharashtra" },
+    { value: "Toda", label: "Toda — Tamil Nadu (Nilgiris)", region: "Tamil Nadu" },
+    { value: "Chilika", label: "Chilika — Odisha", region: "Odisha" },
+    { value: "Other", label: "Other — (Any Region)", region: "Any" },
+  ],
+  Goat: [
+    { value: "Jamunapari", label: "Jamunapari — Uttar Pradesh", region: "Uttar Pradesh" },
+    { value: "Beetal", label: "Beetal — Punjab", region: "Punjab" },
+    { value: "Barbari", label: "Barbari — Uttar Pradesh", region: "Uttar Pradesh" },
+    { value: "Sirohi", label: "Sirohi — Rajasthan", region: "Rajasthan" },
+    { value: "Black Bengal", label: "Black Bengal — West Bengal", region: "West Bengal" },
+    { value: "Osmanabadi", label: "Osmanabadi — Maharashtra", region: "Maharashtra" },
+    { value: "Malabari", label: "Malabari (Kannur) — Kerala", region: "Kerala" },
+    { value: "Jakhrana", label: "Jakhrana — Rajasthan", region: "Rajasthan" },
+    { value: "Gaddi", label: "Gaddi — Himachal Pradesh", region: "Himachal Pradesh" },
+    { value: "Marwari", label: "Marwari — Rajasthan", region: "Rajasthan" },
+    { value: "Zalawadi", label: "Zalawadi — Gujarat", region: "Gujarat" },
+    { value: "Sangamneri", label: "Sangamneri — Maharashtra", region: "Maharashtra" },
+    { value: "Surti", label: "Surti — Gujarat", region: "Gujarat" },
+    { value: "Changthangi", label: "Changthangi — Ladakh", region: "Ladakh" },
+    { value: "Chegu", label: "Chegu — Himachal/J&K", region: "Himachal/J&K" },
+    { value: "Other", label: "Other — (Any Region)", region: "Any" },
+  ],
+};
+
+const weightOptions: Record<FormValues["cattleType"], string[]> = {
+  Cow: ["0-300kg", "300-400kg", "400-500kg"],
+  Buffalo: ["0-300kg", "300-400kg", "400-500kg"],
+  Goat: ["20-50kg", "50-80kg", "80-120kg"],
+};
+
+// small summary saved in logs
+function makeSummary(data: FormValues) {
+  return `${data.cattleType} • ${data.breed} • ${data.weightCategory} • ${data.healthStatus} — Chart generated`;
+}
+
 export default function DietPlanner() {
   const { toast } = useToast();
   const { data: logs, isLoading: logsLoading } = useDietLogs();
@@ -43,38 +114,15 @@ export default function DietPlanner() {
 
   const cattleType = form.watch("cattleType");
 
-  // ✅ Max 7 breeds per type + Other
-  const breedOptions = {
-    Cow: ["Gir", "Sahiwal", "Tharparkar", "Red Sindhi", "Rathi", "Hariana", "Kankrej", "Other"],
-    Buffalo: ["Murrah", "Mehsana", "Jaffarabadi", "Surti", "Bhadawari", "Nagpuri", "Nili Ravi", "Other"],
-    Goat: ["Jamunapari", "Beetal", "Barbari", "Sirohi", "Black Bengal", "Osmanabadi", "Malabari", "Other"],
-  } as const;
-
-  const weightOptions = {
-    Cow: ["0-300kg", "300-400kg", "400-500kg"],
-    Buffalo: ["0-300kg", "300-400kg", "400-500kg"],
-    Goat: ["20-50kg", "50-80kg", "80-120kg"],
-  } as const;
-
-  // ✅ solid dropdown styles
-  const solidTriggerClass =
-    "bg-white dark:bg-zinc-950 border border-border shadow-sm focus:ring-2 focus:ring-primary/30";
-  const solidContentClass = "bg-white dark:bg-zinc-950 border border-border";
-
-  // ✅ When user changes cattle type, reset breed + weight to avoid mismatch
+  // reset breed when cattleType changes (prevents mismatch)
   useEffect(() => {
     if (!cattleType) return;
     form.setValue("breed", "");
-    form.setValue("weightCategory", "");
-  }, [cattleType]);
-
-  const calculateDietSummary = (data: FormValues) => {
-    return `${data.cattleType} • ${data.breed} • ${data.weightCategory} • ${data.healthStatus} — Full chart generated`;
-  };
+  }, [cattleType, form]);
 
   const onSubmit = async (data: FormValues) => {
     try {
-      const summary = calculateDietSummary(data);
+      const summary = makeSummary(data);
 
       await createLog({
         date: new Date().toISOString(),
@@ -92,11 +140,18 @@ export default function DietPlanner() {
         description: "Opening full chart with details.",
       });
 
+      // send breedRegion too
+      const region =
+        breedOptions[data.cattleType].find((b) => b.value === data.breed)?.region ?? "Any";
+
+      // default Hindi chart => lang=hi
       const params = new URLSearchParams({
+        lang: "hi",
         name: data.name,
         contact: data.contact,
         cattleType: data.cattleType,
         breed: data.breed,
+        breedRegion: region,
         weightCategory: data.weightCategory,
         age: String(data.age),
         healthStatus: data.healthStatus,
@@ -117,7 +172,9 @@ export default function DietPlanner() {
     <div className="min-h-screen py-16 bg-background">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-primary mb-6">Smart Diet Planner</h1>
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-primary mb-6">
+            Smart Diet Planner
+          </h1>
           <p className="text-lg text-muted-foreground">
             Get feeding recommendations based on cattle type, breed, weight, and health status.
           </p>
@@ -146,7 +203,7 @@ export default function DietPlanner() {
                           <FormItem>
                             <FormLabel>Your Name</FormLabel>
                             <FormControl>
-                              <Input {...field} className="bg-white dark:bg-zinc-950 border border-border" />
+                              <Input {...field} className="bg-background" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -159,11 +216,7 @@ export default function DietPlanner() {
                           <FormItem>
                             <FormLabel>Contact Number</FormLabel>
                             <FormControl>
-                              <Input
-                                placeholder="+91..."
-                                {...field}
-                                className="bg-white dark:bg-zinc-950 border border-border"
-                              />
+                              <Input placeholder="+91..." {...field} className="bg-background" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -180,11 +233,13 @@ export default function DietPlanner() {
                             <FormLabel>Cattle Type</FormLabel>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                               <FormControl>
-                                <SelectTrigger className={solidTriggerClass}>
+                                {/* ✅ make solid */}
+                                <SelectTrigger className="bg-background !opacity-100">
                                   <SelectValue placeholder="Select type" />
                                 </SelectTrigger>
                               </FormControl>
-                              <SelectContent className={solidContentClass}>
+                              {/* ✅ make dropdown solid */}
+                              <SelectContent className="bg-background">
                                 <SelectItem value="Cow">Cow</SelectItem>
                                 <SelectItem value="Buffalo">Buffalo</SelectItem>
                                 <SelectItem value="Goat">Goat</SelectItem>
@@ -200,18 +255,22 @@ export default function DietPlanner() {
                         name="breed"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Breed</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value} disabled={!cattleType}>
+                            <FormLabel>Breed (with region)</FormLabel>
+                            <Select
+                              onValueChange={field.onChange}
+                              defaultValue={field.value}
+                              disabled={!cattleType}
+                            >
                               <FormControl>
-                                <SelectTrigger className={solidTriggerClass}>
-                                  <SelectValue placeholder="Select breed" />
+                                <SelectTrigger className="bg-background !opacity-100">
+                                  <SelectValue placeholder={cattleType ? "Select breed" : "Select cattle type first"} />
                                 </SelectTrigger>
                               </FormControl>
-                              <SelectContent className={solidContentClass}>
+                              <SelectContent className="bg-background">
                                 {cattleType &&
-                                  breedOptions[cattleType as keyof typeof breedOptions].map((opt) => (
-                                    <SelectItem key={opt} value={opt}>
-                                      {opt}
+                                  breedOptions[cattleType].map((opt) => (
+                                    <SelectItem key={opt.value} value={opt.value}>
+                                      {opt.label}
                                     </SelectItem>
                                   ))}
                               </SelectContent>
@@ -227,15 +286,19 @@ export default function DietPlanner() {
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel>Weight Category</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value} disabled={!cattleType}>
+                            <Select
+                              onValueChange={field.onChange}
+                              defaultValue={field.value}
+                              disabled={!cattleType}
+                            >
                               <FormControl>
-                                <SelectTrigger className={solidTriggerClass}>
-                                  <SelectValue placeholder="Select weight" />
+                                <SelectTrigger className="bg-background !opacity-100">
+                                  <SelectValue placeholder={cattleType ? "Select weight" : "Select cattle type first"} />
                                 </SelectTrigger>
                               </FormControl>
-                              <SelectContent className={solidContentClass}>
+                              <SelectContent className="bg-background">
                                 {cattleType &&
-                                  weightOptions[cattleType as keyof typeof weightOptions].map((opt) => (
+                                  weightOptions[cattleType].map((opt) => (
                                     <SelectItem key={opt} value={opt}>
                                       {opt}
                                     </SelectItem>
@@ -256,12 +319,7 @@ export default function DietPlanner() {
                           <FormItem>
                             <FormLabel>Age (Years)</FormLabel>
                             <FormControl>
-                              <Input
-                                type="number"
-                                min="0"
-                                {...field}
-                                className="bg-white dark:bg-zinc-950 border border-border"
-                              />
+                              <Input type="number" min="0" {...field} className="bg-background" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -276,11 +334,11 @@ export default function DietPlanner() {
                             <FormLabel>Health Status</FormLabel>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                               <FormControl>
-                                <SelectTrigger className={solidTriggerClass}>
+                                <SelectTrigger className="bg-background !opacity-100">
                                   <SelectValue placeholder="Select status" />
                                 </SelectTrigger>
                               </FormControl>
-                              <SelectContent className={solidContentClass}>
+                              <SelectContent className="bg-background">
                                 <SelectItem value="Healthy">Healthy</SelectItem>
                                 <SelectItem value="Sick">Sick</SelectItem>
                                 <SelectItem value="Pregnant">Pregnant</SelectItem>
@@ -299,11 +357,11 @@ export default function DietPlanner() {
                             <FormLabel>Tagged?</FormLabel>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                               <FormControl>
-                                <SelectTrigger className={solidTriggerClass}>
+                                <SelectTrigger className="bg-background !opacity-100">
                                   <SelectValue placeholder="Select..." />
                                 </SelectTrigger>
                               </FormControl>
-                              <SelectContent className={solidContentClass}>
+                              <SelectContent className="bg-background">
                                 <SelectItem value="Yes">Yes</SelectItem>
                                 <SelectItem value="No">No</SelectItem>
                               </SelectContent>
@@ -318,7 +376,7 @@ export default function DietPlanner() {
                       {isPending ? (
                         <>
                           <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                          Generating...
+                          Calculating...
                         </>
                       ) : (
                         "Generate Diet Chart"
@@ -353,17 +411,23 @@ export default function DietPlanner() {
                           <span className="font-bold text-primary text-sm">
                             {log.cattleType} ({log.breed})
                           </span>
-                          <span className="text-xs text-muted-foreground">{new Date(log.date).toLocaleDateString()}</span>
+                          <span className="text-xs text-muted-foreground">
+                            {new Date(log.date).toLocaleDateString()}
+                          </span>
                         </div>
                         <p className="text-xs text-muted-foreground mb-2">
                           {log.weightCategory} • {log.healthStatus}
                         </p>
-                        <p className="text-sm font-medium text-foreground line-clamp-2">{log.dietPlanResult}</p>
+                        <p className="text-sm font-medium text-foreground line-clamp-2">
+                          {log.dietPlanResult}
+                        </p>
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <div className="p-8 text-center text-muted-foreground">No history yet. Generate your first plan!</div>
+                  <div className="p-8 text-center text-muted-foreground">
+                    No history yet. Generate your first plan!
+                  </div>
                 )}
               </CardContent>
             </Card>

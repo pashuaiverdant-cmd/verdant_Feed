@@ -2,7 +2,6 @@ import {
   ArrowRight,
   Star,
   TrendingUp,
-  Quote,
   ChevronLeft,
   ChevronRight,
   ShieldCheck,
@@ -82,7 +81,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-primary py-24 md:py-32">
+      <section className="relative overflow-hidden bg-primary py-12 sm:py-16 md:py-32">
         {/* Soft Verdant glow */}
         <div className="pointer-events-none absolute inset-0 opacity-25">
           <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-accent blur-3xl" />
@@ -90,82 +89,31 @@ export default function Home() {
         </div>
 
         <div className="container-custom relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* LEFT CONTENT */}
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="space-y-6"
-            >
-              <div className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white ring-1 ring-inset ring-white/15">
-                <Star className="mr-1.5 h-4 w-4 fill-white/80 text-white/80" />
-                Verdant-grade Nutrition
-              </div>
-
-              <h1 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight">
-                Nutrition That Grows Your Livestock
-              </h1>
-
-              <p className="text-lg md:text-xl text-primary-foreground/90 max-w-lg">
-                Science-backed feeding practices to improve animal health, growth, and yield — consistently.
-              </p>
-
-              {/* ✅ Buttons back as before */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                <Link href="/diet-planner">
-                  <Button size="lg" className="text-lg px-8 bg-accent text-primary font-bold">
-                    Plan a Diet <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-
-                <Link href="/products">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="text-lg px-8 border-white/30 text-white hover:bg-white/10"
-                  >
-                    Browse Feed
-                  </Button>
-                </Link>
-              </div>
-
-              {/* Minimal “premium” trust chips */}
-              <div className="flex flex-wrap gap-2 pt-2">
-                {["Field-tested", "Vet-friendly", "Simple routines", "Better yield"].map((t) => (
-                  <span
-                    key={t}
-                    className="rounded-full bg-white/10 text-white/90 px-3 py-1 text-xs ring-1 ring-inset ring-white/10"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* 🔁 MOVING IMAGE BANNER */}
+          {/* ✅ MOBILE: image first | DESKTOP: text left, image right */}
+          <div className="grid gap-10 md:grid-cols-2 md:gap-12 items-center">
+            {/* ✅ MOVING IMAGE BANNER (TOP on mobile) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.15 }}
+              transition={{ duration: 0.5, delay: 0.05 }}
               className="
-    relative overflow-hidden rounded-2xl shadow-2xl border border-white/120
-    h-[320px] sm:h-[360px] md:h-[520px]
-    bg-black/15
-  "
+                relative overflow-hidden rounded-2xl shadow-2xl
+                border border-white/20 bg-black/15
+                order-1 md:order-2
+                h-[260px] xs:h-[300px] sm:h-[360px] md:h-[520px]
+              "
             >
               {/* overlay */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/25 z-10" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/30 z-10" />
 
               {/* ✅ moving track */}
               <motion.div
                 className="absolute inset-0 flex will-change-transform"
-                // ✅ IMPORTANT: since we duplicate images, move only HALF the track for a perfect loop
                 animate={{ x: ["0%", "-50%"] }}
                 transition={{ repeat: Infinity, duration: 26, ease: "linear" }}
               >
                 {[...heroImages, ...heroImages].map((img, i) => (
-                  <div key={i} className="h-full shrink-0 basis-full md:basis-1/2">
+                  <div key={i} className="h-full shrink-0 basis-full">
                     <img
                       src={img}
                       alt="Healthy livestock"
@@ -177,34 +125,87 @@ export default function Home() {
                 ))}
               </motion.div>
 
-              {/* Growth Card (responsive placement) */}
+              {/* ✅ Growth Card (mobile-friendly) */}
               <div
                 className="
-      absolute z-20 bg-white/95 backdrop-blur p-5 md:p-6 rounded-xl shadow-xl ring-1 ring-black/5
-      left-4 bottom-4 md:-left-6 md:-bottom-6
-    "
+                  absolute z-20 bg-white/95 backdrop-blur p-4 sm:p-5 md:p-6 rounded-xl shadow-xl ring-1 ring-black/5
+                  left-3 bottom-3 sm:left-4 sm:bottom-4 md:-left-6 md:-bottom-6
+                "
               >
                 <div className="flex items-center space-x-3">
                   <div className="bg-green-100 p-2 rounded-full">
                     <TrendingUp className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Growth Rate</p>
-                    <p className="text-xl font-bold">+25% Faster</p>
+                    <p className="text-xs sm:text-sm text-gray-500">Growth Rate</p>
+                    <p className="text-lg sm:text-xl font-bold">+25% Faster</p>
                   </div>
                 </div>
               </div>
             </motion.div>
 
+            {/* ✅ LEFT CONTENT (below image on mobile) */}
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-5 sm:space-y-6 order-2 md:order-1"
+            >
+              <div className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white ring-1 ring-inset ring-white/15">
+                <Star className="mr-1.5 h-4 w-4 fill-white/80 text-white/80" />
+                Verdant-grade Nutrition
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold text-white leading-tight">
+                Nutrition That Grows Your Livestock
+              </h1>
+
+              <p className="text-base sm:text-lg md:text-xl text-primary-foreground/90 max-w-lg">
+                Science-backed feeding practices to improve animal health, growth, and yield — consistently.
+              </p>
+
+              {/* ✅ Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-1 sm:pt-2">
+                <Link href="/diet-planner">
+                  <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 bg-accent text-primary font-bold w-full sm:w-auto">
+                    Plan a Diet <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+
+                <Link href="/products">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="text-base sm:text-lg px-6 sm:px-8 border-white/30 text-white hover:bg-white/10 w-full sm:w-auto"
+                  >
+                    Browse Feed
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Trust chips */}
+              <div className="flex flex-wrap gap-2 pt-1 sm:pt-2">
+                {["Field-tested", "Vet-friendly", "Simple routines", "Better yield"].map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-full bg-white/10 text-white/90 px-3 py-1 text-xs ring-1 ring-inset ring-white/10"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Farmer Stories */}
-      <section className="py-24 bg-[#d9e0c8]">
+      <section className="py-16 sm:py-20 md:py-24 bg-[#d9e0c8]">
         <div className="container-custom">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl font-bold text-primary mb-4">Hear from our Farmers</h2>
+          <div className="text-center mb-10 sm:mb-12 md:mb-14 px-2">
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-3 sm:mb-4">
+              Hear from our Farmers
+            </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Real stories from farmers who improved animal health and profitability with better nutrition.
             </p>
@@ -214,9 +215,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ✅ Farming Insights (Premium Verdant Style | NO IMAGES | NO BUTTONS) */}
-      <section className="relative py-20 bg-primary/5 overflow-hidden">
-        {/* subtle pattern + glow */}
+      {/* ✅ Farming Insights */}
+      <section className="relative py-16 sm:py-20 bg-primary/5 overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-accent/20 blur-3xl" />
           <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
@@ -224,13 +224,13 @@ export default function Home() {
         </div>
 
         <div className="container-custom relative">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10 sm:mb-12 px-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 text-primary text-sm font-semibold shadow-sm ring-1 ring-primary/10">
               <Sparkles className="h-4 w-4" />
               Verdant Farming Insights
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mt-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mt-4">
               Better routines. Healthier animals. Higher yield.
             </h2>
 
@@ -239,8 +239,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Premium cards */}
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {bestPractices.map((item, i) => {
               const Icon = item.icon;
               return (
@@ -253,11 +252,9 @@ export default function Home() {
                   custom={i}
                   className="group rounded-3xl border border-primary/10 bg-white/70 backdrop-blur shadow-sm hover:shadow-md transition overflow-hidden"
                 >
-                  {/* top accent bar */}
                   <div className="h-1 w-full bg-gradient-to-r from-primary/70 via-accent/60 to-primary/30" />
 
-                  <div className="p-7">
-                    {/* Tag */}
+                  <div className="p-6 sm:p-7">
                     <div className="flex items-center justify-between gap-3 mb-5">
                       <span className="inline-flex items-center rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold ring-1 ring-inset ring-primary/10">
                         {item.tag}
@@ -269,23 +266,18 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Title + Icon */}
                     <div className="flex items-start gap-3 mb-3">
                       <div className="p-2 rounded-2xl bg-primary/10 ring-1 ring-inset ring-primary/10">
                         <Icon className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold text-foreground leading-snug">
-                          {item.title}
-                        </h3>
+                        <h3 className="text-lg font-bold text-foreground leading-snug">{item.title}</h3>
                         <p className="text-sm text-muted-foreground mt-1">{item.summary}</p>
                       </div>
                     </div>
 
-                    {/* Divider */}
                     <div className="my-5 h-px w-full bg-primary/10" />
 
-                    {/* Points */}
                     <ul className="space-y-2.5 text-sm text-muted-foreground">
                       {item.points.map((p) => (
                         <li key={p} className="flex items-start gap-2">
@@ -299,7 +291,6 @@ export default function Home() {
               );
             })}
 
-            {/* Premium Summary Card */}
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -309,7 +300,7 @@ export default function Home() {
               className="rounded-3xl border border-primary/10 bg-white/80 backdrop-blur shadow-sm overflow-hidden"
             >
               <div className="h-1 w-full bg-gradient-to-r from-accent/70 via-primary/50 to-accent/30" />
-              <div className="p-7">
+              <div className="p-6 sm:p-7">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 text-primary text-xs font-semibold ring-1 ring-inset ring-primary/10">
                   <Sparkles className="h-4 w-4" />
                   Verdant Note
@@ -324,18 +315,17 @@ export default function Home() {
 
                 <div className="mt-6 rounded-2xl bg-primary/5 p-4 ring-1 ring-inset ring-primary/10">
                   <p className="text-sm text-muted-foreground">
-                    Tip: Start with <span className="font-semibold text-primary">one habit</span> today,
-                    then add the next habit next week.
+                    Tip: Start with <span className="font-semibold text-primary">one habit</span> today, then add
+                    the next habit next week.
                   </p>
                 </div>
               </div>
             </motion.div>
           </div>
 
-          {/* Quick Tips (Premium strip) */}
-          <div className="mt-14">
-            <div className="flex items-center justify-between flex-wrap gap-3 mb-5">
-              <h3 className="text-2xl font-bold text-primary">Quick Tips</h3>
+          <div className="mt-12 sm:mt-14">
+            <div className="flex items-center justify-between flex-wrap gap-3 mb-5 px-1">
+              <h3 className="text-xl sm:text-2xl font-bold text-primary">Quick Tips</h3>
               <p className="text-sm text-muted-foreground">Fast wins you can apply immediately.</p>
             </div>
 
@@ -393,27 +383,26 @@ function FarmerCarousel() {
   const farmer = farmers[index];
 
   return (
-    <div className="max-w-5xl mx-auto">
-      <div className="bg-white rounded-3xl shadow-lg p-10 flex flex-col md:flex-row gap-10">
+    <div className="max-w-5xl mx-auto px-2 sm:px-0">
+      <div className="bg-white rounded-3xl shadow-lg p-5 sm:p-8 md:p-10 flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10">
         <img
           src={farmer.image}
           alt={farmer.name}
-          className="w-full md:w-1/3 h-[280px] rounded-2xl object-cover"
+          className="w-full md:w-1/3 h-[220px] sm:h-[260px] md:h-[280px] rounded-2xl object-cover"
         />
 
         <div className="relative md:w-2/3">
-
-          <p className="text-lg text-muted-foreground mb-6">{farmer.story}</p>
-
-          <h4 className="text-xl font-bold text-primary">{farmer.name}</h4>
+          <p className="text-base sm:text-lg text-muted-foreground mb-5 sm:mb-6">{farmer.story}</p>
+          <h4 className="text-lg sm:text-xl font-bold text-primary">{farmer.name}</h4>
           <p className="text-sm text-muted-foreground">{farmer.location}</p>
         </div>
       </div>
 
-      <div className="flex justify-center items-center gap-4 mt-8">
+      <div className="flex justify-center items-center gap-4 mt-6 sm:mt-8">
         <button
           onClick={() => setIndex((index - 1 + farmers.length) % farmers.length)}
           className="p-2 rounded-full border"
+          aria-label="Previous farmer"
         >
           <ChevronLeft />
         </button>
@@ -425,6 +414,7 @@ function FarmerCarousel() {
         <button
           onClick={() => setIndex((index + 1) % farmers.length)}
           className="p-2 rounded-full border"
+          aria-label="Next farmer"
         >
           <ChevronRight />
         </button>

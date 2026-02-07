@@ -18,7 +18,6 @@ import BlogPost from "@/pages/BlogPost";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import Terms from "@/pages/Terms";
 
-
 function Router() {
   return (
     <Switch>
@@ -39,6 +38,7 @@ function Router() {
     </Switch>
   );
 }
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
