@@ -106,18 +106,21 @@ export default function Home() {
               {/* overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/30 z-10" />
 
-              {/* ✅ moving track */}
+              {/* ✅ moving track (FIXED LOOP + FIT) */}
               <motion.div
                 className="absolute inset-0 flex will-change-transform"
-                animate={{ x: ["0%", "-50%"] }}
+                animate={{ x: ["0%", "-100%"] }}
                 transition={{ repeat: Infinity, duration: 26, ease: "linear" }}
               >
                 {[...heroImages, ...heroImages].map((img, i) => (
-                  <div key={i} className="h-full shrink-0 basis-full">
+                  <div
+                    key={i}
+                    className="h-full shrink-0 basis-full flex items-center justify-center bg-black/15"
+                  >
                     <img
                       src={img}
                       alt="Healthy livestock"
-                      className="h-full w-full object-cover object-center"
+                      className="h-full w-full object-contain md:object-cover md:object-center"
                       loading="lazy"
                       draggable={false}
                     />
@@ -167,7 +170,10 @@ export default function Home() {
               {/* ✅ Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-1 sm:pt-2">
                 <Link href="/diet-planner">
-                  <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 bg-accent text-primary font-bold w-full sm:w-auto">
+                  <Button
+                    size="lg"
+                    className="text-base sm:text-lg px-6 sm:px-8 bg-accent text-primary font-bold w-full sm:w-auto"
+                  >
                     Plan a Diet <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
