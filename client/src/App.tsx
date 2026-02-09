@@ -17,6 +17,7 @@ import NotFound from "@/pages/not-found";
 import BlogPost from "@/pages/BlogPost";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import Terms from "@/pages/Terms";
+import Genetics from "./pages/Genetics";
 
 function Router() {
   return (
@@ -32,6 +33,7 @@ function Router() {
 
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms" component={Terms} />
+      <Route path="/Genetics" component={Genetics}/>
 
       {/* Always keep 404 last */}
       <Route component={NotFound} />

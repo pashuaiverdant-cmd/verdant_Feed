@@ -77,7 +77,7 @@ function baseCattle(green: number, dry: number, conc: number, minerals: number, 
     feedingSchedule: [
       { time: "Morning (6–8 AM)", items: ["Green fodder (50%)", "Concentrate (50%)", "Fresh water"] },
       { time: "Afternoon (12–2 PM)", items: ["Dry fodder (50%)", "Fresh water"] },
-      { time: "Evening (6–8 PM)", items: ["Green fodder (50%)", "Concentrate (50%)", "Mineral mix + salt", "Fresh water"] },
+      { time: "Evening (4–6 PM)", items: ["Green fodder (50%)", "Concentrate (50%)", "Mineral mix + salt", "Fresh water"] },
     ],
     notes: [],
   };

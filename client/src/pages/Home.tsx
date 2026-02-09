@@ -106,30 +106,24 @@ export default function Home() {
               {/* overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/30 z-10" />
 
-              {/* ✅ REAL SLIDER FIX (NO GAPS) */}
+              {/* ✅ moving track (FIXED BG + MULTI IMAGES ON MOBILE + NO GAPS) */}
               <motion.div
                 className="absolute inset-0 flex will-change-transform"
-                style={{ transform: "translate3d(0,0,0)" }}
                 animate={{ x: ["0%", "-50%"] }}
                 transition={{ repeat: Infinity, duration: 26, ease: "linear" }}
               >
                 {[...heroImages, ...heroImages].map((img, i) => (
-                  <div key={i} className="relative h-full shrink-0 basis-full overflow-hidden">
-                    {/* ✅ background fill (removes “contain gaps”) */}
-                    <img
-                      src={img}
-                      alt=""
-                      aria-hidden="true"
-                      className="absolute inset-0 h-full w-full object-cover blur-2xl scale-110 opacity-60"
-                      draggable={false}
-                    />
-                    <div className="absolute inset-0 bg-black/15" />
-
-                    {/* ✅ foreground (full image visible) */}
+                  <div
+                    key={i}
+                    className="
+        relative h-full shrink-0 overflow-hidden
+        basis-1/2 sm:basis-1/3 md:basis-1/2
+      "
+                  >
                     <img
                       src={img}
                       alt="Healthy livestock"
-                      className="relative z-10 h-full w-full object-contain"
+                      className="h-full w-full object-cover object-center"
                       loading="lazy"
                       draggable={false}
                     />
@@ -373,7 +367,7 @@ const farmers = [
   {
     name: "ममता देवी",
     location: "",
-    image: "/img/farmer1.jpeg",
+    image: "/img/farmer002.jpeg",
     story:
       "वर्डेन्ट फीड ने न केवल मेरे पशुओं की सेहत सुधारी और दूध का उत्पादन बढ़ाया, बल्कि मेरी आर्थिक स्थिति को भी एक नई मजबूती दी है। आज मैं गर्व के साथ कह सकती हूँ कि मैं आत्मनिर्भर हूँ। अब मेरा लक्ष्य समाज की अन्य महिलाओं को भी जागरूक करना और उन्हें प्रगति की राह पर आगे बढ़ाना है।",
   },
@@ -389,7 +383,14 @@ const farmers = [
     location: "",
     image: "/img/farmer2.jpeg",
     story:
-      "मेहनत तो हम सब दिन-रात करते हैं, पर असली बरकत तब आती है जब पशुओं को वर्डेन्ट फीड जैसा शुद्ध और सही खान-paan मिले। आज मुझे अपने पशुओं की फिक्र करने की जरूरत नहीं पड़ती, उनकी सेहत की हर खबर अब मेरे पास रहती है। मैं तो आत्मनिर्भर बन गया और अपने गाँव की सूरत भी बदल रहा हूँ—अब समय है कि आप भी अपनी किस्मत खुद लिखें! — जयपाल यादव",
+      "मेहनत तो हम सब दिन-रात करते हैं, पर असली बरकत तब आती है जब पशुओं को वर्डेन्ट फीड जैसा शुद्ध और सही खान-पान मिले। आज मुझे अपने पशुओं की फिक्र करने की जरूरत नहीं पड़ती, उनकी सेहत की हर खबर अब मेरे पास रहती है। मैं तो आत्मनिर्भर बन गया और अपने गाँव की सूरत भी बदल रहा हूँ—अब समय है कि आप भी अपनी किस्मत खुद लिखें! — जयपाल यादव",
+  },
+  {
+    name: "शंभू",
+    location: "",
+    image: "/img/farmer003.jpeg",
+    story:
+      "बरसों तक मैंने डेयरी को सिर्फ किस्मत का खेल समझा, पर वर्डेन्ट फीड ने मेरी सोच और मेरे फार्म की सूरत, दोनों बदल दीं। आज न पशुओं की बीमारी का डर है, न दूध घटने की चिंता; क्योंकि मेरे पास उनकी सेहत का सटीक हिसाब और वर्डेन्ट फीड का बेजोड़ पोषण है। इस भरोसे ने मेरी जेब भी भरी और परिवार का भविष्य भी सुरक्षित कर दिया। आज मैं मजबूरी में नहीं, बल्कि गर्व से डेयरी चलाता हूँ और चाहता हूँ कि गाँव का हर युवा इस आधुनिक बदलाव का हिस्सा बने।",
   },
 ];
 

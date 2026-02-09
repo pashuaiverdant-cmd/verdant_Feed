@@ -38,7 +38,7 @@ export function Footer() {
               {/* Logo */}
               <div className="rounded-2xl bg-white/10 p-3 ring-1 ring-white/10 backdrop-blur">
                 <img
-                  src="/img/logo.jpg"
+                  src="/img/logo1.jpeg"
                   alt="Verdant Feed"
                   className="h-10 w-auto"
                 />
