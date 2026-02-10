@@ -246,7 +246,7 @@ export default function Genetics() {
       <section className="relative min-h-[520px] md:min-h-[600px] h-[75vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1452690700277-2b73062803b0?q=80&w=2940&auto=format&fit=crop"
+            src="./img/gene1.jpeg"
             alt="Genetics & AI"
             className="w-full h-full object-cover"
             loading="eager"
@@ -343,7 +343,7 @@ export default function Genetics() {
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] aspect-[4/3] sm:aspect-video lg:aspect-square">
                 <img
-                  src="https://images.unsplash.com/photo-1543336332-9602523588f6?q=80&w=1400&auto=format&fit=crop"
+                  src="./img/gene3.jpeg"
                   alt="Modern livestock"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -482,7 +482,7 @@ export default function Genetics() {
               Semen Sample Guide
             </Badge>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-foreground mb-3 md:mb-4 italic">
-              Semen Sample (Straw) 101
+              Semen Sample (Straw)
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg font-light">
               What a “semen dose” is, what the label means, and how handling affects results.
@@ -616,7 +616,7 @@ export default function Genetics() {
           <div className="mt-10 md:mt-14 relative rounded-[32px] sm:rounded-[40px] overflow-hidden shadow-2xl">
             <div className="absolute inset-0">
               <img
-                src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?q=80&w=2400&auto=format&fit=crop"
+                src="./img/gene2.jpeg"
                 className="w-full h-full object-cover"
                 alt="Breeding support"
                 loading="lazy"

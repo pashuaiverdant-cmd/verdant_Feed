@@ -19,12 +19,26 @@ import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import Terms from "@/pages/Terms";
 import Genetics from "./pages/Genetics";
 
+//  article pages
+import BlogCattleNutrition from "@/pages/BlogCattleNutrition";
+import BlogLivestockDiseases from "@/pages/BlogLivestockDiseases";
+import BlogSustainableFeeding from "@/pages/BlogSustainableFeeding";
+
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/products" component={Products} />
+
+      {/*  Blog list */}
       <Route path="/blog" component={Blog} />
+
+      {/*  NEW: full article pages (MUST be above /blog/:id) */}
+      <Route path="/blog/cattle-nutrition" component={BlogCattleNutrition} />
+      <Route path="/blog/livestock-diseases" component={BlogLivestockDiseases} />
+      <Route path="/blog/sustainable-feeding" component={BlogSustainableFeeding} />
+
+      {/* Keep dynamic last so it doesn't catch the slugs above */}
       <Route path="/blog/:id" component={BlogPost} />
 
       <Route path="/diet-planner" component={DietPlanner} />
@@ -33,9 +47,9 @@ function Router() {
 
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms" component={Terms} />
-      <Route path="/Genetics" component={Genetics}/>
+      <Route path="/Genetics" component={Genetics} />
 
-      {/* Always keep 404 last */}
+      {/*  404  */}
       <Route component={NotFound} />
     </Switch>
   );
