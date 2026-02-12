@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { GoogleTranslate } from "@/components/GoogleTranslate";
 
 export function Navbar() {
   const [location] = useLocation();
@@ -29,36 +30,48 @@ export function Navbar() {
             alt="Mera Pashu Logo"
             className="h-10 w-10 object-contain transition-transform group-hover:scale-105"
           />
-          <span className="font-serif text-2xl font-semibold tracking-tight text-primary">
+          <span
+            className="font-serif text-2xl font-semibold tracking-tight text-primary notranslate"
+            translate="no"
+          >
             Verdant Feed
           </span>
+
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-1">
-          {links.map((link) => (
-            <Link key={link.href} href={link.href}>
-              <span
-                className={cn(
-                  "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer",
-                  isActive(link.href)
-                    ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
-                    : "text-foreground/70 hover:bg-secondary hover:text-foreground"
-                )}
-              >
-                {link.label}
-              </span>
-            </Link>
-          ))}
+        <div className="hidden md:flex items-center gap-2">
+          <div className="flex items-center space-x-1">
+            {links.map((link) => (
+              <Link key={link.href} href={link.href}>
+                <span
+                  className={cn(
+                    "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer",
+                    isActive(link.href)
+                      ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
+                      : "text-foreground/70 hover:bg-secondary hover:text-foreground"
+                  )}
+                >
+                  {link.label}
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          {/* ✅ Google Translate (Desktop) */}
+          <div className="ml-2 pl-2 border-l border-border/60 flex items-center">
+            <GoogleTranslate />
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setIsOpen(!isOpen)}
             className="text-primary hover:bg-primary/10 hover:text-primary"
+            aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
@@ -68,6 +81,11 @@ export function Navbar() {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden border-t bg-background p-4 shadow-lg animate-in slide-in-from-top-5">
+          {/* ✅ Google Translate (Mobile) */}
+          <div className="mb-3 flex justify-start">
+            <GoogleTranslate />
+          </div>
+
           <div className="flex flex-col space-y-2">
             {links.map((link) => (
               <Link key={link.href} href={link.href}>

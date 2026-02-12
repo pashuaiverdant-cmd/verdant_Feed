@@ -5,24 +5,23 @@
 @tailwind utilities;
 
 :root {
-
   --font-display: "Fraunces", ui-serif, Georgia, serif;
   --font-body: "Noto Sans", "Noto Sans Devanagari", ui-sans-serif, system-ui, sans-serif;
 
   /* Earthy Agricultural Palette */
-  --background: 45 30% 96%;      /* Warm oatmeal white */
-  --foreground: 120 40% 10%;     /* Deep forest green text */
+  --background: 45 30% 96%;
+  --foreground: 120 40% 10%;
 
-  --primary: 138 58% 30%;        /* Lush crop green */
+  --primary: 138 58% 30%;
   --primary-foreground: 45 30% 96%;
 
-  --secondary: 35 40% 90%;       /* Light beige */
-  --secondary-foreground: 25 30% 20%; /* Brown earth tone */
+  --secondary: 35 40% 90%;
+  --secondary-foreground: 25 30% 20%;
 
   --muted: 120 10% 92%;
   --muted-foreground: 120 10% 40%;
 
-  --accent: 35 90% 45%;          /* Harvest gold/amber */
+  --accent: 35 90% 45%;
   --accent-foreground: 45 30% 96%;
 
   --destructive: 0 84% 60%;
@@ -34,6 +33,8 @@
 
   --radius: 0.75rem;
 }
+
+/* ================= BASE ================= */
 
 @layer base {
   html {
@@ -49,12 +50,11 @@
     font-family: var(--font-body) !important;
   }
 
-  /* ✅ Verdant Typography System (automatic headings) */
+  /* Verdant Typography System */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-body);
     @apply tracking-tight text-foreground font-semibold;
   }
-  
 
   h1 { @apply text-4xl sm:text-5xl md:text-6xl font-semibold; }
   h2 { @apply text-3xl sm:text-4xl md:text-5xl font-semibold; }
@@ -71,6 +71,8 @@
     @apply text-muted-foreground;
   }
 }
+
+/* ================= UTILITIES ================= */
 
 @layer utilities {
   .verdant-display {
@@ -94,6 +96,8 @@
   }
 }
 
+/* ================= COMPONENTS ================= */
+
 @layer components {
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
@@ -106,4 +110,86 @@
   .card-hover {
     @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-primary/30;
   }
+}
+
+/* =================================================
+   GOOGLE TRANSLATE — HARD FIX (FINAL CLEAN VERSION)
+   ================================================= */
+
+/* Hide Google top banner iframe completely */
+iframe.goog-te-banner-frame,
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
+/* Hide tooltip balloon */
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+/* Prevent page from shifting down */
+html,
+body {
+  margin-top: 0 !important;
+  top: 0 !important;
+}
+
+/* Hide Google branding */
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  font-size: 0px !important;
+}
+
+/* Hide Google dropdown (we use custom toggle) */
+.goog-te-combo {
+  display: none !important;
+}
+
+/* ================= Verdant Language Toggle ================= */
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--background));
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.lang-btn {
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  color: hsl(var(--foreground));
+  opacity: 0.75;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  opacity: 1;
+  background: hsl(var(--secondary));
+}
+
+.lang-btn.is-active {
+  opacity: 1;
+  color: hsl(var(--primary-foreground));
+  background: hsl(var(--primary));
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.lang-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }

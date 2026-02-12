@@ -31,7 +31,7 @@ export function Footer() {
               </div>
 
               <div className="leading-tight">
-                <div className="font-serif text-2xl md:text-3xl font-semibold tracking-tight text-white">
+                <div className="font-serif text-2xl md:text-3xl font-semibold tracking-tight text-white" translate="no">
                   Verdant Feed
                 </div>
                 <div className="text-primary-foreground/70 text-sm">
