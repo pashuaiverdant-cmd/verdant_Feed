@@ -151,7 +151,7 @@ export function Footer() {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="https://www.instagram.com/verdant.impact/?hl=en"
+                href="https://www.instagram.com/verdant.impact?igsh=MWZwb3kwbmI3d2lrMA=="
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-2xl bg-white/10 p-2 ring-1 ring-white/10 hover:bg-white/20 transition"
