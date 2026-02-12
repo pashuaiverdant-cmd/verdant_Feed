@@ -1,11 +1,4 @@
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  Phone,
-} from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "wouter";
 
 export function Footer() {
@@ -25,27 +18,20 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-primary text-primary-foreground">
-      {/* Top gradient divider */}
+    <footer className="bg-primary text-primary-foreground font-sans">
       <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
       <div className="container-custom pt-14 pb-10">
-        {/* Top grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-          {/* Brand (Premium) */}
+          {/* Brand */}
           <div className="lg:col-span-5 space-y-5">
             <div className="flex items-center gap-3">
-              {/* Logo */}
               <div className="rounded-2xl bg-white/10 p-3 ring-1 ring-white/10 backdrop-blur">
-                <img
-                  src="/img/logo1.jpeg"
-                  alt="Verdant Feed"
-                  className="h-10 w-auto"
-                />
+                <img src="/img/logo1.jpeg" alt="Verdant Feed" className="h-10 w-auto" />
               </div>
 
               <div className="leading-tight">
-                <div className="font-display text-2xl md:text-3xl font-bold text-white">
+                <div className="font-serif text-2xl md:text-3xl font-semibold tracking-tight text-white">
                   Verdant Feed
                 </div>
                 <div className="text-primary-foreground/70 text-sm">
@@ -55,29 +41,25 @@ export function Footer() {
             </div>
 
             <p className="text-primary-foreground/80 leading-relaxed max-w-md">
-              Providing premium nutrition for healthy livestock. We care about
-              your cattle as much as you do — with quality feed, trusted
-              guidance, and better outcomes.
+              Providing premium nutrition for healthy livestock. We care about your cattle as much as you do —
+              with quality feed, trusted guidance, and better outcomes.
             </p>
 
-            {/* Trust badges */}
             <div className="flex flex-wrap gap-2">
-              {["Quality Assured", "Farmer Trusted", "Nutrition Backed"].map(
-                (t) => (
-                  <span
-                    key={t}
-                    className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs text-white/90 ring-1 ring-white/10"
-                  >
-                    {t}
-                  </span>
-                ),
-              )}
+              {["Quality Assured", "Farmer Trusted", "Nutrition Backed"].map((t) => (
+                <span
+                  key={t}
+                  className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs text-white/90 ring-1 ring-white/10"
+                >
+                  {t}
+                </span>
+              ))}
             </div>
           </div>
 
           {/* Links */}
           <div className="lg:col-span-3">
-            <h3 className="font-display text-lg font-bold text-white mb-4">
+            <h3 className="font-serif text-lg font-semibold tracking-tight text-white mb-4">
               Explore
             </h3>
             <ul className="space-y-2">
@@ -95,7 +77,7 @@ export function Footer() {
 
           {/* Contact */}
           <div className="lg:col-span-4 space-y-4">
-            <h3 className="font-display text-lg font-bold text-white">
+            <h3 className="font-serif text-lg font-semibold tracking-tight text-white">
               Contact
             </h3>
 
@@ -113,24 +95,19 @@ export function Footer() {
                 <span className="mt-0.5 rounded-xl bg-white/10 p-2 ring-1 ring-white/10">
                   <Phone className="h-5 w-5" />
                 </span>
-                <p className="text-primary-foreground/80">
-                  +91 789 10 11 401
-                </p>
+                <p className="text-primary-foreground/80">+91 789 10 11 401</p>
               </div>
 
               <div className="flex gap-3">
                 <span className="mt-0.5 rounded-xl bg-white/10 p-2 ring-1 ring-white/10">
                   <Mail className="h-5 w-5" />
                 </span>
-                <p className="text-primary-foreground/80">info@verdantimpact.com</p>
+                <p className="text-primary-foreground/80">info@verdantfeed.com</p>
               </div>
             </div>
 
-            {/* Newsletter (premium add-on) */}
             <div className="mt-6 rounded-2xl bg-white/10 ring-1 ring-white/10 p-4">
-              <p className="text-white font-semibold">
-                Get feed tips & offers
-              </p>
+              <p className="text-white font-semibold">Get feed tips & offers</p>
               <p className="text-primary-foreground/70 text-sm mt-1">
                 Monthly insights to improve yield and livestock health.
               </p>
@@ -143,18 +120,17 @@ export function Footer() {
                   type="email"
                   required
                   placeholder="Enter your email"
-                  className="h-11 w-full rounded-xl bg-white/10 px-3 text-white placeholder:text-white/50 ring-1 ring-white/10 outline-none focus:ring-2 focus:ring-white/30"
+                  className="h-11 w-full rounded-xl bg-white/10 px-3 text-white placeholder:text-white/50 ring-1 ring-white/10 outline-none focus:ring-2 focus:ring-white/30 font-sans"
                 />
                 <button
                   type="submit"
-                  className="h-11 rounded-xl bg-white text-primary px-4 font-semibold hover:bg-white/90 transition"
+                  className="h-11 rounded-xl bg-white text-primary px-4 font-semibold hover:bg-white/90 transition font-sans"
                 >
                   Subscribe
                 </button>
               </form>
             </div>
 
-            {/* Social */}
             <div className="flex items-center gap-3 pt-2">
               <a
                 href="https://www.facebook.com/verdant.impact/"
@@ -187,10 +163,9 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-primary-foreground/60 text-sm">
-            © {year} Verdant Feed Solutions. All rights reserved.
+            © {year} Verdant Impact Private Limited. All rights reserved.
           </p>
 
           <div className="flex items-center gap-4 text-sm">

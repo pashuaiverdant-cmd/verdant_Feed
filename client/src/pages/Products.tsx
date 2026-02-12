@@ -64,9 +64,10 @@ export default function Products() {
   };
 
   return (
-    <div className="min-h-screen py-16">
+    <div className="min-h-screen py-16 font-sans">
       <div className="container-custom">
-        <h1 className="text-4xl font-bold text-center mb-12">
+        {/* ✅ Page Title */}
+        <h1 className="text-4xl md:text-5xl font-serif font-semibold tracking-tight text-center mb-12 text-primary">
           Buy Livestock Feed
         </h1>
 
@@ -82,9 +83,9 @@ export default function Products() {
             {products.map((product: any) => (
               <div
                 key={product.id}
-                className="border rounded-xl overflow-hidden bg-white hover:shadow-md transition"
+                className="group border rounded-xl overflow-hidden bg-white hover:shadow-lg transition-all duration-300"
               >
-                {/* ✅ IMAGE FIX: consistent container + no stretching */}
+                {/* IMAGE */}
                 <div className="w-full aspect-square bg-gray-50 overflow-hidden flex items-center justify-center">
                   <img
                     src={product.imageUrl}
@@ -94,13 +95,25 @@ export default function Products() {
                   />
                 </div>
 
-                <div className="p-4">
-                  <h3 className="font-bold">{product.name}</h3>
-                  <p className="text-sm text-gray-600">{product.description}</p>
-                  <p className="font-semibold mt-2">₹{product.price / 100}</p>
+                {/* CONTENT */}
+                <div className="p-5 space-y-2">
+                  {/* ✅ Product Name (Verdant Green Serif) */}
+                  <h3 className="font-serif font-semibold tracking-tight text-primary transition-colors duration-200 group-hover:text-primary/80">
+                    {product.name}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-sm text-muted-foreground font-sans">
+                    {product.description}
+                  </p>
+
+                  {/* ✅ Price (Verdant Premium Style) */}
+                  <p className="font-sans text-lg font-semibold text-primary mt-1">
+                    ₹{product.price / 100}
+                  </p>
 
                   <Button
-                    className="mt-4 w-full"
+                    className="mt-4 w-full font-sans"
                     onClick={() => setSelectedProduct(product)}
                   >
                     Buy Now
@@ -112,44 +125,48 @@ export default function Products() {
         )}
       </div>
 
-      {/* Modal */}
+      {/* MODAL */}
       {selectedProduct && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center px-4">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center px-4 font-sans">
           <div className="bg-white p-6 rounded-xl w-full max-w-md relative">
-            <button className="absolute right-4 top-4" onClick={closeModal}>
+            <button
+              className="absolute right-4 top-4"
+              onClick={closeModal}
+              aria-label="Close"
+            >
               <X />
             </button>
 
             {!receipt ? (
               <>
-                <h2 className="text-xl font-bold mb-4">
+                <h2 className="text-xl font-serif font-semibold tracking-tight mb-4 text-primary">
                   Buy {selectedProduct.name}
                 </h2>
 
                 <input
                   placeholder="Name *"
-                  className="border p-2 w-full mb-2 rounded"
+                  className="border p-2 w-full mb-2 rounded font-sans"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
 
                 <input
                   placeholder="Mobile *"
-                  className="border p-2 w-full mb-2 rounded"
+                  className="border p-2 w-full mb-2 rounded font-sans"
                   value={mobile}
                   onChange={(e) => setMobile(e.target.value)}
                 />
 
                 <input
                   placeholder="Email (optional)"
-                  className="border p-2 w-full mb-2 rounded"
+                  className="border p-2 w-full mb-2 rounded font-sans"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
 
                 <textarea
                   placeholder="Address *"
-                  className="border p-2 w-full mb-4 rounded"
+                  className="border p-2 w-full mb-4 rounded font-sans"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
                 />
@@ -157,16 +174,18 @@ export default function Products() {
                 <Button
                   onClick={submitOrder}
                   disabled={loading}
-                  className="w-full"
+                  className="w-full font-sans"
                 >
                   {loading ? "Placing Order..." : "Confirm Order"}
                 </Button>
               </>
             ) : (
               <>
-                <h2 className="font-bold text-lg mb-2">Order Placed ✅</h2>
+                <h2 className="font-serif font-semibold tracking-tight text-lg mb-2 text-primary">
+                  Order Placed ✅
+                </h2>
 
-                <div className="text-sm space-y-1">
+                <div className="text-sm space-y-1 font-sans text-muted-foreground">
                   <p>
                     <strong>Order ID:</strong> {receipt.id}
                   </p>
@@ -192,7 +211,7 @@ export default function Products() {
                   </p>
                 </div>
 
-                <Button className="mt-4 w-full" onClick={closeModal}>
+                <Button className="mt-4 w-full font-sans" onClick={closeModal}>
                   Close
                 </Button>
               </>

@@ -77,7 +77,7 @@ function baseCattle(green: number, dry: number, conc: number, minerals: number, 
     feedingSchedule: [
       { time: "Morning (6–8 AM)", items: ["Green fodder (50%)", "Concentrate (50%)", "Fresh water"] },
       { time: "Afternoon (12–2 PM)", items: ["Dry fodder (50%)", "Fresh water"] },
-      { time: "Evening (4–6 PM)", items: ["Green fodder (50%)", "Concentrate (50%)", "Mineral mix + salt", "Fresh water"] },
+      { time: "Evening (4–6 PM)", items: ["Green fodder (50%)", "Concentrate (50%)", "Mineral mixture + salt", "Fresh water"] },
     ],
     notes: [],
   };
@@ -93,7 +93,7 @@ function baseGoat(green: number, dry: number, conc: number, minerals: number, sa
     waterLPerDay: water,
     feedingSchedule: [
       { time: "Morning (7–9 AM)", items: ["Green fodder", "Concentrate", "Fresh water"] },
-      { time: "Evening (5–7 PM)", items: ["Dry fodder", "Mineral mix + salt", "Fresh water"] },
+      { time: "Evening (5–7 PM)", items: ["Dry fodder", "Mineral mixture + salt", "Fresh water"] },
     ],
     notes: [],
   };
@@ -290,7 +290,7 @@ const TEXT = {
       green: "हरा चारा",
       dry: "सूखा चारा",
       conc: "कंसन्ट्रेट/दाना",
-      mineral: "मिनरल मिक्स",
+      mineral: "मिनरल मिक्सर",
       salt: "नमक",
       water: "पानी",
     },

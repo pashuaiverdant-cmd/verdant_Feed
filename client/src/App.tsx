@@ -19,7 +19,7 @@ import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import Terms from "@/pages/Terms";
 import Genetics from "./pages/Genetics";
 
-//  article pages
+// Article pages
 import BlogCattleNutrition from "@/pages/BlogCattleNutrition";
 import BlogLivestockDiseases from "@/pages/BlogLivestockDiseases";
 import BlogSustainableFeeding from "@/pages/BlogSustainableFeeding";
@@ -30,15 +30,15 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/products" component={Products} />
 
-      {/*  Blog list */}
+      {/* Blog list */}
       <Route path="/blog" component={Blog} />
 
-      {/*  NEW: full article pages (MUST be above /blog/:id) */}
+      {/* Full article pages (MUST be above /blog/:id) */}
       <Route path="/blog/cattle-nutrition" component={BlogCattleNutrition} />
       <Route path="/blog/livestock-diseases" component={BlogLivestockDiseases} />
       <Route path="/blog/sustainable-feeding" component={BlogSustainableFeeding} />
 
-      {/* Keep dynamic last so it doesn't catch the slugs above */}
+      {/* Keep dynamic last so it doesn't catch slugs above */}
       <Route path="/blog/:id" component={BlogPost} />
 
       <Route path="/diet-planner" component={DietPlanner} />
@@ -49,7 +49,7 @@ function Router() {
       <Route path="/terms" component={Terms} />
       <Route path="/Genetics" component={Genetics} />
 
-      {/*  404  */}
+      {/* 404 */}
       <Route component={NotFound} />
     </Switch>
   );
@@ -59,7 +59,8 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <div className="flex flex-col min-h-screen">
+        {/* ✅ Enforce global base font everywhere */}
+        <div className="flex flex-col min-h-screen font-sans">
           <Navbar />
           <main className="flex-grow">
             <Router />

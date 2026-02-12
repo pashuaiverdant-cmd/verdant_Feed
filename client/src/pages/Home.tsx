@@ -17,7 +17,12 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 /* 🔁 HERO MOVING BANNER IMAGES */
-const heroImages = ["/img/feed1.jpeg", "/img/feed4.jpeg", "/img/feed5.jpeg", "/img/feed6.jpeg"];
+const heroImages = [
+  "/img/feed1.jpeg",
+  "/img/feed4.jpeg",
+  "/img/feed5.jpeg",
+  "/img/feed6.jpeg",
+];
 
 /* ✅ STATIC BEST PRACTICES (NO IMAGES) */
 const bestPractices = [
@@ -60,7 +65,7 @@ const bestPractices = [
 ];
 
 const quickTips = [
-  { title: "Mineral Mix", desc: "Daily mineral mix helps immunity and milk yield." },
+  { title: "Mineral Mixture", desc: "Daily mineral mix helps immunity and milk yield." },
   { title: "Salt Lick", desc: "Improves appetite and electrolyte balance." },
   { title: "Clean Milking", desc: "Wash udder & hands to reduce mastitis risk." },
   { title: "Heat Stress", desc: "Shade + ventilation keeps intake and production stable." },
@@ -79,7 +84,7 @@ const fadeUp = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen font-sans">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-primary py-12 sm:py-16 md:py-32">
         {/* Soft Verdant glow */}
@@ -116,9 +121,9 @@ export default function Home() {
                   <div
                     key={i}
                     className="
-        relative h-full shrink-0 overflow-hidden
-        basis-1/2 sm:basis-1/3 md:basis-1/2
-      "
+                      relative h-full shrink-0 overflow-hidden
+                      basis-1/2 sm:basis-1/3 md:basis-1/2
+                    "
                   >
                     <img
                       src={img}
@@ -143,8 +148,8 @@ export default function Home() {
                     <TrendingUp className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
-                    <p className="text-xs sm:text-sm text-gray-500">Growth Rate</p>
-                    <p className="text-lg sm:text-xl font-bold">+25% Faster</p>
+                    <p className="text-xs sm:text-sm text-gray-500 font-sans">Growth Rate</p>
+                    <p className="text-lg sm:text-xl font-bold font-sans">+25% Faster</p>
                   </div>
                 </div>
               </div>
@@ -157,16 +162,16 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="space-y-5 sm:space-y-6 order-2 md:order-1"
             >
-              <div className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white ring-1 ring-inset ring-white/15">
+              <div className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white ring-1 ring-inset ring-white/15 font-sans">
                 <Star className="mr-1.5 h-4 w-4 fill-white/80 text-white/80" />
                 Verdant-grade Nutrition
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold text-white leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif font-semibold text-white leading-tight tracking-tight">
                 Nutrition That Grows Your Livestock
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl text-primary-foreground/90 max-w-lg">
+              <p className="text-base sm:text-lg md:text-xl text-primary-foreground/90 max-w-lg font-sans">
                 Science-backed feeding practices to improve animal health, growth, and yield — consistently.
               </p>
 
@@ -175,7 +180,7 @@ export default function Home() {
                 <Link href="/diet-planner">
                   <Button
                     size="lg"
-                    className="text-base sm:text-lg px-6 sm:px-8 bg-accent text-primary font-bold w-full sm:w-auto"
+                    className="text-base sm:text-lg px-6 sm:px-8 bg-accent text-primary font-bold w-full sm:w-auto font-sans"
                   >
                     Plan a Diet <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -185,7 +190,7 @@ export default function Home() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="text-base sm:text-lg px-6 sm:px-8 border-white/30 text-white hover:bg-white/10 w-full sm:w-auto"
+                    className="text-base sm:text-lg px-6 sm:px-8 border-white/30 text-white hover:bg-white/10 w-full sm:w-auto font-sans"
                   >
                     Browse Feed
                   </Button>
@@ -193,7 +198,7 @@ export default function Home() {
               </div>
 
               {/* Trust chips */}
-              <div className="flex flex-wrap gap-2 pt-1 sm:pt-2">
+              <div className="flex flex-wrap gap-2 pt-1 sm:pt-2 font-sans">
                 {["Field-tested", "Vet-friendly", "Simple routines", "Better yield"].map((t) => (
                   <span
                     key={t}
@@ -212,10 +217,10 @@ export default function Home() {
       <section className="py-16 sm:py-20 md:py-24 bg-[#d9e0c8]">
         <div className="container-custom">
           <div className="text-center mb-10 sm:mb-12 md:mb-14 px-2">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-3 sm:mb-4">
+            <h2 className="text-3xl sm:text-4xl font-serif font-semibold text-primary mb-3 sm:mb-4 tracking-tight">
               Hear from our Farmers
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto font-sans">
               Real stories from farmers who improved animal health and profitability with better nutrition.
             </p>
           </div>
@@ -234,16 +239,16 @@ export default function Home() {
 
         <div className="container-custom relative">
           <div className="text-center mb-10 sm:mb-12 px-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 text-primary text-sm font-semibold shadow-sm ring-1 ring-primary/10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 text-primary text-sm font-semibold shadow-sm ring-1 ring-primary/10 font-sans">
               <Sparkles className="h-4 w-4" />
               Verdant Farming Insights
             </div>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mt-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-primary mt-4 tracking-tight">
               Better routines. Healthier animals. Higher yield.
             </h2>
 
-            <p className="text-muted-foreground max-w-2xl mx-auto mt-3">
+            <p className="text-muted-foreground max-w-2xl mx-auto mt-3 font-sans">
               High-impact livestock practices in a clean checklist format — easy to follow, easy to repeat.
             </p>
           </div>
@@ -265,11 +270,11 @@ export default function Home() {
 
                   <div className="p-6 sm:p-7">
                     <div className="flex items-center justify-between gap-3 mb-5">
-                      <span className="inline-flex items-center rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold ring-1 ring-inset ring-primary/10">
+                      <span className="inline-flex items-center rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold ring-1 ring-inset ring-primary/10 font-sans">
                         {item.tag}
                       </span>
 
-                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground font-sans">
                         <span className="h-2 w-2 rounded-full bg-primary/60" />
                         Daily Practice
                       </div>
@@ -280,14 +285,16 @@ export default function Home() {
                         <Icon className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold text-foreground leading-snug">{item.title}</h3>
-                        <p className="text-sm text-muted-foreground mt-1">{item.summary}</p>
+                        <h3 className="text-lg font-serif font-semibold text-foreground leading-snug tracking-tight">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground mt-1 font-sans">{item.summary}</p>
                       </div>
                     </div>
 
                     <div className="my-5 h-px w-full bg-primary/10" />
 
-                    <ul className="space-y-2.5 text-sm text-muted-foreground">
+                    <ul className="space-y-2.5 text-sm text-muted-foreground font-sans">
                       {item.points.map((p) => (
                         <li key={p} className="flex items-start gap-2">
                           <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary" />
@@ -310,20 +317,22 @@ export default function Home() {
             >
               <div className="h-1 w-full bg-gradient-to-r from-accent/70 via-primary/50 to-accent/30" />
               <div className="p-6 sm:p-7">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 text-primary text-xs font-semibold ring-1 ring-inset ring-primary/10">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 text-primary text-xs font-semibold ring-1 ring-inset ring-primary/10 font-sans">
                   <Sparkles className="h-4 w-4" />
                   Verdant Note
                 </div>
 
-                <h3 className="text-xl font-bold text-primary mt-4">Consistency beats complexity.</h3>
+                <h3 className="text-xl font-serif font-semibold text-primary mt-4 tracking-tight">
+                  Consistency beats complexity.
+                </h3>
 
-                <p className="text-muted-foreground mt-2">
+                <p className="text-muted-foreground mt-2 font-sans">
                   If you follow feeding timing, clean water, hygiene, and a basic health calendar consistently,
                   you’ll usually see better intake, better health, and more stable yield over time.
                 </p>
 
                 <div className="mt-6 rounded-2xl bg-primary/5 p-4 ring-1 ring-inset ring-primary/10">
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground font-sans">
                     Tip: Start with <span className="font-semibold text-primary">one habit</span> today, then add
                     the next habit next week.
                   </p>
@@ -334,8 +343,10 @@ export default function Home() {
 
           <div className="mt-12 sm:mt-14">
             <div className="flex items-center justify-between flex-wrap gap-3 mb-5 px-1">
-              <h3 className="text-xl sm:text-2xl font-bold text-primary">Quick Tips</h3>
-              <p className="text-sm text-muted-foreground">Fast wins you can apply immediately.</p>
+              <h3 className="text-xl sm:text-2xl font-serif font-semibold text-primary tracking-tight">
+                Quick Tips
+              </h3>
+              <p className="text-sm text-muted-foreground font-sans">Fast wins you can apply immediately.</p>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -349,8 +360,8 @@ export default function Home() {
                   custom={i}
                   className="rounded-2xl bg-white/70 backdrop-blur p-5 shadow-sm hover:shadow-md transition border border-primary/10"
                 >
-                  <h4 className="font-bold text-foreground mb-1">{t.title}</h4>
-                  <p className="text-sm text-muted-foreground">{t.desc}</p>
+                  <h4 className="font-serif font-semibold text-foreground mb-1 tracking-tight">{t.title}</h4>
+                  <p className="text-sm text-muted-foreground font-sans">{t.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -372,7 +383,7 @@ const farmers = [
       "वर्डेन्ट फीड ने न केवल मेरे पशुओं की सेहत सुधारी और दूध का उत्पादन बढ़ाया, बल्कि मेरी आर्थिक स्थिति को भी एक नई मजबूती दी है। आज मैं गर्व के साथ कह सकती हूँ कि मैं आत्मनिर्भर हूँ। अब मेरा लक्ष्य समाज की अन्य महिलाओं को भी जागरूक करना और उन्हें प्रगति की राह पर आगे बढ़ाना है।",
   },
   {
-    name: "मदन लाल",
+    name: "सतीश कुमार",
     location: "",
     image: "/img/farmer5.jpeg",
     story:
@@ -390,7 +401,7 @@ const farmers = [
     location: "",
     image: "/img/farmer003.jpeg",
     story:
-      "बरसों तक मैंने डेयरी को सिर्फ किस्मत का खेल समझा, पर वर्डेन्ट फीड ने मेरी सोच और मेरे फार्म की सूरत, दोनों बदल दीं। आज न पशुओं की बीमारी का डर है, न दूध घटने की चिंता; क्योंकि मेरे पास उनकी सेहत का सटीक हिसाब और वर्डेन्ट फीड का बेजोड़ पोषण है। इस भरोसे ने मेरी जेब भी भरी और परिवार का भविष्य भी सुरक्षित कर दिया। आज मैं मजबूरी में नहीं, बल्कि गर्व से डेयरी चलाता हूँ और चाहता हूँ कि गाँव का हर युवा इस आधुनिक बदलाव का हिस्सा बने।",
+      "बरसों तक मैंने डेयरी को सिर्फ किस्मत का खेल समझा, पर वर्डेन्ट फीड ने मेरी सोच और मेरे फार्म की सूरत, दोनों बदल दीं। आज न पशुओं की बीमारी का डर है, न दूध घटने की चिंता; क्योंकि मेरे पास उनकी सेहत का सटीक हिसाब और वर्डेन्ट फीड का बेजोड़ पोषण है। इस भरोसे ने मेरी जेब भी भरी और परिवार का भविष्य भी सुरक्षित कर दिया। आज मैं मजबूती में नहीं, बल्कि गर्व से डेयरी चलाता हूँ और चाहता हूँ कि गाँव का हर युवा इस आधुनिक बदलाव का हिस्सा बने।",
   },
 ];
 
@@ -399,7 +410,7 @@ function FarmerCarousel() {
   const farmer = farmers[index];
 
   return (
-    <div className="max-w-5xl mx-auto px-2 sm:px-0">
+    <div className="max-w-5xl mx-auto px-2 sm:px-0 font-sans">
       <div className="bg-white rounded-3xl shadow-lg p-5 sm:p-8 md:p-10 flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10">
         <img
           src={farmer.image}
@@ -408,28 +419,32 @@ function FarmerCarousel() {
         />
 
         <div className="relative md:w-2/3">
-          <p className="text-base sm:text-lg text-muted-foreground mb-5 sm:mb-6">{farmer.story}</p>
-          <h4 className="text-lg sm:text-xl font-bold text-primary">{farmer.name}</h4>
-          <p className="text-sm text-muted-foreground">{farmer.location}</p>
+          <p className="text-base sm:text-lg text-muted-foreground mb-5 sm:mb-6 font-sans">
+            {farmer.story}
+          </p>
+          <h4 className="text-lg sm:text-xl font-serif font-semibold text-primary tracking-tight">
+            {farmer.name}
+          </h4>
+          <p className="text-sm text-muted-foreground font-sans">{farmer.location}</p>
         </div>
       </div>
 
       <div className="flex justify-center items-center gap-4 mt-6 sm:mt-8">
         <button
           onClick={() => setIndex((index - 1 + farmers.length) % farmers.length)}
-          className="p-2 rounded-full border"
+          className="p-2 rounded-full border font-sans"
           aria-label="Previous farmer"
         >
           <ChevronLeft />
         </button>
 
-        <span className="text-sm">
+        <span className="text-sm font-sans">
           {index + 1} / {farmers.length}
         </span>
 
         <button
           onClick={() => setIndex((index + 1) % farmers.length)}
-          className="p-2 rounded-full border"
+          className="p-2 rounded-full border font-sans"
           aria-label="Next farmer"
         >
           <ChevronRight />

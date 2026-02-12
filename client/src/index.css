@@ -11,38 +11,80 @@
   /* Earthy Agricultural Palette */
   --background: 45 30% 96%;      /* Warm oatmeal white */
   --foreground: 120 40% 10%;     /* Deep forest green text */
-  
+
   --primary: 138 58% 30%;        /* Lush crop green */
   --primary-foreground: 45 30% 96%;
-  
+
   --secondary: 35 40% 90%;       /* Light beige */
   --secondary-foreground: 25 30% 20%; /* Brown earth tone */
-  
+
   --muted: 120 10% 92%;
   --muted-foreground: 120 10% 40%;
-  
+
   --accent: 35 90% 45%;          /* Harvest gold/amber */
   --accent-foreground: 45 30% 96%;
-  
+
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
 
   --border: 120 15% 85%;
   --input: 120 15% 85%;
   --ring: 138 58% 30%;
-  
+
   --radius: 0.75rem;
 }
 
 @layer base {
+  html {
+    font-family: var(--font-body);
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
   }
 
+  /* ✅ Verdant Typography System (automatic headings) */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    @apply font-bold tracking-tight text-primary;
+    @apply tracking-tight text-foreground;
+  }
+
+  h1 { @apply text-4xl sm:text-5xl md:text-6xl font-semibold; }
+  h2 { @apply text-3xl sm:text-4xl md:text-5xl font-semibold; }
+  h3 { @apply text-2xl sm:text-3xl font-semibold; }
+  h4 { @apply text-xl sm:text-2xl font-semibold; }
+  h5 { @apply text-lg sm:text-xl font-semibold; }
+  h6 { @apply text-base sm:text-lg font-semibold; }
+
+  p {
+    @apply text-base leading-relaxed text-foreground;
+  }
+
+  .text-subtle {
+    @apply text-muted-foreground;
+  }
+}
+
+@layer utilities {
+  .verdant-display {
+    font-family: var(--font-display);
+    @apply tracking-tight font-semibold;
+  }
+
+  .verdant-title {
+    font-family: var(--font-display);
+    @apply tracking-tight font-semibold;
+  }
+
+  .verdant-body {
+    font-family: var(--font-body);
+    @apply leading-relaxed;
+  }
+
+  .verdant-eyebrow {
+    font-family: var(--font-body);
+    @apply uppercase tracking-widest text-xs font-semibold;
   }
 }
 
@@ -50,7 +92,7 @@
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   .btn-primary {
     @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 rounded-lg px-6 py-3 font-semibold;
   }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import {
@@ -234,14 +234,22 @@ export default function Genetics() {
     if (tab === "Standards") return indiaStandards;
     if (tab === "Semen") return semenBasics;
     return breedingBasics;
-  }, [tab]);
+  }, [tab, indiaStandards, semenBasics, breedingBasics]);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  // ✅ Consistent bullet styling (same height + perfect alignment)
+  const BulletItem = ({ text }: { text: string }) => (
+    <li className="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed min-h-[48px] sm:min-h-[52px] font-sans">
+      <CheckCircle2 className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-[2px]" />
+      <span className="flex-1">{text}</span>
+    </li>
+  );
+
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col font-sans">
       {/* Hero */}
       <section className="relative min-h-[520px] md:min-h-[600px] h-[75vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -261,19 +269,19 @@ export default function Genetics() {
             transition={{ duration: 0.7 }}
             className="max-w-3xl text-white space-y-6 md:space-y-8"
           >
-            <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-3 sm:px-4 py-2 rounded-full text-emerald-300 font-semibold tracking-wide uppercase text-[10px] sm:text-xs">
+            <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-3 sm:px-4 py-2 rounded-full text-emerald-300 font-semibold tracking-wide uppercase text-[10px] sm:text-xs font-sans">
               <Dna className="h-4 w-4" />
               <span>Genetics • Semen Samples • AI • Quality</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-semibold leading-tight tracking-tight">
               Genetics & Semen <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500">
                 Explained Simply
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed max-w-xl font-light">
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed max-w-xl font-sans">
               Verdant Impact’s premium guide to semen samples (straws), quality testing, cryo handling,
               and genetics planning — built for real farm outcomes.
             </p>
@@ -281,7 +289,7 @@ export default function Genetics() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-1 sm:pt-2">
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white border-none rounded-xl h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg"
+                className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white border-none rounded-xl h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-sans"
                 onClick={() => scrollTo("numbers")}
               >
                 Know the Numbers
@@ -290,7 +298,7 @@ export default function Genetics() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-white border-white/20 backdrop-blur-sm rounded-xl h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg"
+                className="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-white border-white/20 backdrop-blur-sm rounded-xl h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-sans"
                 onClick={() => scrollTo("straw")}
               >
                 Semen Sample (Straw) Guide
@@ -306,10 +314,10 @@ export default function Genetics() {
           <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
             <div className="space-y-7 md:space-y-8">
               <div className="space-y-3 md:space-y-4">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-foreground leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold tracking-tight text-foreground leading-tight">
                   Why Quality + Planning Matters
                 </h2>
-                <p className="text-muted-foreground leading-relaxed text-base sm:text-lg font-light">
+                <p className="text-muted-foreground leading-relaxed text-base sm:text-lg font-sans">
                   AI works when semen meets minimum quality, cold-chain is respected, and breeding is goal-based.
                   This page helps farmers understand what to look for and how to handle it correctly.
                 </p>
@@ -331,8 +339,12 @@ export default function Genetics() {
                         <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                       </div>
                       <div className="space-y-1">
-                        <h4 className="font-bold text-base sm:text-lg text-foreground">{prop.title}</h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{prop.description}</p>
+                        <h4 className="font-serif font-semibold tracking-tight text-base sm:text-lg text-foreground">
+                          {prop.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed font-sans">
+                          {prop.description}
+                        </p>
                       </div>
                     </motion.div>
                   );
@@ -354,12 +366,12 @@ export default function Genetics() {
               <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-3xl shadow-2xl border border-slate-100 hidden lg:block max-w-xs">
                 <div className="flex items-center gap-3 mb-3 text-primary">
                   <Microscope className="h-7 w-7" />
-                  <span className="font-bold text-lg">Field Reality</span>
+                  <span className="font-serif font-semibold tracking-tight text-lg">Field Reality</span>
                 </div>
-                <p className="text-sm text-muted-foreground italic">
+                <p className="text-sm text-muted-foreground italic font-sans">
                   “Good semen + wrong timing = poor results. Heat detection and handling matter.”
                 </p>
-                <p className="text-xs font-bold mt-2">— Verdant Notes</p>
+                <p className="text-xs font-bold mt-2 font-sans">— Verdant Notes</p>
               </div>
             </div>
           </div>
@@ -371,13 +383,13 @@ export default function Genetics() {
         <div className="container-custom px-4 sm:px-6">
           <div className="flex flex-col md:flex-row justify-between md:items-end mb-10 md:mb-12 gap-5 md:gap-6">
             <div className="max-w-2xl">
-              <Badge className="mb-3 sm:mb-4 bg-emerald-100 text-emerald-700 hover:bg-emerald-200 border-none px-4 py-1.5 rounded-full font-bold uppercase tracking-widest text-[10px]">
+              <Badge className="mb-3 sm:mb-4 bg-emerald-100 text-emerald-700 hover:bg-emerald-200 border-none px-4 py-1.5 rounded-full font-bold uppercase tracking-widest text-[10px] font-sans">
                 Know the Numbers
               </Badge>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-foreground mb-3 md:mb-4 italic">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold tracking-tight text-foreground mb-3 md:mb-4 italic">
                 Standards • Semen • Breeding
               </h2>
-              <p className="text-muted-foreground text-base sm:text-lg font-light">
+              <p className="text-muted-foreground text-base sm:text-lg font-sans">
                 A premium snapshot of key concepts. Use the tabs to switch the focus.
               </p>
             </div>
@@ -389,7 +401,7 @@ export default function Genetics() {
                   variant="outline"
                   onClick={() => setTab(t)}
                   className={[
-                    "rounded-xl border-slate-200 bg-white w-full sm:w-auto",
+                    "rounded-xl border-slate-200 bg-white w-full sm:w-auto font-sans",
                     tab === t ? "border-primary text-primary" : "",
                   ].join(" ")}
                 >
@@ -404,7 +416,7 @@ export default function Genetics() {
               <CardContent className="p-6 sm:p-8 space-y-6">
                 <div className="flex items-center gap-3 text-primary">
                   <Droplets className="h-6 w-6" />
-                  <h3 className="text-xl sm:text-2xl font-bold">
+                  <h3 className="text-xl sm:text-2xl font-serif font-semibold tracking-tight">
                     {tab === "Standards"
                       ? "Quality Benchmarks Snapshot"
                       : tab === "Semen"
@@ -415,12 +427,15 @@ export default function Genetics() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {activeMetrics.map((m) => (
-                    <div key={m.label} className="rounded-2xl bg-slate-50 border border-slate-100 p-5">
-                      <p className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
+                    <div
+                      key={m.label}
+                      className="rounded-2xl bg-slate-50 border border-slate-100 p-5"
+                    >
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground font-sans">
                         {m.label}
                       </p>
-                      <p className="text-xl font-bold text-foreground mt-1">{m.value}</p>
-                      <p className="text-sm text-muted-foreground mt-1">{m.hint}</p>
+                      <p className="text-xl font-bold text-foreground mt-1 font-sans">{m.value}</p>
+                      <p className="text-sm text-muted-foreground mt-1 font-sans">{m.hint}</p>
                     </div>
                   ))}
                 </div>
@@ -428,7 +443,7 @@ export default function Genetics() {
                 <div className="rounded-2xl bg-emerald-50 border border-emerald-100 p-5">
                   <div className="flex items-start gap-3">
                     <Info className="h-5 w-5 text-emerald-700 mt-0.5" />
-                    <p className="text-sm text-emerald-800 leading-relaxed">
+                    <p className="text-sm text-emerald-800 leading-relaxed font-sans">
                       Benchmarks help ensure minimum quality. Final results still depend on timing, handling,
                       cow health, and nutrition.
                     </p>
@@ -441,10 +456,12 @@ export default function Genetics() {
               <CardContent className="p-6 sm:p-8 space-y-6">
                 <div className="flex items-center gap-3 text-primary">
                   <ClipboardList className="h-6 w-6" />
-                  <h3 className="text-xl sm:text-2xl font-bold">Verdant Field Checklist</h3>
+                  <h3 className="text-xl sm:text-2xl font-serif font-semibold tracking-tight">
+                    Verdant Field Checklist
+                  </h3>
                 </div>
 
-                <div className="space-y-3">
+                <ul className="space-y-3">
                   {[
                     "Confirm heat signs and do AI at the right time window.",
                     "Thaw properly as per technician/provider instructions.",
@@ -452,17 +469,14 @@ export default function Genetics() {
                     "Record cow ID, AI time, semen code, outcome.",
                     "Review outcomes and improve next cycle.",
                   ].map((item) => (
-                    <div key={item} className="flex gap-3 rounded-2xl bg-slate-50 border border-slate-100 p-4">
-                      <CheckCircle2 className="h-5 w-5 text-emerald-600 mt-0.5" />
-                      <p className="text-sm text-muted-foreground leading-relaxed">{item}</p>
-                    </div>
+                    <BulletItem key={item} text={item} />
                   ))}
-                </div>
+                </ul>
 
                 <div className="pt-2">
                   <Button
                     variant="outline"
-                    className="w-full rounded-xl border-slate-200 bg-white"
+                    className="w-full rounded-xl border-slate-200 bg-white font-sans"
                     onClick={() => scrollTo("workflow")}
                   >
                     See the Quality Workflow <ArrowRight className="ml-2 h-4 w-4" />
@@ -478,13 +492,13 @@ export default function Genetics() {
       <section id="straw" className="py-16 sm:py-20 md:py-24 bg-white">
         <div className="container-custom px-4 sm:px-6">
           <div className="max-w-3xl mb-10 md:mb-12">
-            <Badge className="mb-3 sm:mb-4 bg-emerald-100 text-emerald-700 hover:bg-emerald-200 border-none px-4 py-1.5 rounded-full font-bold uppercase tracking-widest text-[10px]">
+            <Badge className="mb-3 sm:mb-4 bg-emerald-100 text-emerald-700 hover:bg-emerald-200 border-none px-4 py-1.5 rounded-full font-bold uppercase tracking-widest text-[10px] font-sans">
               Semen Sample Guide
             </Badge>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-foreground mb-3 md:mb-4 italic">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold tracking-tight text-foreground mb-3 md:mb-4 italic">
               Semen Sample (Straw)
             </h2>
-            <p className="text-muted-foreground text-base sm:text-lg font-light">
+            <p className="text-muted-foreground text-base sm:text-lg font-sans">
               What a “semen dose” is, what the label means, and how handling affects results.
             </p>
           </div>
@@ -506,15 +520,14 @@ export default function Genetics() {
                     ) : (
                       <Beaker className="h-5 w-5" />
                     )}
-                    <h3 className="font-bold text-base sm:text-lg text-foreground">{step.title}</h3>
+                    <h3 className="font-serif font-semibold tracking-tight text-base sm:text-lg text-foreground">
+                      {step.title}
+                    </h3>
                   </div>
 
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {step.points.map((p) => (
-                      <li key={p} className="flex gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 className="h-4 w-4 text-emerald-600 mt-0.5" />
-                        <span>{p}</span>
-                      </li>
+                      <BulletItem key={p} text={p} />
                     ))}
                   </ul>
                 </CardContent>
@@ -526,10 +539,10 @@ export default function Genetics() {
             <div className="flex flex-col sm:flex-row items-start gap-4">
               <Info className="h-6 w-6 text-primary mt-0.5" />
               <div className="min-w-0">
-                <h3 className="text-lg sm:text-xl font-bold text-foreground">
+                <h3 className="text-lg sm:text-xl font-serif font-semibold tracking-tight text-foreground">
                   Quick note: “Semen sample” ≠ “guaranteed pregnancy”
                 </h3>
-                <p className="text-muted-foreground mt-2 text-sm sm:text-base">
+                <p className="text-muted-foreground mt-2 text-sm sm:text-base font-sans">
                   Even high-quality frozen semen can fail if heat detection is wrong, thawing is incorrect,
                   or cow health/nutrition is poor. Always follow technician guidance and record outcomes.
                 </p>
@@ -543,13 +556,13 @@ export default function Genetics() {
       <section className="py-16 sm:py-20 md:py-24 bg-slate-50">
         <div className="container-custom px-4 sm:px-6">
           <div className="max-w-3xl mb-10 md:mb-12">
-            <Badge className="mb-3 sm:mb-4 bg-emerald-100 text-emerald-700 hover:bg-emerald-200 border-none px-4 py-1.5 rounded-full font-bold uppercase tracking-widest text-[10px]">
+            <Badge className="mb-3 sm:mb-4 bg-emerald-100 text-emerald-700 hover:bg-emerald-200 border-none px-4 py-1.5 rounded-full font-bold uppercase tracking-widest text-[10px] font-sans">
               Genetics
             </Badge>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-foreground mb-3 md:mb-4 italic">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold tracking-tight text-foreground mb-3 md:mb-4 italic">
               Genetics That Fits Your Goal
             </h2>
-            <p className="text-muted-foreground text-base sm:text-lg font-light">
+            <p className="text-muted-foreground text-base sm:text-lg font-sans">
               Pick the goal first, then select genetics that supports it. Random selection is slow and expensive.
             </p>
           </div>
@@ -566,8 +579,10 @@ export default function Genetics() {
                     <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-foreground">{p.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{p.description}</p>
+                    <h3 className="text-lg sm:text-xl font-serif font-semibold tracking-tight text-foreground">
+                      {p.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed font-sans">{p.description}</p>
                   </CardContent>
                 </Card>
               );
@@ -580,13 +595,13 @@ export default function Genetics() {
       <section id="workflow" className="py-16 sm:py-20 md:py-24 bg-white">
         <div className="container-custom px-4 sm:px-6">
           <div className="max-w-3xl mb-10 md:mb-12">
-            <Badge className="mb-3 sm:mb-4 bg-emerald-100 text-emerald-700 hover:bg-emerald-200 border-none px-4 py-1.5 rounded-full font-bold uppercase tracking-widest text-[10px]">
+            <Badge className="mb-3 sm:mb-4 bg-emerald-100 text-emerald-700 hover:bg-emerald-200 border-none px-4 py-1.5 rounded-full font-bold uppercase tracking-widest text-[10px] font-sans">
               Quality Assurance
             </Badge>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-foreground mb-3 md:mb-4 italic">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold tracking-tight text-foreground mb-3 md:mb-4 italic">
               From Collection to Conception
             </h2>
-            <p className="text-muted-foreground text-base sm:text-lg font-light">
+            <p className="text-muted-foreground text-base sm:text-lg font-sans">
               A practical chain of steps — hygiene, processing discipline, post-thaw checks, and on-farm handling.
             </p>
           </div>
@@ -598,13 +613,12 @@ export default function Genetics() {
                 className="border-none rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.04)] bg-slate-50"
               >
                 <CardContent className="p-6 sm:p-7 space-y-4">
-                  <h3 className="font-bold text-base sm:text-lg text-foreground">{step.title}</h3>
-                  <ul className="space-y-2">
+                  <h3 className="font-serif font-semibold tracking-tight text-base sm:text-lg text-foreground">
+                    {step.title}
+                  </h3>
+                  <ul className="space-y-3">
                     {step.points.map((p) => (
-                      <li key={p} className="flex gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 className="h-4 w-4 text-emerald-600 mt-0.5" />
-                        <span>{p}</span>
-                      </li>
+                      <BulletItem key={p} text={p} />
                     ))}
                   </ul>
                 </CardContent>
@@ -627,13 +641,13 @@ export default function Genetics() {
 
             <div className="relative z-10 px-5 sm:px-8 py-12 sm:py-16 md:p-24 text-white">
               <div className="max-w-3xl space-y-5 sm:space-y-6">
-                <div className="inline-block px-4 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] sm:text-xs font-bold uppercase tracking-widest">
+                <div className="inline-block px-4 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] sm:text-xs font-bold uppercase tracking-widest font-sans">
                   Verdant Learning
                 </div>
-                <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold font-display italic leading-tight">
+                <h3 className="text-3xl sm:text-4xl md:text-6xl font-serif font-semibold tracking-tight italic leading-tight">
                   Make Quality Visible
                 </h3>
-                <p className="text-base sm:text-lg md:text-xl text-white/85 font-light leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-white/85 font-sans leading-relaxed">
                   Use the straw guide + standards snapshot + field checklist to reduce common mistakes and
                   improve AI outcomes.
                 </p>
@@ -642,7 +656,7 @@ export default function Genetics() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="w-full sm:w-auto h-12 sm:h-14 md:h-16 px-6 sm:px-8 md:px-10 rounded-2xl border-white/30 text-white hover:bg-white/10 backdrop-blur-sm text-base sm:text-lg"
+                    className="w-full sm:w-auto h-12 sm:h-14 md:h-16 px-6 sm:px-8 md:px-10 rounded-2xl border-white/30 text-white hover:bg-white/10 backdrop-blur-sm text-base sm:text-lg font-sans"
                     onClick={() => scrollTo("straw")}
                   >
                     Read Straw Guide
@@ -651,7 +665,7 @@ export default function Genetics() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="w-full sm:w-auto h-12 sm:h-14 md:h-16 px-6 sm:px-8 md:px-10 rounded-2xl border-white/30 text-white hover:bg-white/10 backdrop-blur-sm text-base sm:text-lg"
+                    className="w-full sm:w-auto h-12 sm:h-14 md:h-16 px-6 sm:px-8 md:px-10 rounded-2xl border-white/30 text-white hover:bg-white/10 backdrop-blur-sm text-base sm:text-lg font-sans"
                     onClick={() => scrollTo("faq")}
                   >
                     Read FAQ
@@ -660,7 +674,7 @@ export default function Genetics() {
                   <Link href="/contact">
                     <Button
                       size="lg"
-                      className="w-full sm:w-auto h-12 sm:h-14 md:h-16 px-6 sm:px-8 md:px-10 rounded-2xl bg-white text-primary hover:bg-emerald-50 border-none font-bold text-base sm:text-lg shadow-xl"
+                      className="w-full sm:w-auto h-12 sm:h-14 md:h-16 px-6 sm:px-8 md:px-10 rounded-2xl bg-white text-primary hover:bg-emerald-50 border-none font-bold text-base sm:text-lg shadow-xl font-sans"
                     >
                       Contact
                     </Button>
@@ -676,13 +690,13 @@ export default function Genetics() {
       <section id="faq" className="py-16 sm:py-20 md:py-24 bg-slate-50">
         <div className="container-custom px-4 sm:px-6">
           <div className="max-w-3xl mb-10 md:mb-12">
-            <Badge className="mb-3 sm:mb-4 bg-emerald-100 text-emerald-700 hover:bg-emerald-200 border-none px-4 py-1.5 rounded-full font-bold uppercase tracking-widest text-[10px]">
+            <Badge className="mb-3 sm:mb-4 bg-emerald-100 text-emerald-700 hover:bg-emerald-200 border-none px-4 py-1.5 rounded-full font-bold uppercase tracking-widest text-[10px] font-sans">
               FAQ
             </Badge>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-foreground mb-3 md:mb-4 italic">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold tracking-tight text-foreground mb-3 md:mb-4 italic">
               Genetics & Semen — Common Questions
             </h2>
-            <p className="text-muted-foreground text-base sm:text-lg font-light">
+            <p className="text-muted-foreground text-base sm:text-lg font-sans">
               Straight answers, farmer-friendly.
             </p>
           </div>
@@ -696,9 +710,11 @@ export default function Genetics() {
                 <CardContent className="p-6 sm:p-8 space-y-3">
                   <div className="flex items-start gap-3">
                     <Info className="h-5 w-5 text-primary mt-0.5" />
-                    <h3 className="text-base sm:text-lg font-bold text-foreground">{item.q}</h3>
+                    <h3 className="text-base sm:text-lg font-serif font-semibold tracking-tight text-foreground">
+                      {item.q}
+                    </h3>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.a}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed font-sans">{item.a}</p>
                 </CardContent>
               </Card>
             ))}
@@ -707,7 +723,7 @@ export default function Genetics() {
           <div className="pt-8">
             <Button
               variant="outline"
-              className="w-full rounded-xl border-slate-200 bg-white"
+              className="w-full rounded-xl border-slate-200 bg-white font-sans"
               onClick={() => scrollTo("numbers")}
             >
               Back to Know the Numbers <ArrowRight className="ml-2 h-4 w-4" />

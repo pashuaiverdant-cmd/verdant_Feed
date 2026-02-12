@@ -20,9 +20,8 @@ export function Navbar() {
   const isActive = (path: string) => location === path;
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 font-sans">
       <div className="container-custom flex h-20 items-center justify-between">
-        
         {/* Logo + Brand Name */}
         <Link href="/" className="flex items-center gap-3 group cursor-pointer">
           <img
@@ -30,7 +29,7 @@ export function Navbar() {
             alt="Mera Pashu Logo"
             className="h-10 w-10 object-contain transition-transform group-hover:scale-105"
           />
-          <span className="font-display text-2xl font-bold tracking-tight text-primary">
+          <span className="font-serif text-2xl font-semibold tracking-tight text-primary">
             Verdant Feed
           </span>
         </Link>
