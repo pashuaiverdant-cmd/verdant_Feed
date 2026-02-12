@@ -240,7 +240,6 @@ export default function Genetics() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  // ✅ Consistent bullet styling (same height + perfect alignment)
   const BulletItem = ({ text }: { text: string }) => (
     <li className="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed min-h-[48px] sm:min-h-[52px] font-sans">
       <CheckCircle2 className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-[2px]" />
@@ -259,7 +258,9 @@ export default function Genetics() {
             className="w-full h-full object-cover"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
+
+          {/* ✅ FIX: overlay was too strong; lighten it so pastel greens pop */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-transparent" />
         </div>
 
         <div className="container-custom relative z-10 px-4 sm:px-6">
@@ -275,8 +276,16 @@ export default function Genetics() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-semibold leading-tight tracking-tight">
-              Genetics & Semen <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500">
+              <span className="text-white/80">
+                Genetics & Semen
+              </span>
+              <br />
+              <span
+                className="
+      text-transparent bg-clip-text bg-gradient-to-r
+      from-emerald-100 via-green-100 to-emerald-200
+    "
+              >
                 Explained Simply
               </span>
             </h1>
@@ -420,8 +429,8 @@ export default function Genetics() {
                     {tab === "Standards"
                       ? "Quality Benchmarks Snapshot"
                       : tab === "Semen"
-                      ? "Semen Quality Basics"
-                      : "Breeding Success Basics"}
+                        ? "Semen Quality Basics"
+                        : "Breeding Success Basics"}
                   </h3>
                 </div>
 
@@ -626,7 +635,6 @@ export default function Genetics() {
             ))}
           </div>
 
-          {/* CTA (mobile friendly) */}
           <div className="mt-10 md:mt-14 relative rounded-[32px] sm:rounded-[40px] overflow-hidden shadow-2xl">
             <div className="absolute inset-0">
               <img
