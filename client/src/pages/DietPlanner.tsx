@@ -26,8 +26,8 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 type BreedOption = {
-  value: string;     // used in logic
-  label: string;     // shown in UI (includes region)
+  value: string;     
+  label: string;     
   region: string;
 };
 
@@ -91,7 +91,7 @@ const weightOptions: Record<FormValues["cattleType"], string[]> = {
   Goat: ["20-50kg", "50-80kg", "80-120kg"],
 };
 
-// small summary saved in logs
+
 function makeSummary(data: FormValues) {
   return `${data.cattleType} • ${data.breed} • ${data.weightCategory} • ${data.healthStatus} — Chart generated`;
 }
@@ -114,7 +114,7 @@ export default function DietPlanner() {
 
   const cattleType = form.watch("cattleType");
 
-  // reset breed when cattleType changes (prevents mismatch)
+  
   useEffect(() => {
     if (!cattleType) return;
     form.setValue("breed", "");
@@ -140,11 +140,11 @@ export default function DietPlanner() {
         description: "Opening full chart with details.",
       });
 
-      // send breedRegion too
+      
       const region =
         breedOptions[data.cattleType].find((b) => b.value === data.breed)?.region ?? "Any";
 
-      // default Hindi chart => lang=hi
+     
       const params = new URLSearchParams({
         lang: "hi",
         name: data.name,

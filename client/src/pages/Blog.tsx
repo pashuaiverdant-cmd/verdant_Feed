@@ -24,7 +24,7 @@ type PostLike = {
   id: number | string;
   title: string;
   summary: string;
-  imageUrl?: string; // 👈 optional now (you'll add local imgs)
+  imageUrl?: string; 
   createdAt?: string | Date | null;
   category?: string;
   author?: string;
@@ -133,7 +133,7 @@ export default function Blog() {
           <Skeleton className="h-40 w-full" />
         ) : (
           <>
-            {/* FEATURED CARD (NO IMAGE — YOU WILL ADD LOCAL IMAGE LATER) */}
+            
             {featured && (
               <Card className="mb-12 rounded-3xl border-border/60">
                 <CardContent className="p-8 space-y-4">

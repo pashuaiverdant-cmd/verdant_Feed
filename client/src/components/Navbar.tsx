@@ -58,7 +58,7 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* ✅ Google Translate (Desktop) */}
+       
           <div className="ml-2 pl-2 border-l border-border/60 flex items-center">
             <GoogleTranslate />
           </div>
@@ -81,7 +81,7 @@ export function Navbar() {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden border-t bg-background p-4 shadow-lg animate-in slide-in-from-top-5">
-          {/* ✅ Google Translate (Mobile) */}
+          
           <div className="mb-3 flex justify-start">
             <GoogleTranslate />
           </div>

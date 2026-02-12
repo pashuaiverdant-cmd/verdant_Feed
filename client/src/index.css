@@ -8,7 +8,7 @@
   --font-display: "Fraunces", ui-serif, Georgia, serif;
   --font-body: "Noto Sans", "Noto Sans Devanagari", ui-sans-serif, system-ui, sans-serif;
 
-  /* Earthy Agricultural Palette */
+
   --background: 45 30% 96%;
   --foreground: 120 40% 10%;
 
@@ -34,7 +34,7 @@
   --radius: 0.75rem;
 }
 
-/* ================= BASE ================= */
+
 
 @layer base {
   html {
@@ -50,7 +50,7 @@
     font-family: var(--font-body) !important;
   }
 
-  /* Verdant Typography System */
+
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-body);
     @apply tracking-tight text-foreground font-semibold;
@@ -72,7 +72,7 @@
   }
 }
 
-/* ================= UTILITIES ================= */
+
 
 @layer utilities {
   .verdant-display {
@@ -96,7 +96,7 @@
   }
 }
 
-/* ================= COMPONENTS ================= */
+
 
 @layer components {
   .container-custom {
@@ -112,11 +112,11 @@
   }
 }
 
-/* =================================================
-   GOOGLE TRANSLATE — HARD FIX (FINAL CLEAN VERSION)
-   ================================================= */
 
-/* Hide Google top banner iframe completely */
+
+
+
+
 iframe.goog-te-banner-frame,
 .goog-te-banner-frame,
 .goog-te-banner-frame.skiptranslate {
@@ -126,20 +126,20 @@ iframe.goog-te-banner-frame,
   width: 0 !important;
 }
 
-/* Hide tooltip balloon */
+
 #goog-gt-tt,
 .goog-te-balloon-frame {
   display: none !important;
 }
 
-/* Prevent page from shifting down */
+
 html,
 body {
   margin-top: 0 !important;
   top: 0 !important;
 }
 
-/* Hide Google branding */
+
 .goog-logo-link {
   display: none !important;
 }
@@ -148,12 +148,12 @@ body {
   font-size: 0px !important;
 }
 
-/* Hide Google dropdown (we use custom toggle) */
+
 .goog-te-combo {
   display: none !important;
 }
 
-/* ================= Verdant Language Toggle ================= */
+
 
 .lang-toggle {
   display: inline-flex;

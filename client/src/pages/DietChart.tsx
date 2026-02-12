@@ -60,12 +60,7 @@ function deepClone<T>(obj: T): T {
   return JSON.parse(JSON.stringify(obj));
 }
 
-/**
- * PDF-based thumb-rule idea:
- * - Maintenance ration concept (straw + concentrate) + extra allowance in pregnancy/milk production
- *   (Feeding of Cattle & Buffalo PDF).
- * - Goat DM%BW guidance (dry vs late gestation vs lactation) used as adjustment idea for Pregnant.
- */
+
 function baseCattle(green: number, dry: number, conc: number, minerals: number, salt: number, water: number): DietChart {
   return {
     greenFodderKgPerDay: green,
@@ -102,16 +97,16 @@ function baseGoat(green: number, dry: number, conc: number, minerals: number, sa
 function getBreedPreset(data: DietFormData): BreedPreset {
   const { cattleType, breed } = data;
 
-  // rough estimates (for “precision fields”)
+  
   const cattleDM = { green: 0.2, dry: 0.9, conc: 0.9 };
   const goatDM = { green: 0.22, dry: 0.9, conc: 0.9 };
 
-  // crude protein (g/kg as-fed rough guidance)
+  
   const cattleCP = { green: 35, dry: 55, conc: 180 };
   const dairyCattleCP = { green: 40, dry: 60, conc: 200 };
   const goatCP = { green: 45, dry: 60, conc: 170 };
 
-  // ✅ broader presets (more breeds) + region hint
+  
   const cow: Record<string, BreedPreset> = {
     Gir: { profile: "dairy", base: baseCattle(26, 6.5, 6.0, 70, 30, 105), dm: cattleDM, cp: dairyCattleCP, regionHint: "Gujarat" },
     Sahiwal: { profile: "high_dairy", base: baseCattle(25, 6.0, 6.3, 70, 30, 105), dm: cattleDM, cp: dairyCattleCP, regionHint: "Punjab/Haryana" },
@@ -175,7 +170,7 @@ function applyAdjustments(base: DietChart, data: DietFormData, preset: BreedPres
   const chart = deepClone(base);
   const { cattleType, weightCategory, healthStatus } = data;
 
-  // weight adjustment (simple)
+  
   if (cattleType !== "Goat") {
     if (weightCategory === "0-300kg") chart.concentrateKgPerDay += 0.5;
     if (weightCategory === "400-500kg") chart.concentrateKgPerDay += 1.0;
@@ -184,7 +179,7 @@ function applyAdjustments(base: DietChart, data: DietFormData, preset: BreedPres
     if (weightCategory === "80-120kg") chart.concentrateKgPerDay += 0.2;
   }
 
-  // breed profile adjustment
+  
   if (preset.profile === "high_dairy") {
     chart.concentrateKgPerDay = round(chart.concentrateKgPerDay * 1.1);
     chart.mineralMixGPerDay += cattleType === "Goat" ? 5 : 10;
@@ -198,16 +193,13 @@ function applyAdjustments(base: DietChart, data: DietFormData, preset: BreedPres
     chart.notes.push("Dual purpose: balanced roughage + concentrate.");
   }
 
-  // health adjustments
+  
   if (healthStatus === "Sick") {
     chart.concentrateKgPerDay = round(chart.concentrateKgPerDay * 0.9);
     chart.notes.push("Sick: soft green fodder, avoid sudden feed changes. Vet advice recommended.");
   }
 
-  // Pregnant:
-  // - cattle/buffalo: increase concentrate + mineral
-  // - goat: use idea of higher intake in late gestation (4–4.5% BW guideline from PDF),
-  //   so we push concentrate & roughage slightly.
+  
   if (healthStatus === "Pregnant") {
     chart.concentrateKgPerDay = round(chart.concentrateKgPerDay * (cattleType === "Goat" ? 1.12 : 1.1));
     chart.mineralMixGPerDay += cattleType === "Goat" ? 10 : 15;
@@ -215,7 +207,7 @@ function applyAdjustments(base: DietChart, data: DietFormData, preset: BreedPres
     chart.notes.push("Pregnant: higher energy/protein + minerals (consult vet for trimester-specific plan).");
   }
 
-  // precision metrics (approx)
+  
   const dmKg =
     chart.greenFodderKgPerDay * preset.dm.green +
     chart.dryFodderKgPerDay * preset.dm.dry +
@@ -232,7 +224,7 @@ function applyAdjustments(base: DietChart, data: DietFormData, preset: BreedPres
   chart.crudeProteinG = Math.round(cpG);
   chart.energyMJ = round(energyMJ);
 
-  // round display
+  
   chart.greenFodderKgPerDay = round(chart.greenFodderKgPerDay);
   chart.dryFodderKgPerDay = round(chart.dryFodderKgPerDay);
   chart.concentrateKgPerDay = round(chart.concentrateKgPerDay);
@@ -396,7 +388,7 @@ export default function DietChartPage() {
     );
   }
 
-  // ✅ graph data (charts render only with fixed height container!)
+  
   const barData = [
     { name: t.labels.green, kg: chart.greenFodderKgPerDay },
     { name: t.labels.dry, kg: chart.dryFodderKgPerDay },

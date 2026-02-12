@@ -66,7 +66,7 @@ export default function Products() {
   return (
     <div className="min-h-screen py-16 font-sans">
       <div className="container-custom">
-        {/* ✅ Page Title */}
+        
         <h1 className="text-4xl md:text-5xl font-serif font-semibold tracking-tight text-center mb-12 text-primary">
           Buy Livestock Feed
         </h1>
@@ -97,7 +97,7 @@ export default function Products() {
 
                 {/* CONTENT */}
                 <div className="p-5 space-y-2">
-                  {/* ✅ Product Name (Verdant Green Serif) */}
+                 
                   <h3 className="font-serif font-semibold tracking-tight text-primary transition-colors duration-200 group-hover:text-primary/80">
                     {product.name}
                   </h3>
@@ -107,7 +107,7 @@ export default function Products() {
                     {product.description}
                   </p>
 
-                  {/* ✅ Price (Verdant Premium Style) */}
+                  
                   <p className="font-sans text-lg font-semibold text-primary mt-1">
                     ₹{product.price / 100}
                   </p>
@@ -125,7 +125,7 @@ export default function Products() {
         )}
       </div>
 
-      {/* MODAL */}
+      
       {selectedProduct && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center px-4 font-sans">
           <div className="bg-white p-6 rounded-xl w-full max-w-md relative">

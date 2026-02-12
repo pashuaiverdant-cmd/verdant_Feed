@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-/* 🔁 HERO MOVING BANNER IMAGES */
+
 const heroImages = [
   "/img/feed1.jpeg",
   "/img/feed4.jpeg",
@@ -24,7 +24,7 @@ const heroImages = [
   "/img/feed6.jpeg",
 ];
 
-/* ✅ STATIC BEST PRACTICES (NO IMAGES) */
+
 const bestPractices = [
   {
     id: "bp1",
@@ -85,18 +85,18 @@ const fadeUp = {
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen font-sans">
-      {/* Hero Section */}
+      
       <section className="relative overflow-hidden bg-primary py-12 sm:py-16 md:py-32">
-        {/* Soft Verdant glow */}
+        
         <div className="pointer-events-none absolute inset-0 opacity-25">
           <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-accent blur-3xl" />
           <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-white blur-3xl" />
         </div>
 
         <div className="container-custom relative z-10">
-          {/* ✅ MOBILE: image first | DESKTOP: text left, image right */}
+         
           <div className="grid gap-10 md:grid-cols-2 md:gap-12 items-center">
-            {/* ✅ MOVING IMAGE BANNER (TOP on mobile) */}
+            
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -111,7 +111,7 @@ export default function Home() {
               {/* overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/30 z-10" />
 
-              {/* ✅ moving track (FIXED BG + MULTI IMAGES ON MOBILE + NO GAPS) */}
+              
               <motion.div
                 className="absolute inset-0 flex will-change-transform"
                 animate={{ x: ["0%", "-50%"] }}
@@ -136,7 +136,7 @@ export default function Home() {
                 ))}
               </motion.div>
 
-              {/* ✅ Growth Card (mobile-friendly) */}
+              
               <div
                 className="
                   absolute z-20 bg-white/95 backdrop-blur p-4 sm:p-5 md:p-6 rounded-xl shadow-xl ring-1 ring-black/5
@@ -155,7 +155,7 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* ✅ LEFT CONTENT (below image on mobile) */}
+            
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
@@ -175,7 +175,7 @@ export default function Home() {
                 Science-backed feeding practices to improve animal health, growth, and yield — consistently.
               </p>
 
-              {/* ✅ Buttons */}
+              
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-1 sm:pt-2">
                 <Link href="/diet-planner">
                   <Button
@@ -213,7 +213,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Farmer Stories */}
+      
       <section className="py-16 sm:py-20 md:py-24 bg-[#d9e0c8]">
         <div className="container-custom">
           <div className="text-center mb-10 sm:mb-12 md:mb-14 px-2">
@@ -229,7 +229,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ✅ Farming Insights */}
+      
       <section className="relative py-16 sm:py-20 bg-primary/5 overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-accent/20 blur-3xl" />

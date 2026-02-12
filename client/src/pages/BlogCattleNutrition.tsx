@@ -349,7 +349,7 @@ export default function BlogCattleNutrition() {
           />
         </Card>
 
-        {/* Challenge feeding */}
+        
         <SectionTitle
           icon={ClipboardCheck}
           title="Challenge feeding SOP (pre-calving to peak yield)"
@@ -391,7 +391,7 @@ export default function BlogCattleNutrition() {
           </Card>
         </div>
 
-        {/* Mid/late lactation */}
+        
         <SectionTitle
           icon={Leaf}
           title="Mid & late lactation: stabilize, then rebuild condition"
@@ -407,7 +407,7 @@ export default function BlogCattleNutrition() {
           />
         </Card>
 
-        {/* High producer rules */}
+        
         <SectionTitle
           icon={ShieldCheck}
           title="High-producing cows: avoid rumen dysfunction"
@@ -435,7 +435,7 @@ export default function BlogCattleNutrition() {
           </Card>
         </div>
 
-        {/* Feeding allowances table */}
+        
         <SectionTitle
           icon={Droplets}
           title="Feeding allowances (quick reference table)"

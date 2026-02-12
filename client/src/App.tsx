@@ -30,15 +30,15 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/products" component={Products} />
 
-      {/* Blog list */}
+      
       <Route path="/blog" component={Blog} />
 
-      {/* Full article pages (MUST be above /blog/:id) */}
+     
       <Route path="/blog/cattle-nutrition" component={BlogCattleNutrition} />
       <Route path="/blog/livestock-diseases" component={BlogLivestockDiseases} />
       <Route path="/blog/sustainable-feeding" component={BlogSustainableFeeding} />
 
-      {/* Keep dynamic last so it doesn't catch slugs above */}
+      
       <Route path="/blog/:id" component={BlogPost} />
 
       <Route path="/diet-planner" component={DietPlanner} />
@@ -49,7 +49,7 @@ function Router() {
       <Route path="/terms" component={Terms} />
       <Route path="/Genetics" component={Genetics} />
 
-      {/* 404 */}
+      
       <Route component={NotFound} />
     </Switch>
   );
@@ -59,7 +59,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        {/* ✅ Enforce global base font everywhere */}
+        
         <div className="flex flex-col min-h-screen font-sans">
           <Navbar />
           <main className="flex-grow">

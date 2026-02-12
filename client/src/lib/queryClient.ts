@@ -1,5 +1,37 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
 
+function getApiBase() {
+  const raw = import.meta.env.VITE_API_URL || "";
+  return raw.replace(/\/$/, ""); // trim trailing slash
+}
+
+const API_BASE = getApiBase();
+
+function joinUrl(base: string, path: string) {
+  const cleanBase = base.replace(/\/$/, "");
+  const cleanPath = path.replace(/^\/+/, "");
+  return `${cleanBase}/${cleanPath}`;
+}
+
+
+function toAbsoluteUrl(url: string) {
+  if (!url) return url;
+
+  
+  if (/^https?:\/\//i.test(url)) return url;
+
+  
+  if (!API_BASE) {
+    console.warn(
+      "VITE_API_URL is not set. Add it to client/.env.production (or client/.env).",
+    );
+   
+    return url.startsWith("/") ? url : `/${url}`;
+  }
+
+  return joinUrl(API_BASE, url);
+}
+
 async function throwIfResNotOk(res: Response) {
   if (!res.ok) {
     const text = (await res.text()) || res.statusText;
@@ -10,9 +42,11 @@ async function throwIfResNotOk(res: Response) {
 export async function apiRequest(
   method: string,
   url: string,
-  data?: unknown | undefined,
+  data?: unknown,
 ): Promise<Response> {
-  const res = await fetch(url, {
+  const absUrl = toAbsoluteUrl(url);
+
+  const res = await fetch(absUrl, {
     method,
     headers: data ? { "Content-Type": "application/json" } : {},
     body: data ? JSON.stringify(data) : undefined,
@@ -24,12 +58,17 @@ export async function apiRequest(
 }
 
 type UnauthorizedBehavior = "returnNull" | "throw";
+
 export const getQueryFn: <T>(options: {
   on401: UnauthorizedBehavior;
 }) => QueryFunction<T> =
   ({ on401: unauthorizedBehavior }) =>
   async ({ queryKey }) => {
-    const res = await fetch(queryKey.join("/") as string, {
+    
+    const raw = queryKey.join("/") as string;
+    const url = toAbsoluteUrl(raw);
+
+    const res = await fetch(url, {
       credentials: "include",
     });
 

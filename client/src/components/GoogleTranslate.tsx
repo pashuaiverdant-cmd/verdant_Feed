@@ -23,7 +23,7 @@ export function GoogleTranslate() {
   const [lang, setLang] = useState<"en" | "hi">("en");
 
   useEffect(() => {
-    // ✅ Remove Google top bar + reset layout (runs repeatedly because Google reinjects)
+    
     const cleanup = () => {
       const bannerFrame = document.querySelector(
         "iframe.goog-te-banner-frame"
@@ -60,7 +60,7 @@ export function GoogleTranslate() {
           "google_translate_element"
         );
 
-        // wait for Google to inject select
+       
         setTimeout(() => {
           setReady(true);
           cleanup();
