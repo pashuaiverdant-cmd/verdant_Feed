@@ -1,11 +1,46 @@
-import 'dotenv/config';
+import "dotenv/config";
 import express, { type Request, Response, NextFunction } from "express";
+import cors from "cors";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
 
 const app = express();
 const httpServer = createServer(app);
+
+/* =========================
+   ✅ CORS CONFIGURATION
+========================= */
+
+const allowedOrigins = [
+  "https://verdantnaturals.com",
+  "https://www.verdantnaturals.com",
+];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      // Allow server-to-server calls (Render health checks, curl, etc.)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error(`CORS blocked for origin: ${origin}`));
+    },
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: false, // set to true ONLY if using cookies
+  })
+);
+
+// Handle preflight requests
+app.options("*", cors());
+
+/* =========================
+   BODY PARSERS
+========================= */
 
 declare module "http" {
   interface IncomingMessage {
@@ -18,10 +53,14 @@ app.use(
     verify: (req, _res, buf) => {
       req.rawBody = buf;
     },
-  }),
+  })
 );
 
 app.use(express.urlencoded({ extended: false }));
+
+/* =========================
+   REQUEST LOGGER
+========================= */
 
 export function log(message: string, source = "express") {
   const formattedTime = new Date().toLocaleTimeString("en-US", {
@@ -59,6 +98,10 @@ app.use((req, res, next) => {
   next();
 });
 
+/* =========================
+   ROUTES + SERVER START
+========================= */
+
 (async () => {
   await registerRoutes(httpServer, app);
 
@@ -82,7 +125,6 @@ app.use((req, res, next) => {
     await setupVite(httpServer, app);
   }
 
-  
   const port = parseInt(process.env.PORT || "5004", 10);
 
   httpServer.listen(port, () => {
