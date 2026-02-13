@@ -15,6 +15,7 @@ const httpServer = createServer(app);
 const allowedOrigins = [
   "https://verdantnaturals.com",
   "https://www.verdantnaturals.com",
+  "https://verdant-feed-1.onrender.com",
 ];
 
 app.use(
@@ -27,11 +28,12 @@ app.use(
         return callback(null, true);
       }
 
-      return callback(new Error(`CORS blocked for origin: ${origin}`));
+      // ✅ Do NOT throw error (prevents 500 crashes). Just block CORS.
+      return callback(null, false);
     },
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: false, // set to true ONLY if using cookies
+    credentials: false, // set to true ONLY if using cookies/sessions
   })
 );
 
