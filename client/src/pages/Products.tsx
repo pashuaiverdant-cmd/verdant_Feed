@@ -66,7 +66,7 @@ export default function Products() {
   return (
     <div className="min-h-screen py-16 font-sans">
       <div className="container-custom">
-        
+        {/* ✅ Page Title */}
         <h1 className="text-4xl md:text-5xl font-serif font-semibold tracking-tight text-center mb-12 text-primary">
           Buy Livestock Feed
         </h1>

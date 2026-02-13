@@ -144,7 +144,7 @@ export default function DietPlanner() {
       const region =
         breedOptions[data.cattleType].find((b) => b.value === data.breed)?.region ?? "Any";
 
-     
+      // default Hindi chart => lang=hi
       const params = new URLSearchParams({
         lang: "hi",
         name: data.name,
