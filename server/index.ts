@@ -13,32 +13,32 @@ const httpServer = createServer(app);
 ========================= */
 
 const allowedOrigins = [
-  "https://verdantnaturals.com",
-  "https://www.verdantnaturals.com",
+  "https://verdantfeed.com",
+  "https://www.verdantfeed.com",
   "https://verdant-feed-1.onrender.com",
 ];
 
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      // Allow server-to-server calls (Render health checks, curl, etc.)
-      if (!origin) return callback(null, true);
+const corsOptions: cors.CorsOptions = {
+  origin: (origin, callback) => {
+    // Allow server-to-server calls (Render health checks, curl, etc.)
+    if (!origin) return callback(null, true);
 
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
 
-      // ✅ Do NOT throw error (prevents 500 crashes). Just block CORS.
-      return callback(null, false);
-    },
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: false, // set to true ONLY if using cookies/sessions
-  })
-);
+    // ❌ Do NOT throw error — prevents 500 crash
+    return callback(null, false);
+  },
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: false, // change to true ONLY if using cookies
+};
 
-// ✅ FIX: Handle preflight requests (do NOT use "*")
-app.options(/.*/, cors());
+app.use(cors(corsOptions));
+
+// ✅ IMPORTANT: Preflight must use SAME corsOptions
+app.options(/.*/, cors(corsOptions));
 
 /* =========================
    BODY PARSERS
