@@ -7,3 +7,4 @@ node_modules
 dist/
 client/dist/
 *.zip
+client/public/img/*.zip
