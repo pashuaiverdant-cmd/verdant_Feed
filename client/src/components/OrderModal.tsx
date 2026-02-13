@@ -1,5 +1,11 @@
 import { useState } from "react";
 
+const API_BASE = import.meta.env.VITE_API_URL;
+
+if (!API_BASE) {
+  throw new Error("VITE_API_URL is missing. Check client/.env.production and rebuild.");
+}
+
 type Props = {
   product: {
     id: number;
@@ -17,22 +23,34 @@ export default function OrderModal({ product, onClose }: Props) {
   const [receipt, setReceipt] = useState<any>(null);
 
   const placeOrder = async () => {
-    setLoading(true);
+    try {
+      setLoading(true);
 
-    const res = await fetch("/api/orders", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        productId: product.id,
-        quantity,
-        customerName,
-        phone,
-      }),
-    });
+      const res = await fetch(`${API_BASE}/api/orders`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          productId: product.id,
+          quantity,
+          customerName,
+          phone,
+        }),
+        // ✅ removed credentials to avoid CORS issues unless you use cookie auth
+      });
 
-    const data = await res.json();
-    setReceipt(data);
-    setLoading(false);
+      const data = await res.json().catch(() => null);
+
+      if (!res.ok) {
+        throw new Error(data?.message || "Failed to place order");
+      }
+
+      setReceipt(data);
+    } catch (err) {
+      console.error(err);
+      alert("Order failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (receipt) {
