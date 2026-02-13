@@ -35,8 +35,8 @@ app.use(
   })
 );
 
-// Handle preflight requests
-app.options("*", cors());
+// ✅ FIX: Handle preflight requests (do NOT use "*")
+app.options(/.*/, cors());
 
 /* =========================
    BODY PARSERS
