@@ -3,43 +3,57 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { GoogleTranslate } from "@/components/GoogleTranslate";
+import { useTranslation } from "react-i18next";
 
 export function Navbar() {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
-  const links = [
-    { href: "/", label: "Home" },
-    { href: "/products", label: "Buy Livestock Feed" },
-    { href: "/blog", label: "Blog" },
-    { href: "/diet-planner", label: "Diet Planner" },
-    { href: "/about", label: "About Us" },
-    { href: "/Genetics", label: "Genetics" },
-  ];
+  const { t } = useTranslation();
 
-  const isActive = (path: string) => location === path;
+  const links = [
+    { href: "/", key: "home", fallback: "Home" },
+    { href: "/products", key: "products", fallback: "Buy Livestock Feed" },
+    { href: "/blog", key: "blog", fallback: "Blog" },
+    { href: "/diet-planner", key: "dietPlanner", fallback: "Diet Planner" },
+    { href: "/about", key: "about", fallback: "About Us" },
+    { href: "/genetics", key: "genetics", fallback: "Genetics" },
+  ] as const;
+
+  // safer active logic (supports nested routes)
+  const isActive = (path: string) =>
+    path === "/" ? location === "/" : location.startsWith(path);
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 font-sans">
       <div className="container-custom flex h-20 items-center justify-between">
-        {/* Logo + Brand Name */}
+        {/* Logo + Brand (never translate) */}
         <Link href="/" className="flex items-center gap-3 group cursor-pointer">
-          <img
-            src="./img/logo.jpg"
-            alt="Mera Pashu Logo"
-            className="h-10 w-10 object-contain transition-transform group-hover:scale-105"
-          />
+          {/* HARD no-translate wrapper to prevent Google Translate DOM injection breaking layout */}
           <span
-            className="font-serif text-2xl font-semibold tracking-tight text-primary notranslate"
+            className="flex items-center gap-3 notranslate"
             translate="no"
+            data-notranslate="true"
+            suppressHydrationWarning
           >
-            Verdant Feed
-          </span>
+            <img
+              src="/img/logo.jpg"
+              alt={t("nav.logoAlt", "Verdant Feed Logo")}
+              className="h-10 w-10 shrink-0 object-contain transition-transform group-hover:scale-105"
+              draggable={false}
+            />
 
+            <span
+              data-verdant-brand
+              className="font-serif text-2xl font-semibold tracking-tight text-primary notranslate whitespace-nowrap"
+              translate="no"
+            >
+              Verdant Feed
+            </span>
+          </span>
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-2">
           <div className="flex items-center space-x-1">
             {links.map((link) => (
@@ -52,15 +66,10 @@ export function Navbar() {
                       : "text-foreground/70 hover:bg-secondary hover:text-foreground"
                   )}
                 >
-                  {link.label}
+                  {t(`nav.${link.key}`, link.fallback)}
                 </span>
               </Link>
             ))}
-          </div>
-
-       
-          <div className="ml-2 pl-2 border-l border-border/60 flex items-center">
-            <GoogleTranslate />
           </div>
         </div>
 
@@ -71,34 +80,33 @@ export function Navbar() {
             size="icon"
             onClick={() => setIsOpen(!isOpen)}
             className="text-primary hover:bg-primary/10 hover:text-primary"
-            aria-label="Toggle menu"
+            aria-label={
+              isOpen
+                ? t("nav.closeMenu", "Close menu")
+                : t("nav.openMenu", "Open menu")
+            }
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden border-t bg-background p-4 shadow-lg animate-in slide-in-from-top-5">
-          
-          <div className="mb-3 flex justify-start">
-            <GoogleTranslate />
-          </div>
-
+        <div className="md:hidden border-t bg-background p-4 shadow-lg">
           <div className="flex flex-col space-y-2">
             {links.map((link) => (
               <Link key={link.href} href={link.href}>
                 <span
                   className={cn(
-                    "block px-4 py-3 rounded-lg text-base font-medium transition-colors cursor-pointer",
+                    "block px-4 py-3 rounded-lg text-base font-medium cursor-pointer",
                     isActive(link.href)
                       ? "bg-primary text-primary-foreground"
                       : "text-foreground/70 hover:bg-secondary hover:text-foreground"
                   )}
                   onClick={() => setIsOpen(false)}
                 >
-                  {link.label}
+                  {t(`nav.${link.key}`, link.fallback)}
                 </span>
               </Link>
             ))}

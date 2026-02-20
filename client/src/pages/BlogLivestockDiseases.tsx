@@ -12,6 +12,7 @@ import {
   Stethoscope,
   AlertTriangle,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const updatedAt = "February 10, 2026";
 
@@ -85,6 +86,8 @@ function Table({
 }
 
 export default function BlogLivestockDiseases() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-background py-12 md:py-16">
       <div className="container-custom max-w-5xl space-y-10">
@@ -92,10 +95,12 @@ export default function BlogLivestockDiseases() {
           <Link href="/blog">
             <Button variant="outline" className="rounded-2xl">
               <ArrowLeft className="mr-2 h-5 w-5" />
-              Back to Blog
+              {t("blogLivestockDiseases.backToBlog")}
             </Button>
           </Link>
-          <Badge className="rounded-full">Health • Indian dairy</Badge>
+          <Badge className="rounded-full">
+            {t("blogLivestockDiseases.badgeHealthIndianDairy")}
+          </Badge>
         </div>
 
         <motion.div
@@ -106,216 +111,230 @@ export default function BlogLivestockDiseases() {
         >
           <div className="max-w-3xl space-y-4">
             <h1 className="text-3xl md:text-5xl font-display font-bold leading-tight">
-              Common Livestock Diseases Every Indian Dairy Farmer Should Track
+              {t("blogLivestockDiseases.title")}
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              This is a field-focused guide: what to watch, what to do first, what to
-              record, and when to call the vet. Fast action saves milk, fertility, and lives.
+              {t("blogLivestockDiseases.subtitle")}
             </p>
             <div className="flex flex-wrap gap-2">
               <Badge variant="secondary" className="rounded-full">
-                Updated {updatedAt}
+                {t("blogLivestockDiseases.updatedLabel")}{" "}
+                {t("blogLivestockDiseases.updatedAt", { defaultValue: updatedAt })}
               </Badge>
               <Badge variant="secondary" className="rounded-full">
-                Practical SOPs
+                {t("blogLivestockDiseases.tagPracticalSOPs")}
               </Badge>
               <Badge variant="secondary" className="rounded-full">
-                Isolation & hygiene
+                {t("blogLivestockDiseases.tagIsolationHygiene")}
               </Badge>
               <Badge variant="secondary" className="rounded-full">
-                Recordkeeping
+                {t("blogLivestockDiseases.tagRecordkeeping")}
               </Badge>
             </div>
           </div>
         </motion.div>
 
-        <Card title="The 60-second health check (do this daily)">
+        <Card title={t("blogLivestockDiseases.section60sCheckTitle")}>
           <BulletList
             items={[
-              "Appetite + water intake: any sudden drop is a red flag.",
-              "Dung: very watery / very dry / blood / foul smell → note immediately.",
-              "Cud chewing: low rumination often means rumen trouble, pain, fever, or acidosis.",
-              "Body temperature if animal looks dull (normal range varies; fever is a major sign).",
-              "Milk: clots, watery milk, blood, bad smell → suspect mastitis.",
-              "Feet/legs: limping, swelling, foul hoof smell → lameness/foot rot.",
-              "Breathing: coughing, nasal discharge, laboured breathing → respiratory infection.",
+              t("blogLivestockDiseases.section60sCheck.item1"),
+              t("blogLivestockDiseases.section60sCheck.item2"),
+              t("blogLivestockDiseases.section60sCheck.item3"),
+              t("blogLivestockDiseases.section60sCheck.item4"),
+              t("blogLivestockDiseases.section60sCheck.item5"),
+              t("blogLivestockDiseases.section60sCheck.item6"),
+              t("blogLivestockDiseases.section60sCheck.item7"),
             ]}
           />
         </Card>
 
-        <Card title="Emergency signs — call a vet urgently">
+        <Card title={t("blogLivestockDiseases.sectionEmergencyTitle")}>
           <div className="flex items-start gap-3">
             <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-destructive/10 text-destructive">
               <AlertTriangle className="h-5 w-5" />
             </span>
             <BulletList
               items={[
-                "Animal down and unable to stand; severe weakness or tremors.",
-                "Severe bloat (left side distended), breathing difficulty.",
-                "High fever with mouth lesions / excessive salivation (suspect infectious disease).",
-                "Blood in milk with udder swelling and pain.",
-                "Sudden deaths or multiple animals sick at once.",
+                t("blogLivestockDiseases.sectionEmergency.item1"),
+                t("blogLivestockDiseases.sectionEmergency.item2"),
+                t("blogLivestockDiseases.sectionEmergency.item3"),
+                t("blogLivestockDiseases.sectionEmergency.item4"),
+                t("blogLivestockDiseases.sectionEmergency.item5"),
               ]}
             />
           </div>
         </Card>
 
-        <Card title="Most common problem groups on Indian dairy farms">
+        <Card title={t("blogLivestockDiseases.sectionCommonGroupsTitle")}>
           <Table
-            headers={["Group", "Examples", "Early clues", "First actions (safe)"]}
+            headers={[
+              t("blogLivestockDiseases.table.headers.group"),
+              t("blogLivestockDiseases.table.headers.examples"),
+              t("blogLivestockDiseases.table.headers.earlyClues"),
+              t("blogLivestockDiseases.table.headers.firstActions"),
+            ]}
             rows={[
               [
-                "Udder / Milk",
-                "Mastitis",
-                "Clots, watery milk, hot painful udder",
-                "Isolate milker; clean milking routine; strip test; call vet for treatment plan",
+                t("blogLivestockDiseases.table.rows.udderMilk.group"),
+                t("blogLivestockDiseases.table.rows.udderMilk.examples"),
+                t("blogLivestockDiseases.table.rows.udderMilk.earlyClues"),
+                t("blogLivestockDiseases.table.rows.udderMilk.firstActions"),
               ],
               [
-                "Digestive / Rumen",
-                "Bloat, acidosis, diarrhoea",
-                "Off-feed, less cud chewing, loose dung, belly distension",
-                "Stop sudden concentrate; offer roughage; check water; vet if bloat/fever",
+                t("blogLivestockDiseases.table.rows.digestiveRumen.group"),
+                t("blogLivestockDiseases.table.rows.digestiveRumen.examples"),
+                t("blogLivestockDiseases.table.rows.digestiveRumen.earlyClues"),
+                t("blogLivestockDiseases.table.rows.digestiveRumen.firstActions"),
               ],
               [
-                "Feet / Legs",
-                "Lameness, foot rot, injuries",
-                "Limping, swelling, foul smell, reduced walking",
-                "Clean & dry flooring; hoof hygiene; vet for trimming/antibiotics if needed",
+                t("blogLivestockDiseases.table.rows.feetLegs.group"),
+                t("blogLivestockDiseases.table.rows.feetLegs.examples"),
+                t("blogLivestockDiseases.table.rows.feetLegs.earlyClues"),
+                t("blogLivestockDiseases.table.rows.feetLegs.firstActions"),
               ],
               [
-                "Reproduction",
-                "Anestrus, repeat breeding, metritis",
-                "No heat, discharge, low conception",
-                "Nutrition + minerals; heat detection; vet exam; manage transition period",
+                t("blogLivestockDiseases.table.rows.reproduction.group"),
+                t("blogLivestockDiseases.table.rows.reproduction.examples"),
+                t("blogLivestockDiseases.table.rows.reproduction.earlyClues"),
+                t("blogLivestockDiseases.table.rows.reproduction.firstActions"),
               ],
               [
-                "Skin / Vector",
-                "Tick-borne illness, skin lesions",
-                "Ticks, fever, anaemia signs",
-                "Tick control; shed sanitation; vet for diagnosis",
+                t("blogLivestockDiseases.table.rows.skinVector.group"),
+                t("blogLivestockDiseases.table.rows.skinVector.examples"),
+                t("blogLivestockDiseases.table.rows.skinVector.earlyClues"),
+                t("blogLivestockDiseases.table.rows.skinVector.firstActions"),
               ],
             ]}
           />
         </Card>
 
-        <Card title="Mastitis SOP (simple & effective)">
+        <Card title={t("blogLivestockDiseases.sectionMastitisSOPTitle")}>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h4 className="font-semibold mb-2 flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4" /> Prevention checklist
+                <ShieldCheck className="h-4 w-4" />{" "}
+                {t("blogLivestockDiseases.mastitis.preventionTitle")}
               </h4>
               <BulletList
                 items={[
-                  "Pre-dip (if used), clean and dry teats; always wipe with separate cloth/tissue per animal.",
-                  "Full hand milking/ proper machine settings (if machine). Avoid teat injuries.",
-                  "Post-milking teat dip (where possible).",
-                  "Keep bedding dry and clean; remove dung frequently.",
-                  "Identify chronic cases and milk them last.",
+                  t("blogLivestockDiseases.mastitis.prevention.item1"),
+                  t("blogLivestockDiseases.mastitis.prevention.item2"),
+                  t("blogLivestockDiseases.mastitis.prevention.item3"),
+                  t("blogLivestockDiseases.mastitis.prevention.item4"),
+                  t("blogLivestockDiseases.mastitis.prevention.item5"),
                 ]}
               />
             </div>
             <div>
               <h4 className="font-semibold mb-2 flex items-center gap-2">
-                <ClipboardCheck className="h-4 w-4" /> What to do if suspected
+                <ClipboardCheck className="h-4 w-4" />{" "}
+                {t("blogLivestockDiseases.mastitis.suspectedTitle")}
               </h4>
               <BulletList
                 items={[
-                  "Check milk for clots/wateriness; compare quarters.",
-                  "Mark the animal; milk separately; don’t mix milk in bulk can.",
-                  "Record: date, quarter affected, fever yes/no, milk change.",
-                  "Call vet for correct therapy and withdrawal guidance.",
+                  t("blogLivestockDiseases.mastitis.suspected.item1"),
+                  t("blogLivestockDiseases.mastitis.suspected.item2"),
+                  t("blogLivestockDiseases.mastitis.suspected.item3"),
+                  t("blogLivestockDiseases.mastitis.suspected.item4"),
                 ]}
               />
             </div>
           </div>
         </Card>
 
-        <Card title="Bloat & acidosis prevention (feeding-linked diseases)">
+        <Card title={t("blogLivestockDiseases.sectionBloatAcidosisTitle")}>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h4 className="font-semibold mb-2 flex items-center gap-2">
-                <Droplets className="h-4 w-4" /> Bloat risk reducers
+                <Droplets className="h-4 w-4" />{" "}
+                {t("blogLivestockDiseases.bloat.title")}
               </h4>
               <BulletList
                 items={[
-                  "Avoid sudden lush legume-heavy grazing without adaptation.",
-                  "Provide dry roughage before turning out to lush fodder.",
-                  "Avoid abrupt concentrate jumps.",
-                  "Observe animals after diet change; early bloat acts fast.",
+                  t("blogLivestockDiseases.bloat.item1"),
+                  t("blogLivestockDiseases.bloat.item2"),
+                  t("blogLivestockDiseases.bloat.item3"),
+                  t("blogLivestockDiseases.bloat.item4"),
                 ]}
               />
             </div>
             <div>
               <h4 className="font-semibold mb-2 flex items-center gap-2">
-                <Thermometer className="h-4 w-4" /> Acidosis risk reducers
+                <Thermometer className="h-4 w-4" />{" "}
+                {t("blogLivestockDiseases.acidosis.title")}
               </h4>
               <BulletList
                 items={[
-                  "Maintain adequate fibre (roughage) to support rumination and saliva buffering.",
-                  "Split concentrates into multiple feedings rather than one heavy meal.",
-                  "If milk fat suddenly drops + loose dung: suspect rumen imbalance.",
-                  "Review ration with a nutritionist if high producers.",
+                  t("blogLivestockDiseases.acidosis.item1"),
+                  t("blogLivestockDiseases.acidosis.item2"),
+                  t("blogLivestockDiseases.acidosis.item3"),
+                  t("blogLivestockDiseases.acidosis.item4"),
                 ]}
               />
             </div>
           </div>
         </Card>
 
-        <Card title="Farm biosecurity basics (smallholder-friendly)">
+        <Card title={t("blogLivestockDiseases.sectionBiosecurityTitle")}>
           <BulletList
             items={[
-              "Quarantine new animals (separate pen) before mixing with herd.",
-              "Separate sick animals; dedicate bucket/rope for them.",
-              "Footbath at entry (where possible) and regular shed disinfection.",
-              "Control visitors, vehicles, and shared equipment between farms.",
-              "Follow local vaccination schedule (ask your vet/department).",
+              t("blogLivestockDiseases.biosecurity.item1"),
+              t("blogLivestockDiseases.biosecurity.item2"),
+              t("blogLivestockDiseases.biosecurity.item3"),
+              t("blogLivestockDiseases.biosecurity.item4"),
+              t("blogLivestockDiseases.biosecurity.item5"),
             ]}
           />
         </Card>
 
-        <Card title="What to do today / this week / this month">
+        <Card title={t("blogLivestockDiseases.sectionTodayWeekMonthTitle")}>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="rounded-2xl border border-border/60 p-4">
-              <h4 className="font-semibold mb-2">Today</h4>
+              <h4 className="font-semibold mb-2">
+                {t("blogLivestockDiseases.plan.todayTitle")}
+              </h4>
               <BulletList
                 items={[
-                  "Observe appetite + cud chewing.",
-                  "Check udder & milk during milking.",
-                  "Identify limping animals early.",
+                  t("blogLivestockDiseases.plan.today.item1"),
+                  t("blogLivestockDiseases.plan.today.item2"),
+                  t("blogLivestockDiseases.plan.today.item3"),
                 ]}
               />
             </div>
             <div className="rounded-2xl border border-border/60 p-4">
-              <h4 className="font-semibold mb-2">This week</h4>
+              <h4 className="font-semibold mb-2">
+                {t("blogLivestockDiseases.plan.weekTitle")}
+              </h4>
               <BulletList
                 items={[
-                  "Clean bedding + drainage; fix wet areas.",
-                  "Tick control routine; check calves.",
-                  "Review feed changes made recently.",
+                  t("blogLivestockDiseases.plan.week.item1"),
+                  t("blogLivestockDiseases.plan.week.item2"),
+                  t("blogLivestockDiseases.plan.week.item3"),
                 ]}
               />
             </div>
             <div className="rounded-2xl border border-border/60 p-4">
-              <h4 className="font-semibold mb-2">This month</h4>
+              <h4 className="font-semibold mb-2">
+                {t("blogLivestockDiseases.plan.monthTitle")}
+              </h4>
               <BulletList
                 items={[
-                  "Record conception/heat issues and consult vet if repeats.",
-                  "Review vaccination and deworming schedule.",
-                  "Evaluate mastitis repeat cases and milking hygiene SOP.",
+                  t("blogLivestockDiseases.plan.month.item1"),
+                  t("blogLivestockDiseases.plan.month.item2"),
+                  t("blogLivestockDiseases.plan.month.item3"),
                 ]}
               />
             </div>
           </div>
         </Card>
 
-        <Card title="Note">
+        <Card title={t("blogLivestockDiseases.noteTitle")}>
           <div className="flex items-start gap-3">
             <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10 text-primary">
               <Stethoscope className="h-5 w-5" />
             </span>
             <p className="text-muted-foreground leading-relaxed">
-              This guide is educational. Exact diagnosis and medicine must be decided
-              with a veterinarian, especially for infectious diseases and milk withdrawal rules.
+              {t("blogLivestockDiseases.noteText")}
             </p>
           </div>
         </Card>

@@ -1,0 +1,145 @@
+{
+    "nav": {
+      "home": "હોમ",
+      "products": "પશુઓનો ચારો ખરીદો",
+      "blog": "બ્લોગ",
+      "dietPlanner": "ડાયેટ પ્લાનર",
+      "about": "અમારા વિશે",
+      "genetics": "જિનેટિક્સ"
+    },
+    "common": {
+      "featured": "વિશેષ",
+      "readFullArticle": "પૂર્ણ લેખ વાંચો",
+      "searchTopics": "વિષયો શોધો...",
+      "recently": "તાજેતરમાં",
+      "minRead": "{{count}} મિનિટ વાંચન",
+      "close": "બંધ કરો",
+      "confirm": "ખાતરી કરો",
+      "submit": "સબમિટ કરો",
+      "loading": "લોડ થઈ રહ્યું છે..."
+    },
+    "footer": {
+      "tagline": "પ્રીમિયમ પોષણ • વધુ ઉત્પાદન • સ્વસ્થ પશુઓ",
+      "about": "સ્વસ્થ પશુઓ માટે પ્રીમિયમ પોષણ પ્રદાન કરીએ છીએ. અમે તમારા પશુઓની એટલી જ કાળજી લઈએ છીએ જેટલી તમે લો છો — ગુણવત્તાયુક્ત ચારો, વિશ્વસનીય માર્ગદર્શન અને વધુ સારા પરિણામો સાથે.",
+      "chips": {
+        "qualityAssured": "ગુણવત્તાની ખાતરી",
+        "farmerTrusted": "ખેડૂતોનો વિશ્વાસ",
+        "nutritionBacked": "પોષણ આધારિત"
+      },
+      "explore": "અન્વેષણ કરો",
+      "contact": "સંપર્ક કરો",
+      "newsletterTitle": "ચારા ટીપ્સ અને ઑફર્સ મેળવો",
+      "newsletterDesc": "ઉત્પાદન અને પશુ આરોગ્ય સુધારવા માટે માસિક માહિતી.",
+      "emailPlaceholder": "તમારું ઈમેલ દાખલ કરો",
+      "subscribe": "સબ્સ્ક્રાઇબ કરો",
+      "copyright": "© {{year}} Verdant Impact Private Limited. સર્વ હક્ક સુરક્ષિત.",
+      "privacyPolicy": "પ્રાઈવસી પોલિસી",
+      "terms": "ઉપયોગની શરતો",
+      "quickLinks": {
+        "home": "હોમ",
+        "buyFeed": "ચારો ખરીદો",
+        "dietPlanner": "ડાયેટ પ્લાનર",
+        "blog": "બ્લોગ",
+        "about": "અમારા વિશે"
+      },
+      "address": "Verdant Food Park, રાજાવાસ, જયપુર–સીકર હાઇવે, જયપુર"
+    },
+    "home": {
+      "badge": "Verdant સ્તરની પોષણ",
+      "heroTitle": "પોષણ જે તમારા પશુઓને મજબૂત બનાવે",
+      "heroSubtitle": "વૈજ્ઞાનિક આધારિત ખોરાક પદ્ધતિઓ જે પશુ આરોગ્ય, વૃદ્ધિ અને ઉત્પાદન સુધારે.",
+      "ctaDiet": "ડાયેટ પ્લાન કરો",
+      "ctaBrowse": "ચારો જુઓ",
+      "trustChips": {
+        "fieldTested": "ફિલ્ડમાં પરીક્ષણ કરેલું",
+        "vetFriendly": "પશુચિકિત્સક માટે અનુકૂળ",
+        "simpleRoutines": "સરળ રૂટિન",
+        "betterYield": "વધુ ઉત્પાદન"
+      },
+      "farmersTitle": "અમારા ખેડૂતો પાસેથી સાંભળો",
+      "farmersSubtitle": "સારા પોષણથી પશુ આરોગ્ય અને નફામાં સુધારો કરનાર ખેડૂતોની વાસ્તવિક કહાનીઓ.",
+      "insightsBadge": "Verdant ખેતી માર્ગદર્શન",
+      "insightsTitle": "સારા રૂટિન. સ્વસ્થ પશુઓ. વધુ ઉત્પાદન.",
+      "insightsSubtitle": "સરળ અને અસરકારક ખોરાક માર્ગદર્શન.",
+      "quickTipsTitle": "ઝડપી ટીપ્સ",
+      "quickTipsSubtitle": "તુરંત લાગુ કરી શકાય તેવી સલાહ."
+    },
+    "products": {
+      "pageTitle": "પશુઓનો ચારો ખરીદો",
+      "buyNow": "હમણાં ખરીદો",
+      "modalTitle": "{{product}} ખરીદો",
+      "name": "નામ *",
+      "mobile": "મોબાઈલ *",
+      "emailOptional": "ઈમેલ (વૈકલ્પિક)",
+      "address": "સરનામું *",
+      "placingOrder": "ઓર્ડર મૂકી રહ્યા છીએ...",
+      "confirmOrder": "ઓર્ડરની ખાતરી કરો",
+      "orderPlaced": "ઓર્ડર સફળતાપૂર્વક મૂકાયો ✅",
+      "orderId": "ઓર્ડર ID",
+      "product": "પ્રોડક્ટ",
+      "amount": "રકમ",
+      "alertRequired": "કૃપા કરીને તમામ જરૂરી માહિતી ભરો",
+      "alertFailed": "ઓર્ડર મૂકવામાં નિષ્ફળ",
+      "alertGeneric": "કંઈક ખોટું થયું"
+    },
+    "about": {
+      "badge": "પ્રીમિયમ પશુ પોષણ • 2020 થી",
+      "title": "Verdant Feed વિશે",
+      "subtitle": "અમે એવો ચારો બનાવીએ છીએ જેમાં ખેડૂતો વિશ્વાસ રાખી શકે — મજબૂત રોગપ્રતિકારક શક્તિ, સારો પાચન અને વધુ ઉત્પાદન માટે વૈજ્ઞાનિક રીતે તૈયાર કરેલો.",
+      "stats": {
+        "servingSince": "સેવા શરૂ",
+        "farmersSupported": "સહાયિત ખેડૂતો",
+        "livestockTypes": "પશુ પ્રકારો",
+        "transparentLabeling": "સ્પષ્ટ લેબલિંગ"
+      },
+      "missionTitle": "સારો પોષણ. સારા પશુઓ. સારો ખેતર.",
+      "missionBody": "Verdant Feed માં અમે માનીએ છીએ કે સ્વસ્થ પશુઓ સફળ ખેતીનો આધાર છે. અમારું ધ્યેય એવો ચારો આપવાનો છે જે વૃદ્ધિ, રોગપ્રતિકારક શક્તિ અને ઉત્પાદન સુધારે.",
+      "ctaTitle": "ચાલો સાથે મળીને સ્વસ્થ ખેતર બનાવીએ.",
+      "ctaProducts": "પ્રોડક્ટ્સ જુઓ",
+      "ctaDietPlanner": "ડાયેટ પ્લાનર અજમાવો"
+    },
+    "blog": {
+      "title": "ખેતી જ્ઞાન કેન્દ્ર",
+      "subtitle": "પશુ પોષણ, રોગ નિવારણ અને આધુનિક ખોરાક પદ્ધતિઓ માટે Verdant માર્ગદર્શિકા.",
+      "featured": "વિશેષ",
+      "readFull": "પૂર્ણ લેખ વાંચો"
+    },
+    "dietPlanner": {
+      "title": "સ્માર્ટ ડાયેટ પ્લાનર",
+      "subtitle": "પશુ પ્રકાર, જાતિ, વજન અને આરોગ્ય પર આધારિત ખોરાક ભલામણ મેળવો.",
+      "cardTitle": "પશુની વિગતો દાખલ કરો",
+      "cardDesc": "ચોક્કસ ગણતરી માટે તમામ માહિતી જરૂરી છે.",
+      "nameLabel": "તમારું નામ",
+      "contactLabel": "સંપર્ક નંબર",
+      "contactPlaceholder": "+91...",
+      "cattleTypeLabel": "પશુનો પ્રકાર",
+      "breedLabel": "જાતિ (વિસ્તાર સાથે)",
+      "weightLabel": "વજન કેટેગરી",
+      "ageLabel": "ઉંમર (વર્ષ)",
+      "healthLabel": "આરોગ્ય સ્થિતિ",
+      "taggedLabel": "ટેગ થયેલ?",
+      "selectType": "પ્રકાર પસંદ કરો",
+      "selectBreed": "જાતિ પસંદ કરો",
+      "selectWeight": "વજન પસંદ કરો",
+      "selectFirst": "પહેલાં પશુનો પ્રકાર પસંદ કરો",
+      "selectStatus": "સ્થિતિ પસંદ કરો",
+      "select": "પસંદ કરો...",
+      "cow": "ગાય",
+      "buffalo": "ભેંસ",
+      "goat": "બકરી",
+      "healthy": "સ્વસ્થ",
+      "sick": "બીમાર",
+      "pregnant": "ગર્ભવતી",
+      "yes": "હા",
+      "no": "ના",
+      "generate": "ડાયેટ ચાર્ટ બનાવો",
+      "calculating": "ગણતરી થઈ રહી છે...",
+      "toastSuccessTitle": "ડાયેટ ચાર્ટ તૈયાર!",
+      "toastSuccessDesc": "પૂર્ણ ચાર્ટ ખોલી રહ્યા છીએ.",
+      "toastErrorTitle": "ભૂલ",
+      "toastErrorDesc": "ડાયેટ લોગ સાચવવામાં નિષ્ફળ. કૃપા કરીને ફરી પ્રયાસ કરો.",
+      "recentLogs": "તાજેતરના લોગ્સ",
+      "noHistory": "હજુ સુધી કોઈ ઇતિહાસ નથી. તમારો પહેલો પ્લાન બનાવો!"
+    }
+  }
+  

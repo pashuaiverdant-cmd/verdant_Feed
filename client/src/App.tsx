@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import FloatingLanguageButton from "@/components/FloatingLanguageButton";
+
 
 // Pages
 import Home from "@/pages/Home";
@@ -17,7 +19,7 @@ import NotFound from "@/pages/not-found";
 import BlogPost from "@/pages/BlogPost";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import Terms from "@/pages/Terms";
-import Genetics from "./pages/Genetics";
+import Genetics from "@/pages/Genetics";
 
 // Article pages
 import BlogCattleNutrition from "@/pages/BlogCattleNutrition";
@@ -30,15 +32,10 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/products" component={Products} />
 
-      
       <Route path="/blog" component={Blog} />
-
-     
       <Route path="/blog/cattle-nutrition" component={BlogCattleNutrition} />
       <Route path="/blog/livestock-diseases" component={BlogLivestockDiseases} />
       <Route path="/blog/sustainable-feeding" component={BlogSustainableFeeding} />
-
-      
       <Route path="/blog/:id" component={BlogPost} />
 
       <Route path="/diet-planner" component={DietPlanner} />
@@ -47,9 +44,9 @@ function Router() {
 
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms" component={Terms} />
-      <Route path="/Genetics" component={Genetics} />
 
-      
+      <Route path="/genetics" component={Genetics} />
+
       <Route component={NotFound} />
     </Switch>
   );
@@ -59,14 +56,16 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        
         <div className="flex flex-col min-h-screen font-sans">
           <Navbar />
           <main className="flex-grow">
             <Router />
           </main>
           <Footer />
+          {/* ✅ best inside main layout */}
+          <FloatingLanguageButton />
         </div>
+
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>

@@ -1,0 +1,145 @@
+{
+    "nav": {
+      "home": "न' गासै",
+      "products": "पशु आहार गानाय",
+      "blog": "ब्लग",
+      "dietPlanner": "डाइट प्लानर",
+      "about": "आमागोननि बारे",
+      "genetics": "जेनेटिक्स"
+    },
+    "common": {
+      "featured": "खास",
+      "readFullArticle": "गासै लेख फराय",
+      "searchTopics": "विषय नायगिरनाय...",
+      "recently": "नावनाय",
+      "minRead": "{{count}} मिनिट फराय",
+      "close": "बन्द खालाम",
+      "confirm": "थार खालाम",
+      "submit": "सबमिट खालाम",
+      "loading": "लोड खालाम गासिनो..."
+    },
+    "footer": {
+      "tagline": "प्रीमियम पोषण • गेदेर उत्पादन • स्वस्थ पशु",
+      "about": "स्वस्थ पशुगोननि थाखाय प्रीमियम पोषण होनाय। गेदेर परिणामनि थाखाय गुणगुनाय आहार आरो भरोसायोग्य मार्गदर्शन।",
+      "chips": {
+        "qualityAssured": "गुणगुनाय थार",
+        "farmerTrusted": "रायथाय भरोसा",
+        "nutritionBacked": "पोषण थाखाय थार"
+      },
+      "explore": "नायगिरनाय",
+      "contact": "जोगाजोग खालाम",
+      "newsletterTitle": "आहार टिप्स आरो ऑफार लाबो",
+      "newsletterDesc": "पशु स्वास्थ्य आरो उत्पादन सुधारनायनि थाखाय मासनि जानकारी।",
+      "emailPlaceholder": "नोंथांनि ईमेल होनाय",
+      "subscribe": "सब्सक्राइब खालाम",
+      "copyright": "© {{year}} Verdant Impact Private Limited. गासै अधिकार राखा।",
+      "privacyPolicy": "गोपनीयता नीति",
+      "terms": "बेबहार शर्त",
+      "quickLinks": {
+        "home": "न' गासै",
+        "buyFeed": "आहार गानाय",
+        "dietPlanner": "डाइट प्लानर",
+        "blog": "ब्लग",
+        "about": "आमागोननि बारे"
+      },
+      "address": "Verdant Food Park, राजावास, जयपुर–सीकर हाईवे, जयपुर"
+    },
+    "home": {
+      "badge": "Verdant स्तरनि पोषण",
+      "heroTitle": "नोंथांनि पशुगोननि थाखाय पोषण",
+      "heroSubtitle": "पशु स्वास्थ्य आरो उत्पादन सुधारनायनि थाखाय वैज्ञानिक आहार।",
+      "ctaDiet": "डाइट योजना खालाम",
+      "ctaBrowse": "आहार नाय",
+      "trustChips": {
+        "fieldTested": "मैदाननि टेस्ट",
+        "vetFriendly": "पशु डॉक्टरनि थाखाय सुबिधा",
+        "simpleRoutines": "सरल नियम",
+        "betterYield": "गेदेर उत्पादन"
+      },
+      "farmersTitle": "रायथायगोननि कथा",
+      "farmersSubtitle": "गेदेर पोषण नालाय स्वस्थ पशु आरो गेदेर उत्पादन।",
+      "insightsBadge": "Verdant फार्म मार्गदर्शन",
+      "insightsTitle": "गेदेर नियम। स्वस्थ पशु। गेदेर उत्पादन।",
+      "insightsSubtitle": "सरल आरो प्रभावी आहार मार्गदर्शन।",
+      "quickTipsTitle": "ख्रां टिप्स",
+      "quickTipsSubtitle": "जोंथांनि बेबहार खालामनो हाबा टिप्स।"
+    },
+    "products": {
+      "pageTitle": "पशु आहार गानाय",
+      "buyNow": "दानि गानाय",
+      "modalTitle": "{{product}} गानाय",
+      "name": "मुं *",
+      "mobile": "मोबाइल *",
+      "emailOptional": "ईमेल (वैकल्पिक)",
+      "address": "थान *",
+      "placingOrder": "ऑर्डर खालाम गासिनो...",
+      "confirmOrder": "ऑर्डर थार खालाम",
+      "orderPlaced": "ऑर्डर सफल खालामाय ✅",
+      "orderId": "ऑर्डर ID",
+      "product": "प्रोडाक्ट",
+      "amount": "दाम",
+      "alertRequired": "गासै जरूरी जानकारी होनाय",
+      "alertFailed": "ऑर्डर फेल खालामाय",
+      "alertGeneric": "मोनसे गोरोनाय जादों"
+    },
+    "about": {
+      "badge": "प्रीमियम पशु पोषण • 2020 निफ्राय",
+      "title": "Verdant Feed बारे",
+      "subtitle": "रायथायगोननि थाखाय भरोसायोग्य आहार।",
+      "stats": {
+        "servingSince": "सेवा निफ्राय",
+        "farmersSupported": "रायथाय सपोर्ट",
+        "livestockTypes": "पशु प्रकार",
+        "transparentLabeling": "स्पष्ट लेबल"
+      },
+      "missionTitle": "गेदेर पोषण। गेदेर पशु। गेदेर फार्म।",
+      "missionBody": "स्वस्थ पशु सफल फार्मनि आधार।",
+      "ctaTitle": "जों मिलाय गेदेर फार्म खालाम।",
+      "ctaProducts": "प्रोडाक्ट नाय",
+      "ctaDietPlanner": "डाइट प्लानर बेबहार खालाम"
+    },
+    "blog": {
+      "title": "फार्म ज्ञान केंद्र",
+      "subtitle": "पशु पोषण आरो आधुनिक आहार मार्गदर्शन।",
+      "featured": "खास",
+      "readFull": "गासै लेख फराय"
+    },
+    "dietPlanner": {
+      "title": "स्मार्ट डाइट प्लानर",
+      "subtitle": "पशु जानकारीनि आधारत आहार सुझाव।",
+      "cardTitle": "पशु जानकारी होनाय",
+      "cardDesc": "सटीक परिणामनि थाखाय गासै जानकारी जरूरी।",
+      "nameLabel": "नोंथांनि मुं",
+      "contactLabel": "जोगाजोग नम्बर",
+      "contactPlaceholder": "+91...",
+      "cattleTypeLabel": "पशु प्रकार",
+      "breedLabel": "नस्ल",
+      "weightLabel": "वजन वर्ग",
+      "ageLabel": "बोसोर",
+      "healthLabel": "स्वास्थ्य स्थिति",
+      "taggedLabel": "टैग खालामाय?",
+      "selectType": "प्रकार बासिख",
+      "selectBreed": "नस्ल बासिख",
+      "selectWeight": "वजन बासिख",
+      "selectFirst": "सिगाङाव पशु प्रकार बासिख",
+      "selectStatus": "स्थिति बासिख",
+      "select": "बासिख...",
+      "cow": "गाय",
+      "buffalo": "भैंस",
+      "goat": "छागलि",
+      "healthy": "स्वस्थ",
+      "sick": "असुख",
+      "pregnant": "गाभिनि",
+      "yes": "हय",
+      "no": "नङा",
+      "generate": "डाइट चार्ट खालाम",
+      "calculating": "गणना खालाम गासिनो...",
+      "toastSuccessTitle": "डाइट चार्ट रेडि!",
+      "toastSuccessDesc": "गासै चार्ट खुलाय गासिनो।",
+      "toastErrorTitle": "गोरोनाय",
+      "toastErrorDesc": "डाइट लॉग सेव फेल।",
+      "recentLogs": "नावनाय रिकॉर्ड",
+      "noHistory": "दानि गैया रिकॉर्ड नाय।"
+    }
+  }
+  

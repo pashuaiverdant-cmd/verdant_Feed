@@ -1,0 +1,145 @@
+{
+    "nav": {
+      "home": "گھر",
+      "products": "جانورن جو چارَو خريد ڪريو",
+      "blog": "بلاگ",
+      "dietPlanner": "ڊائٽ پلانر",
+      "about": "اسان بابت",
+      "genetics": "جينيات"
+    },
+    "common": {
+      "featured": "نمايان",
+      "readFullArticle": "مڪمل مضمون پڙهو",
+      "searchTopics": "موضوع ڳوليو...",
+      "recently": "تازو",
+      "minRead": "{{count}} منٽ پڙهڻ",
+      "close": "بند ڪريو",
+      "confirm": "تصديق ڪريو",
+      "submit": "جمع ڪريو",
+      "loading": "لوڊ ٿي رهيو آهي..."
+    },
+    "footer": {
+      "tagline": "پريميئم غذائيت • وڌيڪ پيداوار • صحتمند جانور",
+      "about": "اسان صحتمند جانورن لاءِ پريميئم غذائيت فراهم ڪريون ٿا. اسان توهان جي جانورن جي ايتري ئي پرواهه ڪريون ٿا جيتري توهان ڪندا آهيو — اعليٰ معيار جو چارَو، قابل اعتماد رهنمائي، ۽ بهتر نتيجا.",
+      "chips": {
+        "qualityAssured": "معيار جي ضمانت",
+        "farmerTrusted": "هارين جو ڀروسو",
+        "nutritionBacked": "غذائيت تي ٻڌل"
+      },
+      "explore": "دريافت ڪريو",
+      "contact": "رابطو",
+      "newsletterTitle": "چارَي جون صلاحون ۽ آفر حاصل ڪريو",
+      "newsletterDesc": "ماهوار ڄاڻ جيڪا پيداوار ۽ جانورن جي صحت کي بهتر بڻائي.",
+      "emailPlaceholder": "پنهنجو اي ميل داخل ڪريو",
+      "subscribe": "سبسڪرائب ڪريو",
+      "copyright": "© {{year}} Verdant Impact Private Limited. سڀ حق محفوظ.",
+      "privacyPolicy": "رازداري پاليسي",
+      "terms": "استعمال جون شرطون",
+      "quickLinks": {
+        "home": "گھر",
+        "buyFeed": "چارَو خريد ڪريو",
+        "dietPlanner": "ڊائٽ پلانر",
+        "blog": "بلاگ",
+        "about": "اسان بابت"
+      },
+      "address": "Verdant Food Park, Rajawas, Jaipur–Sikar Highway, Jaipur"
+    },
+    "home": {
+      "badge": "Verdant سطح جي غذائيت",
+      "heroTitle": "غذائيت جيڪا توهان جي جانورن کي وڌائي ٿي",
+      "heroSubtitle": "سائنس تي ٻڌل چارَي جا طريقا جيڪي جانورن جي صحت، واڌ ۽ پيداوار کي بهتر بڻائين ٿا.",
+      "ctaDiet": "ڊائٽ منصوبو ٺاهيو",
+      "ctaBrowse": "چارَو ڏسو",
+      "trustChips": {
+        "fieldTested": "ميدان ۾ آزمودو",
+        "vetFriendly": "ويٽرنري دوست",
+        "simpleRoutines": "سادي روٽين",
+        "betterYield": "وڌيڪ پيداوار"
+      },
+      "farmersTitle": "اسان جي هارين کان ٻڌو",
+      "farmersSubtitle": "حقيقي ڪهاڻيون هارين کان جن غذائيت سان پنهنجي جانورن جي صحت ۽ منافعو بهتر ڪيو.",
+      "insightsBadge": "Verdant فارمنگ ڄاڻ",
+      "insightsTitle": "بهتر روٽين. صحتمند جانور. وڌيڪ پيداوار.",
+      "insightsSubtitle": "اعليٰ اثر وارا چارَي جا طريقا جيڪي آسان ۽ ورجائڻ لائق آهن.",
+      "quickTipsTitle": "جلدي صلاحون",
+      "quickTipsSubtitle": "اهڙيون صلاحون جيڪي توهان فوري طور استعمال ڪري سگهو ٿا."
+    },
+    "products": {
+      "pageTitle": "جانورن جو چارَو خريد ڪريو",
+      "buyNow": "هاڻي خريد ڪريو",
+      "modalTitle": "{{product}} خريد ڪريو",
+      "name": "نالو *",
+      "mobile": "موبائل *",
+      "emailOptional": "اي ميل (اختياري)",
+      "address": "پتو *",
+      "placingOrder": "آرڊر ٿي رهيو آهي...",
+      "confirmOrder": "آرڊر جي تصديق ڪريو",
+      "orderPlaced": "آرڊر ڪاميابي سان ٿيو ✅",
+      "orderId": "آرڊر ID",
+      "product": "پراڊڪٽ",
+      "amount": "رقم",
+      "alertRequired": "مهرباني ڪري سڀ ضروري تفصيل ڀريو",
+      "alertFailed": "آرڊر ڪرڻ ۾ ناڪامي",
+      "alertGeneric": "ڪجهه غلط ٿي ويو"
+    },
+    "about": {
+      "badge": "پريميئم جانورن جي غذائيت • 2020 کان",
+      "title": "Verdant Feed بابت",
+      "subtitle": "اسان اهڙو چارَو تيار ڪريون ٿا جنهن تي هاري ڀروسو ڪن — مضبوط مدافعت، بهتر هاضمو، ۽ وڌيڪ پيداوار لاءِ.",
+      "stats": {
+        "servingSince": "خدمت ڪري رهيا آهيون",
+        "farmersSupported": "سهائتا ڪيل هاري",
+        "livestockTypes": "جانورن جا قسم",
+        "transparentLabeling": "شفاف ليبلنگ"
+      },
+      "missionTitle": "بهتر غذائيت. بهتر جانور. بهتر فارم.",
+      "missionBody": "Verdant Feed تي، اسان يقين رکون ٿا ته صحتمند جانور ڪامياب فارمنگ جو بنياد آهن.",
+      "ctaTitle": "اچو گڏجي صحتمند فارم ٺاهيون.",
+      "ctaProducts": "پراڊڪٽ ڏسو",
+      "ctaDietPlanner": "ڊائٽ پلانر آزمائي ڏسو"
+    },
+    "blog": {
+      "title": "فارمنگ ڄاڻ مرڪز",
+      "subtitle": "جانورن جي غذائيت، بيمارين جي روڪٿام، ۽ جديد چارَي جا طريقا.",
+      "featured": "نمايان",
+      "readFull": "مڪمل مضمون پڙهو"
+    },
+    "dietPlanner": {
+      "title": "سمارٽ ڊائٽ پلانر",
+      "subtitle": "جانور جي قسم، نسل، وزن، ۽ صحت جي بنياد تي چارَي جون سفارشون حاصل ڪريو.",
+      "cardTitle": "جانور جا تفصيل داخل ڪريو",
+      "cardDesc": "درست حساب لاءِ سڀ فيلڊ ضروري آهن.",
+      "nameLabel": "توهان جو نالو",
+      "contactLabel": "رابطو نمبر",
+      "contactPlaceholder": "+91...",
+      "cattleTypeLabel": "جانور جو قسم",
+      "breedLabel": "نسل",
+      "weightLabel": "وزن",
+      "ageLabel": "عمر",
+      "healthLabel": "صحت جي حالت",
+      "taggedLabel": "ٽيگ ٿيل؟",
+      "selectType": "قسم چونڊيو",
+      "selectBreed": "نسل چونڊيو",
+      "selectWeight": "وزن چونڊيو",
+      "selectFirst": "پهريان قسم چونڊيو",
+      "selectStatus": "حالت چونڊيو",
+      "select": "چونڊيو...",
+      "cow": "ڳئون",
+      "buffalo": "مينهن",
+      "goat": "ٻڪري",
+      "healthy": "صحتمند",
+      "sick": "بيمار",
+      "pregnant": "حامله",
+      "yes": "ها",
+      "no": "نه",
+      "generate": "ڊائٽ چارٽ ٺاهيو",
+      "calculating": "حساب ٿي رهيو آهي...",
+      "toastSuccessTitle": "ڊائٽ چارٽ تيار ٿيو!",
+      "toastSuccessDesc": "مڪمل چارٽ کلي رهيو آهي.",
+      "toastErrorTitle": "غلطي",
+      "toastErrorDesc": "مهرباني ڪري ٻيهر ڪوشش ڪريو.",
+      "recentLogs": "تازا لاگز",
+      "noHistory": "ڪو تاريخ ناهي."
+    }
+  }
+  

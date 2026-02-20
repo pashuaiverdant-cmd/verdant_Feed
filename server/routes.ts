@@ -9,13 +9,17 @@ export async function registerRoutes(
   app: Express
 ): Promise<Server> {
   /* ---------- PRODUCTS ---------- */
-  app.get(api.products.list.path, async (_req, res) => {
-    const products = await storage.getProducts();
+  app.get(api.products.list.path, async (req, res) => {
+    const rawLang = typeof req.query.lang === "string" ? req.query.lang : "en";
+    const lang = rawLang.split("-")[0]; // ✅ hi-IN -> hi
+    const products = await storage.getProducts(lang);
     res.json(products);
   });
 
   app.get(api.products.get.path, async (req, res) => {
-    const product = await storage.getProduct(Number(req.params.id));
+    const rawLang = typeof req.query.lang === "string" ? req.query.lang : "en";
+    const lang = rawLang.split("-")[0]; // ✅ hi-IN -> hi
+    const product = await storage.getProduct(Number(req.params.id), lang);
     if (!product) return res.status(404).json({ message: "Product not found" });
     res.json(product);
   });
@@ -67,7 +71,7 @@ export async function registerRoutes(
 
   /* ---------- SEED PRODUCTS (ONLY ONCE) ---------- */
   try {
-    const existingProducts = await storage.getProducts();
+    const existingProducts = await storage.getProducts("en"); // ✅ pass lang
 
     if (existingProducts.length < 6) {
       console.log("🌱 Seeding initial products...");

@@ -1,0 +1,145 @@
+{
+    "nav": {
+      "home": "मुख्य पृष्ठ",
+      "products": "पशु आहार खरीदो",
+      "blog": "ब्लॉग",
+      "dietPlanner": "डाइट प्लानर",
+      "about": "साड़े बारे",
+      "genetics": "जेनेटिक्स"
+    },
+    "common": {
+      "featured": "खास",
+      "readFullArticle": "पूरा लेख पढ़ो",
+      "searchTopics": "विषय खोजो...",
+      "recently": "हाल ही में",
+      "minRead": "{{count}} मिनट पढ़ाई",
+      "close": "बंद करो",
+      "confirm": "पुष्टि करो",
+      "submit": "सबमिट करो",
+      "loading": "लोड हो रहा है..."
+    },
+    "footer": {
+      "tagline": "प्रीमियम पोषण • ज्यादा उत्पादन • स्वस्थ पशु",
+      "about": "स्वस्थ पशुओं लिए प्रीमियम पोषण प्रदान करदे आं। गुणवत्ता वाला आहार ते भरोसेमंद मार्गदर्शन दे नाल बेहतर परिणाम।",
+      "chips": {
+        "qualityAssured": "गुणवत्ता सुनिश्चित",
+        "farmerTrusted": "किसान भरोसेमंद",
+        "nutritionBacked": "पोषण आधारित"
+      },
+      "explore": "खोजो",
+      "contact": "संपर्क करो",
+      "newsletterTitle": "आहार टिप्स ते ऑफर पाओ",
+      "newsletterDesc": "उत्पादन ते पशु स्वास्थ्य सुधारन लिए मासिक जानकारी।",
+      "emailPlaceholder": "अपना ईमेल डालो",
+      "subscribe": "सब्सक्राइब करो",
+      "copyright": "© {{year}} Verdant Impact Private Limited. सारे अधिकार सुरक्षित।",
+      "privacyPolicy": "गोपनीयता नीति",
+      "terms": "उपयोग शर्तें",
+      "quickLinks": {
+        "home": "मुख्य पृष्ठ",
+        "buyFeed": "आहार खरीदो",
+        "dietPlanner": "डाइट प्लानर",
+        "blog": "ब्लॉग",
+        "about": "साड़े बारे"
+      },
+      "address": "Verdant Food Park, राजावास, जयपुर–सीकर हाईवे, जयपुर"
+    },
+    "home": {
+      "badge": "Verdant स्तर दा पोषण",
+      "heroTitle": "तुआड़े पशुओं दी वृद्धि लिए पोषण",
+      "heroSubtitle": "पशु स्वास्थ्य ते उत्पादन सुधारन लिए वैज्ञानिक आहार पद्धतियां।",
+      "ctaDiet": "डाइट योजना बनाओ",
+      "ctaBrowse": "आहार देखो",
+      "trustChips": {
+        "fieldTested": "मैदान में टेस्ट",
+        "vetFriendly": "पशु डॉक्टर अनुकूल",
+        "simpleRoutines": "सरल नियम",
+        "betterYield": "बेहतर उत्पादन"
+      },
+      "farmersTitle": "साड़े किसानां दी सुनो",
+      "farmersSubtitle": "बेहतर पोषण नाल बेहतर परिणाम।",
+      "insightsBadge": "Verdant खेती मार्गदर्शन",
+      "insightsTitle": "बेहतर नियम। स्वस्थ पशु। ज्यादा उत्पादन।",
+      "insightsSubtitle": "सरल ते प्रभावी आहार मार्गदर्शन।",
+      "quickTipsTitle": "जल्दी टिप्स",
+      "quickTipsSubtitle": "तुरंत इस्तेमाल योग्य टिप्स।"
+    },
+    "products": {
+      "pageTitle": "पशु आहार खरीदो",
+      "buyNow": "हुण खरीदो",
+      "modalTitle": "{{product}} खरीदो",
+      "name": "नाम *",
+      "mobile": "मोबाइल *",
+      "emailOptional": "ईमेल (वैकल्पिक)",
+      "address": "पता *",
+      "placingOrder": "ऑर्डर हो रहा है...",
+      "confirmOrder": "ऑर्डर पुष्टि करो",
+      "orderPlaced": "ऑर्डर सफल होया ✅",
+      "orderId": "ऑर्डर ID",
+      "product": "उत्पाद",
+      "amount": "राशि",
+      "alertRequired": "कृपया सारे जरूरी विवरण भरो",
+      "alertFailed": "ऑर्डर असफल",
+      "alertGeneric": "कुछ गलत होया"
+    },
+    "about": {
+      "badge": "प्रीमियम पशु पोषण • 2020 तों",
+      "title": "Verdant Feed बारे",
+      "subtitle": "किसानां लिए भरोसेमंद आहार।",
+      "stats": {
+        "servingSince": "सेवा शुरू",
+        "farmersSupported": "समर्थित किसान",
+        "livestockTypes": "पशु प्रकार",
+        "transparentLabeling": "पारदर्शी लेबलिंग"
+      },
+      "missionTitle": "बेहतर पोषण। बेहतर पशु। बेहतर खेती।",
+      "missionBody": "स्वस्थ पशु सफल खेती दा आधार।",
+      "ctaTitle": "आओ मिलके बेहतर खेती बनाइए।",
+      "ctaProducts": "उत्पाद देखो",
+      "ctaDietPlanner": "डाइट प्लानर इस्तेमाल करो"
+    },
+    "blog": {
+      "title": "खेती ज्ञान केंद्र",
+      "subtitle": "पशु पोषण ते आधुनिक आहार मार्गदर्शन।",
+      "featured": "खास",
+      "readFull": "पूरा लेख पढ़ो"
+    },
+    "dietPlanner": {
+      "title": "स्मार्ट डाइट प्लानर",
+      "subtitle": "पशु जानकारी दे आधार ते आहार सुझाव।",
+      "cardTitle": "पशु विवरण भरो",
+      "cardDesc": "सटीक परिणाम लिए सारे विवरण जरूरी।",
+      "nameLabel": "तुआड़ा नाम",
+      "contactLabel": "संपर्क नंबर",
+      "contactPlaceholder": "+91...",
+      "cattleTypeLabel": "पशु प्रकार",
+      "breedLabel": "नस्ल",
+      "weightLabel": "वजन श्रेणी",
+      "ageLabel": "उम्र",
+      "healthLabel": "स्वास्थ्य स्थिति",
+      "taggedLabel": "टैग होया?",
+      "selectType": "प्रकार चुनो",
+      "selectBreed": "नस्ल चुनो",
+      "selectWeight": "वजन चुनो",
+      "selectFirst": "पहले पशु प्रकार चुनो",
+      "selectStatus": "स्थिति चुनो",
+      "select": "चुनो...",
+      "cow": "गाय",
+      "buffalo": "भैंस",
+      "goat": "बकरी",
+      "healthy": "स्वस्थ",
+      "sick": "बीमार",
+      "pregnant": "गर्भवती",
+      "yes": "हाँ",
+      "no": "नहीं",
+      "generate": "डाइट चार्ट बनाओ",
+      "calculating": "गणना हो रही है...",
+      "toastSuccessTitle": "डाइट चार्ट तैयार!",
+      "toastSuccessDesc": "पूरा चार्ट खुल रहा है।",
+      "toastErrorTitle": "त्रुटि",
+      "toastErrorDesc": "डाइट लॉग सेव असफल।",
+      "recentLogs": "हालिया रिकॉर्ड",
+      "noHistory": "अभी कोई रिकॉर्ड नहीं।"
+    }
+  }
+  

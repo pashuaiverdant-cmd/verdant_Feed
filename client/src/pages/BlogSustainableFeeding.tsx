@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "react-i18next";
 import {
   ArrowLeft,
   Leaf,
@@ -21,11 +22,12 @@ function Card({
   title?: string;
   children: React.ReactNode;
 }) {
+  const { t } = useTranslation();
   return (
     <div className="rounded-3xl border border-border/60 bg-white p-5 md:p-7 shadow-sm">
       {title ? (
         <h3 className="text-lg md:text-xl font-display font-bold mb-3">
-          {title}
+          {t(title)}
         </h3>
       ) : null}
       {children}
@@ -34,11 +36,12 @@ function Card({
 }
 
 function BulletList({ items }: { items: string[] }) {
+  const { t } = useTranslation();
   return (
     <ul className="space-y-2 list-disc pl-6 text-foreground/90">
       {items.map((x, i) => (
         <li key={i} className="leading-relaxed">
-          {x}
+          {t(x)}
         </li>
       ))}
     </ul>
@@ -52,6 +55,7 @@ function Table({
   headers: string[];
   rows: (string | React.ReactNode)[][];
 }) {
+  const { t } = useTranslation();
   return (
     <div className="overflow-x-auto rounded-2xl border border-border/60">
       <table className="w-full text-sm">
@@ -62,7 +66,7 @@ function Table({
                 key={h}
                 className="text-left font-semibold px-4 py-3 whitespace-nowrap"
               >
-                {h}
+                {t(h)}
               </th>
             ))}
           </tr>
@@ -72,7 +76,7 @@ function Table({
             <tr key={idx} className="border-t border-border/60">
               {r.map((c, j) => (
                 <td key={j} className="px-4 py-3 align-top">
-                  {c}
+                  {typeof c === "string" ? t(c) : c}
                 </td>
               ))}
             </tr>
@@ -84,6 +88,8 @@ function Table({
 }
 
 export default function BlogSustainableFeeding() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-background py-12 md:py-16">
       <div className="container-custom max-w-5xl space-y-10">
@@ -91,10 +97,12 @@ export default function BlogSustainableFeeding() {
           <Link href="/blog">
             <Button variant="outline" className="rounded-2xl">
               <ArrowLeft className="mr-2 h-5 w-5" />
-              Back to Blog
+              {t("blogSustainableFeeding.backToBlog")}
             </Button>
           </Link>
-          <Badge className="rounded-full">Practices • Indian dairy</Badge>
+          <Badge className="rounded-full">
+            {t("blogSustainableFeeding.badgePracticesIndianDairy")}
+          </Badge>
         </div>
 
         <motion.div
@@ -105,178 +113,189 @@ export default function BlogSustainableFeeding() {
         >
           <div className="max-w-3xl space-y-4">
             <h1 className="text-3xl md:text-5xl font-display font-bold leading-tight">
-              Sustainable Feeding Practices for Modern Indian Dairy Farms
+              {t("blogSustainableFeeding.title")}
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Sustainability is not “expensive tech.” It is mostly: better fodder planning,
-              lower wastage, improved rumen efficiency, cleaner water, and consistent SOPs.
+              {t("blogSustainableFeeding.subtitle")}
             </p>
             <div className="flex flex-wrap gap-2">
               <Badge variant="secondary" className="rounded-full">
-                Updated {updatedAt}
+                {t("blogSustainableFeeding.updatedLabel")} {updatedAt}
               </Badge>
               <Badge variant="secondary" className="rounded-full">
-                Cost cutting
+                {t("blogSustainableFeeding.tagCostCutting")}
               </Badge>
               <Badge variant="secondary" className="rounded-full">
-                Better milk solids
+                {t("blogSustainableFeeding.tagBetterMilkSolids")}
               </Badge>
               <Badge variant="secondary" className="rounded-full">
-                Lower disease risk
+                {t("blogSustainableFeeding.tagLowerDiseaseRisk")}
               </Badge>
             </div>
           </div>
         </motion.div>
 
-        <Card title="Core idea: make each kg of feed convert into milk (not waste)">
+        <Card title={"blogSustainableFeeding.sectionCoreIdeaTitle"}>
           <BulletList
             items={[
-              "Plan fodder supply across seasons (mix of legume + non-legume).",
-              "Reduce mould, dust, and spoilage—these reduce intake and raise disease risk.",
-              "Balance roughage:concentrate to protect rumen and maintain milk fat.",
-              "Keep water clean and always available.",
+              "blogSustainableFeeding.coreIdea.b1",
+              "blogSustainableFeeding.coreIdea.b2",
+              "blogSustainableFeeding.coreIdea.b3",
+              "blogSustainableFeeding.coreIdea.b4",
             ]}
           />
         </Card>
 
-        <Card title="Fodder planning (Indian context)">
+        <Card title={"blogSustainableFeeding.sectionFodderPlanningTitle"}>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h4 className="font-semibold mb-2 flex items-center gap-2">
-                <Leaf className="h-4 w-4" /> Year-round strategy
+                <Leaf className="h-4 w-4" />{" "}
+                {t("blogSustainableFeeding.fodder.yearRoundTitle")}
               </h4>
               <BulletList
                 items={[
-                  "Use a cropping calendar to ensure green fodder availability.",
-                  "Keep dry fodder reserve for lean months.",
-                  "Store fodder off the ground; protect from moisture.",
+                  "blogSustainableFeeding.fodder.yearRound.b1",
+                  "blogSustainableFeeding.fodder.yearRound.b2",
+                  "blogSustainableFeeding.fodder.yearRound.b3",
                 ]}
               />
             </div>
             <div>
               <h4 className="font-semibold mb-2 flex items-center gap-2">
-                <Recycle className="h-4 w-4" /> Silage basics (high impact)
+                <Recycle className="h-4 w-4" />{" "}
+                {t("blogSustainableFeeding.fodder.silageTitle")}
               </h4>
               <BulletList
                 items={[
-                  "Silage helps stabilize fodder availability and reduces spoilage losses.",
-                  "Proper compaction and sealing is critical (air causes mould).",
-                  "Introduce gradually; monitor intake and dung consistency.",
+                  "blogSustainableFeeding.fodder.silage.b1",
+                  "blogSustainableFeeding.fodder.silage.b2",
+                  "blogSustainableFeeding.fodder.silage.b3",
                 ]}
               />
             </div>
           </div>
         </Card>
 
-        <Card title="Precision feeding (without machines)">
+        <Card title={"blogSustainableFeeding.sectionPrecisionFeedingTitle"}>
           <BulletList
             items={[
-              "Measure concentrates with a fixed mug/can (standardize per animal).",
-              "Adjust based on yield and body condition score (thin/ideal/fat).",
-              "Split concentrate into multiple feedings (3–4 parts/day) for high producers.",
-              "Avoid sudden changes; adapt over 7–10 days when possible.",
+              "blogSustainableFeeding.precision.b1",
+              "blogSustainableFeeding.precision.b2",
+              "blogSustainableFeeding.precision.b3",
+              "blogSustainableFeeding.precision.b4",
             ]}
           />
         </Card>
 
-        <Card title="Wastage control checklist (biggest hidden money leak)">
+        <Card title={"blogSustainableFeeding.sectionWastageChecklistTitle"}>
           <Table
-            headers={["Where waste happens", "What it looks like", "Fix (simple)"]}
+            headers={[
+              "blogSustainableFeeding.wasteTable.h1",
+              "blogSustainableFeeding.wasteTable.h2",
+              "blogSustainableFeeding.wasteTable.h3",
+            ]}
             rows={[
               [
-                "Feed trough",
-                "Spilled feed, trampled fodder",
-                "Use raised trough, correct height, smaller frequent servings",
+                "blogSustainableFeeding.wasteTable.r1.c1",
+                "blogSustainableFeeding.wasteTable.r1.c2",
+                "blogSustainableFeeding.wasteTable.r1.c3",
               ],
               [
-                "Storage",
-                "Mouldy smell, clumps, insects",
-                "Keep dry, ventilated, away from moisture; FIFO rotation",
+                "blogSustainableFeeding.wasteTable.r2.c1",
+                "blogSustainableFeeding.wasteTable.r2.c2",
+                "blogSustainableFeeding.wasteTable.r2.c3",
               ],
               [
-                "Chaffing",
-                "Too long/too fine",
-                "Uniform chop size; avoid dustiness; wet lightly if needed",
+                "blogSustainableFeeding.wasteTable.r3.c1",
+                "blogSustainableFeeding.wasteTable.r3.c2",
+                "blogSustainableFeeding.wasteTable.r3.c3",
               ],
               [
-                "Water",
-                "Dirty trough reduces drinking",
-                "Daily cleaning; ensure continuous supply",
+                "blogSustainableFeeding.wasteTable.r4.c1",
+                "blogSustainableFeeding.wasteTable.r4.c2",
+                "blogSustainableFeeding.wasteTable.r4.c3",
               ],
             ]}
           />
         </Card>
 
-        <Card title="Rumen-friendly sustainability (more milk solids, less problems)">
+        <Card title={"blogSustainableFeeding.sectionRumenFriendlyTitle"}>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h4 className="font-semibold mb-2 flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4" /> What to protect
+                <ShieldCheck className="h-4 w-4" />{" "}
+                {t("blogSustainableFeeding.rumen.protectTitle")}
               </h4>
               <BulletList
                 items={[
-                  "Adequate fibre for cud chewing and saliva buffering.",
-                  "Stable feeding times (rumen microbes like routine).",
-                  "Avoid over-grain feeding that can cause acidosis and low milk fat.",
+                  "blogSustainableFeeding.rumen.protect.b1",
+                  "blogSustainableFeeding.rumen.protect.b2",
+                  "blogSustainableFeeding.rumen.protect.b3",
                 ]}
               />
             </div>
             <div>
               <h4 className="font-semibold mb-2 flex items-center gap-2">
-                <Droplets className="h-4 w-4" /> Water is part of feeding
+                <Droplets className="h-4 w-4" />{" "}
+                {t("blogSustainableFeeding.rumen.waterTitle")}
               </h4>
               <BulletList
                 items={[
-                  "Low water intake reduces dry matter intake → lower milk.",
-                  "Keep water points close to resting area and feeding area.",
-                  "Heat stress months: water access becomes even more critical.",
+                  "blogSustainableFeeding.rumen.water.b1",
+                  "blogSustainableFeeding.rumen.water.b2",
+                  "blogSustainableFeeding.rumen.water.b3",
                 ]}
               />
             </div>
           </div>
         </Card>
 
-        <Card title="What to do today / this week / this month">
+        <Card title={"blogSustainableFeeding.sectionWhatToDoTitle"}>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="rounded-2xl border border-border/60 p-4">
               <h4 className="font-semibold mb-2 flex items-center gap-2">
-                <ClipboardCheck className="h-4 w-4" /> Today
+                <ClipboardCheck className="h-4 w-4" />{" "}
+                {t("blogSustainableFeeding.actions.todayTitle")}
               </h4>
               <BulletList
                 items={[
-                  "Clean water troughs.",
-                  "Remove spoiled fodder.",
-                  "Check leftover feed amount (adjust serving).",
+                  "blogSustainableFeeding.actions.today.b1",
+                  "blogSustainableFeeding.actions.today.b2",
+                  "blogSustainableFeeding.actions.today.b3",
                 ]}
               />
             </div>
             <div className="rounded-2xl border border-border/60 p-4">
-              <h4 className="font-semibold mb-2">This week</h4>
+              <h4 className="font-semibold mb-2">
+                {t("blogSustainableFeeding.actions.weekTitle")}
+              </h4>
               <BulletList
                 items={[
-                  "Plan fodder requirement for next 2 weeks.",
-                  "Check concentrate measurement consistency.",
-                  "Inspect storage for moisture and insects.",
+                  "blogSustainableFeeding.actions.week.b1",
+                  "blogSustainableFeeding.actions.week.b2",
+                  "blogSustainableFeeding.actions.week.b3",
                 ]}
               />
             </div>
             <div className="rounded-2xl border border-border/60 p-4">
-              <h4 className="font-semibold mb-2">This month</h4>
+              <h4 className="font-semibold mb-2">
+                {t("blogSustainableFeeding.actions.monthTitle")}
+              </h4>
               <BulletList
                 items={[
-                  "Review milk yield trends and feed cost per litre.",
-                  "Work with vet/extension to adjust minerals and ration balance.",
-                  "Create a seasonal fodder plan (summer/monsoon/winter).",
+                  "blogSustainableFeeding.actions.month.b1",
+                  "blogSustainableFeeding.actions.month.b2",
+                  "blogSustainableFeeding.actions.month.b3",
                 ]}
               />
             </div>
           </div>
         </Card>
 
-        <Card title="Verdant note">
+        <Card title={"blogSustainableFeeding.sectionVerdantNoteTitle"}>
           <p className="text-muted-foreground leading-relaxed">
-            Sustainability is a system: fodder planning + storage + routine + rumen
-            health + water + minerals. Small improvements compound into big profit.
+            {t("blogSustainableFeeding.verdantNote")}
           </p>
         </Card>
       </div>

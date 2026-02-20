@@ -18,6 +18,21 @@ export const products = pgTable("products", {
   imageUrl: text("image_url").notNull(),
 });
 
+/* ---------------- PRODUCT TRANSLATIONS ---------------- */
+export const productTranslations = pgTable("product_translations", {
+  id: serial("id").primaryKey(),
+
+  productId: integer("product_id")
+    .notNull()
+    .references(() => products.id, { onDelete: "cascade" }),
+
+  // "en", "hi", "bn", "te", "mr", "ta", "ur", "gu", "kn", "ml", "or", "pa", "as", "kok", "doi"
+  lang: text("lang").notNull(),
+
+  name: text("name").notNull(),
+  description: text("description").notNull(),
+});
+
 /* ---------------- POSTS ---------------- */
 export const posts = pgTable("posts", {
   id: serial("id").primaryKey(),

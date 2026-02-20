@@ -12,32 +12,61 @@ const httpServer = createServer(app);
    ✅ CORS CONFIGURATION
 ========================= */
 
-const allowedOrigins = [
+// ✅ Add your production domains here
+const PROD_ORIGINS = new Set([
   "https://verdantfeed.com",
   "https://www.verdantfeed.com",
   "https://verdant-feed-1.onrender.com",
-];
+]);
+
+// ✅ Allow local dev origins for Vite / React dev server
+const DEV_ORIGINS = new Set([
+  "http://localhost:5173",
+  "http://127.0.0.1:5173",
+  "http://localhost:3000",
+  "http://127.0.0.1:3000",
+]);
+
+// ✅ allow any localhost:* in dev (covers 5174/5175 etc.)
+function isLocalhost(origin: string) {
+  try {
+    const u = new URL(origin);
+    return (
+      (u.hostname === "localhost" || u.hostname === "127.0.0.1") &&
+      !!u.port
+    );
+  } catch {
+    return false;
+  }
+}
 
 const corsOptions: cors.CorsOptions = {
   origin: (origin, callback) => {
-    // Allow server-to-server calls (Render health checks, curl, etc.)
+    // ✅ Allow server-to-server calls (curl, health checks)
     if (!origin) return callback(null, true);
 
-    if (allowedOrigins.includes(origin)) {
+    const isProd = process.env.NODE_ENV === "production";
+
+    // ✅ production: only allow whitelisted domains
+    if (isProd) {
+      if (PROD_ORIGINS.has(origin)) return callback(null, true);
+      return callback(null, false);
+    }
+
+    // ✅ dev: allow local + any localhost:* + (optional) prod domains
+    if (DEV_ORIGINS.has(origin) || isLocalhost(origin) || PROD_ORIGINS.has(origin)) {
       return callback(null, true);
     }
 
-    // ❌ Do NOT throw error — prevents 500 crash
     return callback(null, false);
   },
+
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: false, // change to true ONLY if using cookies
+  credentials: false, // keep false unless you use cookies auth
 };
 
 app.use(cors(corsOptions));
-
-// ✅ IMPORTANT: Preflight must use SAME corsOptions
 app.options(/.*/, cors(corsOptions));
 
 /* =========================

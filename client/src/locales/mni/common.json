@@ -1,0 +1,145 @@
+{
+    "nav": {
+      "home": "ꯌꯨꯝ",
+      "products": "ꯄꯁꯨ ꯑꯍꯥꯔ ꯂꯩꯕ",
+      "blog": "ꯕ꯭ꯂꯣꯒ",
+      "dietPlanner": "ꯗꯥꯏꯠ ꯄ꯭ꯂꯥꯅꯔ",
+      "about": "ꯑꯃꯥꯒꯤ ꯃꯔꯝ",
+      "genetics": "ꯖꯦꯅꯦꯇꯤꯛꯁ"
+    },
+    "common": {
+      "featured": "ꯑꯍꯥꯟꯕ",
+      "readFullArticle": "ꯃꯄꯨꯡ ꯑꯍꯥꯟꯕ ꯄꯥꯔꯤ",
+      "searchTopics": "ꯑꯗꯨꯗꯤ ꯊꯤꯕ...",
+      "recently": "ꯍꯧꯖꯤꯛ",
+      "minRead": "{{count}} ꯃꯤꯅꯤꯠ ꯄꯥꯔꯤ",
+      "close": "ꯂꯣꯛꯄ",
+      "confirm": "ꯁꯤꯗꯨꯡ ꯑꯃꯥ",
+      "submit": "ꯁꯕꯃꯤꯠ",
+      "loading": "ꯂꯣꯗ ꯇꯧꯔꯤ..."
+    },
+    "footer": {
+      "tagline": "ꯄ꯭ꯔꯤꯃꯤꯌꯝ ꯄꯣꯁꯟ • ꯑꯍꯥꯟꯕ ꯄ꯭ꯔꯣꯗꯛꯁꯟ • ꯑꯁꯥ ꯄꯁꯨ",
+      "about": "ꯑꯁꯥ ꯄꯁꯨ ꯑꯁꯤꯗꯤ ꯄ꯭ꯔꯤꯃꯤꯌꯝ ꯄꯣꯁꯟ ꯄꯤꯔꯤ। ꯑꯁꯤꯒꯤ ꯄꯁꯨ ꯑꯁꯤꯗꯤ ꯑꯃꯥꯒꯤ ꯊꯧꯔꯝ ꯑꯃꯥ ꯄꯤꯔꯤ।",
+      "chips": {
+        "qualityAssured": "ꯀ꯭ꯋꯥꯂꯤꯇꯤ ꯁꯤꯗꯨꯡ",
+        "farmerTrusted": "ꯃꯤꯔꯤꯕ ꯊꯥꯒꯠꯄ",
+        "nutritionBacked": "ꯄꯣꯁꯟ ꯄꯤꯔꯤ"
+      },
+      "explore": "ꯊꯤꯕ",
+      "contact": "ꯃꯥꯏꯔꯤ ꯂꯩꯕ",
+      "newsletterTitle": "ꯑꯍꯥꯔ ꯇꯤꯞꯁ ꯂꯩꯕ",
+      "newsletterDesc": "ꯄꯁꯨ ꯑꯁꯥ ꯑꯃꯥ ꯄꯤꯔꯤ।",
+      "emailPlaceholder": "ꯑꯦꯃꯦꯜ ꯍꯥꯡꯕ",
+      "subscribe": "ꯁꯕꯁ꯭ꯀ꯭ꯔꯥꯏꯕ",
+      "copyright": "© {{year}} Verdant Impact Private Limited. ꯑꯁꯤꯒꯤ ꯑꯃꯥ ꯄꯤꯔꯤ।",
+      "privacyPolicy": "ꯄ꯭ꯔꯥꯏꯚꯦꯁꯤ ꯄꯣꯂꯤꯁꯤ",
+      "terms": "ꯇꯔꯝꯁ",
+      "quickLinks": {
+        "home": "ꯌꯨꯝ",
+        "buyFeed": "ꯑꯍꯥꯔ ꯂꯩꯕ",
+        "dietPlanner": "ꯗꯥꯏꯠ ꯄ꯭ꯂꯥꯅꯔ",
+        "blog": "ꯕ꯭ꯂꯣꯒ",
+        "about": "ꯑꯃꯥꯒꯤ ꯃꯔꯝ"
+      },
+      "address": "Verdant Food Park, Rajawas, Jaipur–Sikar Highway, Jaipur"
+    },
+    "home": {
+      "badge": "Verdant ꯄꯣꯁꯟ",
+      "heroTitle": "ꯄꯁꯨ ꯑꯁꯥ ꯄꯤꯔꯤ",
+      "heroSubtitle": "ꯁꯥꯏꯟꯁ ꯄꯣꯁꯟ ꯑꯁꯤꯗꯤ ꯄꯁꯨ ꯑꯁꯥ ꯄꯤꯔꯤ।",
+      "ctaDiet": "ꯗꯥꯏꯠ ꯄ꯭ꯂꯥꯟ",
+      "ctaBrowse": "ꯑꯍꯥꯔ ꯊꯤꯕ",
+      "trustChips": {
+        "fieldTested": "ꯐꯤꯜꯗ ꯇꯦꯁ꯭ꯇ",
+        "vetFriendly": "ꯚꯦꯠ ꯐ꯭ꯔꯦꯟꯗ꯭ꯂꯤ",
+        "simpleRoutines": "ꯁꯤꯝꯄꯜ ꯔꯨꯇꯤꯟ",
+        "betterYield": "ꯑꯍꯥꯟꯕ ꯄ꯭ꯔꯣꯗꯛꯁꯟ"
+      },
+      "farmersTitle": "ꯃꯤꯔꯤꯕ ꯊꯥꯒꯠꯄ",
+      "farmersSubtitle": "ꯑꯁꯥ ꯄꯁꯨ ꯑꯁꯤꯗꯤ ꯄꯤꯔꯤ।",
+      "insightsBadge": "Verdant ꯐꯥꯔꯃ ꯇꯤꯞꯁ",
+      "insightsTitle": "ꯑꯁꯥ ꯄꯁꯨ ꯑꯁꯤꯗꯤ ꯄꯤꯔꯤ।",
+      "insightsSubtitle": "ꯁꯤꯝꯄꯜ ꯄꯣꯁꯟ ꯇꯤꯞꯁ।",
+      "quickTipsTitle": "ꯑꯍꯥꯟꯕ ꯇꯤꯞꯁ",
+      "quickTipsSubtitle": "ꯑꯁꯤꯗꯤ ꯄꯤꯔꯤ।"
+    },
+    "products": {
+      "pageTitle": "ꯄꯁꯨ ꯑꯍꯥꯔ ꯂꯩꯕ",
+      "buyNow": "ꯍꯧꯖꯤꯛ ꯂꯩꯕ",
+      "modalTitle": "{{product}} ꯂꯩꯕ",
+      "name": "ꯃꯤꯡ *",
+      "mobile": "ꯃꯣꯕꯥꯏꯜ *",
+      "emailOptional": "ꯑꯦꯃꯦꯜ",
+      "address": "ꯑꯗ꯭ꯔꯦꯁ *",
+      "placingOrder": "ꯑꯣꯔꯗꯔ ꯇꯧꯔꯤ...",
+      "confirmOrder": "ꯑꯣꯔꯗꯔ ꯁꯤꯗꯨꯡ",
+      "orderPlaced": "ꯑꯣꯔꯗꯔ ꯁꯨꯛꯄꯤꯔꯤ ✅",
+      "orderId": "ꯑꯣꯔꯗꯔ ID",
+      "product": "ꯄ꯭ꯔꯣꯗꯛꯇ",
+      "amount": "ꯑꯃꯧꯟꯇ",
+      "alertRequired": "ꯑꯗꯨꯗꯤ ꯄꯤꯔꯤ",
+      "alertFailed": "ꯑꯣꯔꯗꯔ ꯐꯦꯜ",
+      "alertGeneric": "ꯑꯍꯥꯟꯕ ꯑꯃꯥ ꯂꯩ"
+    },
+    "about": {
+      "badge": "ꯄ꯭ꯔꯤꯃꯤꯌꯝ ꯄꯣꯁꯟ • 2020",
+      "title": "Verdant Feed ꯑꯃꯥꯒꯤ ꯃꯔꯝ",
+      "subtitle": "ꯄꯁꯨ ꯑꯁꯥ ꯄꯤꯔꯤ।",
+      "stats": {
+        "servingSince": "ꯁꯔꯚꯤꯁ",
+        "farmersSupported": "ꯃꯤꯔꯤꯕ",
+        "livestockTypes": "ꯄꯁꯨ ꯇꯥꯏꯄ",
+        "transparentLabeling": "ꯁꯤꯡꯖꯥꯟ"
+      },
+      "missionTitle": "ꯑꯁꯥ ꯄꯁꯨ ꯑꯁꯤꯗꯤ ꯄꯤꯔꯤ।",
+      "missionBody": "ꯄꯁꯨ ꯑꯁꯥ ꯄꯤꯔꯤ।",
+      "ctaTitle": "ꯑꯁꯤꯗꯤ ꯄꯤꯔꯤ।",
+      "ctaProducts": "ꯄ꯭ꯔꯣꯗꯛꯇ ꯊꯤꯕ",
+      "ctaDietPlanner": "ꯗꯥꯏꯠ ꯄ꯭ꯂꯥꯅꯔ"
+    },
+    "blog": {
+      "title": "ꯐꯥꯔꯃ ꯀꯅꯧ",
+      "subtitle": "ꯄꯁꯨ ꯄꯣꯁꯟ ꯇꯤꯞꯁ",
+      "featured": "ꯑꯍꯥꯟꯕ",
+      "readFull": "ꯄꯥꯔꯤ"
+    },
+    "dietPlanner": {
+      "title": "ꯁ꯭ꯃꯥꯔꯇ ꯗꯥꯏꯠ ꯄ꯭ꯂꯥꯅꯔ",
+      "subtitle": "ꯄꯁꯨ ꯑꯁꯥ ꯄꯤꯔꯤ।",
+      "cardTitle": "ꯄꯁꯨ ꯑꯁꯤꯗꯤ ꯄꯤꯔꯤ",
+      "cardDesc": "ꯑꯗꯨꯗꯤ ꯄꯤꯔꯤ",
+      "nameLabel": "ꯃꯤꯡ",
+      "contactLabel": "ꯃꯣꯕꯥꯏꯜ",
+      "contactPlaceholder": "+91...",
+      "cattleTypeLabel": "ꯄꯁꯨ ꯇꯥꯏꯄ",
+      "breedLabel": "ꯕ꯭ꯔꯤꯗ",
+      "weightLabel": "ꯋꯦꯏꯠ",
+      "ageLabel": "ꯑꯥꯏꯖ",
+      "healthLabel": "ꯑꯁꯥ",
+      "taggedLabel": "ꯇꯦꯒ",
+      "selectType": "ꯕꯁꯤꯕ",
+      "selectBreed": "ꯕꯁꯤꯕ",
+      "selectWeight": "ꯕꯁꯤꯕ",
+      "selectFirst": "ꯑꯁꯤꯗꯤ ꯕꯁꯤꯕ",
+      "selectStatus": "ꯕꯁꯤꯕ",
+      "select": "ꯕꯁꯤꯕ",
+      "cow": "ꯀꯧ",
+      "buffalo": "ꯕꯨꯐꯦꯂꯣ",
+      "goat": "ꯒꯣꯠ",
+      "healthy": "ꯑꯁꯥ",
+      "sick": "ꯑꯁꯨꯛ",
+      "pregnant": "ꯄ꯭ꯔꯦꯒꯅꯦꯟꯇ",
+      "yes": "ꯍꯧ",
+      "no": "ꯅꯠꯇꯦ",
+      "generate": "ꯗꯥꯏꯠ ꯄ꯭ꯂꯥꯅ",
+      "calculating": "ꯀꯦꯂꯀꯨꯂꯦꯇ",
+      "toastSuccessTitle": "ꯑꯣꯀ",
+      "toastSuccessDesc": "ꯑꯣꯄꯦꯟ",
+      "toastErrorTitle": "ꯑꯦꯔꯔ",
+      "toastErrorDesc": "ꯐꯦꯜ",
+      "recentLogs": "ꯔꯤꯁꯦꯟꯇ",
+      "noHistory": "ꯍꯤꯁꯇꯔꯤ ꯅꯠꯇꯦ"
+    }
+  }
+  

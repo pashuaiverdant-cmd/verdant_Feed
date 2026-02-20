@@ -1,0 +1,68 @@
+{
+    "nav": {
+      "home": "ᱵᱟᱹᱲᱤ ᱫᱚᱨ",
+      "products": "ᱯᱟᱹᱥᱩ ᱠᱷᱟᱹᱫᱤ ᱠᱤᱱᱟ",
+      "blog": "ᱵᱞᱚᱜ",
+      "dietPlanner": "ᱠᱷᱟᱹᱫᱤ ᱯᱞᱟᱱᱟᱨ",
+      "about": "ᱟᱢᱟᱜ ᱵᱟᱵᱟᱫ",
+      "genetics": "ᱡᱮᱱᱮᱴᱤᱠᱥ"
+    },
+    "common": {
+      "featured": "ᱵᱤᱥᱮᱥ",
+      "readFullArticle": "ᱯᱩᱨᱟ ᱞᱮᱠᱷᱟ ᱯᱚᱨᱚ",
+      "searchTopics": "ᱵᱤᱥᱚᱭ ᱥᱮᱪᱟᱨᱟ...",
+      "recently": "ᱱᱟᱶᱟ",
+      "minRead": "{{count}} ᱢᱤᱱᱤᱴ ᱯᱚᱨᱚ",
+      "close": "ᱵᱚᱱᱫ",
+      "confirm": "ᱥᱩᱱᱤᱥᱪᱤᱛ ᱠᱚᱨᱚ",
+      "submit": "ᱡᱚᱢᱟ ᱠᱚᱨᱚ",
+      "loading": "ᱞᱳᱰ ᱦᱚᱪᱚ..."
+    },
+    "footer": {
+      "tagline": "ᱩᱛᱛᱚᱢ ᱯᱚᱥᱚᱱ • ᱵᱮᱥᱤ ᱩᱛᱯᱟᱫᱱ • ᱥᱩᱥᱛ ᱯᱟᱹᱥᱩ",
+      "about": "ᱥᱩᱥᱛ ᱯᱟᱹᱥᱩ ᱠᱚᱱᱟᱜ ᱞᱟᱜᱤᱫ ᱩᱛᱛᱚᱢ ᱯᱚᱥᱚᱱ ᱫᱚᱦᱚᱭᱟ। ᱟᱢ ᱟᱢᱟᱜ ᱯᱟᱹᱥᱩ ᱞᱟᱜᱤᱫ ᱡᱟᱦᱟᱱ ᱪᱤᱱᱛᱟ ᱠᱚᱨᱚᱛᱮ — ᱩᱛᱛᱚᱢ ᱠᱷᱟᱹᱫᱤ, ᱵᱤᱥᱣᱟᱥᱭᱚᱜ ᱢᱟᱨᱜᱫᱟᱨᱥᱚᱱ, ᱵᱮᱥᱤ ᱯᱚᱨᱤᱱᱟᱢ।",
+      "chips": {
+        "qualityAssured": "ᱜᱩᱱᱚᱛᱛᱚᱢ ᱥᱩᱱᱤᱥᱪᱤᱛ",
+        "farmerTrusted": "ᱪᱟᱥᱤ ᱵᱤᱥᱣᱟᱥ",
+        "nutritionBacked": "ᱯᱚᱥᱚᱱ ᱟᱫᱷᱟᱨᱤᱛ"
+      },
+      "explore": "ᱮᱠᱥᱯᱞᱚᱨ",
+      "contact": "ᱡᱚᱜᱟᱡᱚᱜ",
+      "newsletterTitle": "ᱠᱷᱟᱹᱫᱤ ᱥᱟᱞᱟᱦ ᱟᱨ ᱚᱯᱟᱨ ᱧᱟᱢ",
+      "newsletterDesc": "ᱢᱟᱹᱥᱤᱠ ᱥᱩᱪᱱᱟ ᱯᱟᱹᱥᱩ ᱥᱩᱥᱛᱷᱟ ᱟᱨ ᱩᱛᱯᱟᱫᱱ ᱵᱮᱥᱤ ᱠᱚᱨᱮ।",
+      "emailPlaceholder": "ᱟᱢᱟᱜ ᱤᱢᱮᱞ ᱞᱮᱠᱷᱚ",
+      "subscribe": "ᱥᱟᱵᱥᱠᱨᱟᱭᱵ",
+      "copyright": "© {{year}} Verdant Impact Private Limited. ᱥᱚᱵ ᱟᱫᱷᱤᱠᱟᱨ ᱨᱚᱠᱷᱟ।",
+      "privacyPolicy": "ᱜᱚᱯᱱᱤᱭᱚᱛᱟ ᱱᱤᱛᱤ",
+      "terms": "ᱵᱮᱵᱚᱦᱟᱨ ᱱᱤᱛᱤ",
+      "quickLinks": {
+        "home": "ᱵᱟᱹᱲᱤ ᱫᱚᱨ",
+        "buyFeed": "ᱠᱷᱟᱹᱫᱤ ᱠᱤᱱᱟ",
+        "dietPlanner": "ᱠᱷᱟᱹᱫᱤ ᱯᱞᱟᱱᱟᱨ",
+        "blog": "ᱵᱞᱚᱜ",
+        "about": "ᱟᱢᱟᱜ ᱵᱟᱵᱟᱫ"
+      },
+      "address": "Verdant Food Park, Rajawas, Jaipur–Sikar Highway, Jaipur"
+    },
+    "home": {
+      "badge": "Verdant ᱥᱛᱚᱨ ᱯᱚᱥᱚᱱ",
+      "heroTitle": "ᱯᱚᱥᱚᱱ ᱡᱟᱦᱟᱱ ᱯᱟᱹᱥᱩ ᱵᱮᱥᱤ ᱵᱚᱲᱚᱭ",
+      "heroSubtitle": "ᱵᱤᱡᱟᱱ ᱟᱫᱷᱟᱨᱤᱛ ᱠᱷᱟᱹᱫᱤ ᱯᱟᱹᱥᱩ ᱥᱩᱥᱛᱷᱟ, ᱵᱚᱲᱚᱭ, ᱟᱨ ᱩᱛᱯᱟᱫᱱ ᱵᱮᱥᱤ ᱠᱚᱨᱮ।",
+      "ctaDiet": "ᱠᱷᱟᱹᱫᱤ ᱯᱞᱟᱱ ᱠᱚᱨᱚ",
+      "ctaBrowse": "ᱠᱷᱟᱹᱫᱤ ᱫᱮᱠᱷᱚ",
+      "trustChips": {
+        "fieldTested": "ᱠᱷᱮᱛᱨᱮ ᱯᱚᱨᱤᱠᱷᱟ",
+        "vetFriendly": "ᱵᱮᱴ ᱥᱟᱦᱟᱭ",
+        "simpleRoutines": "ᱥᱚᱦᱚᱡ ᱨᱩᱴᱤᱱ",
+        "betterYield": "ᱵᱮᱥᱤ ᱩᱛᱯᱟᱫᱱ"
+      },
+      "farmersTitle": "ᱟᱢᱟᱜ ᱪᱟᱥᱤ ᱠᱚ ᱥᱩᱱᱚ",
+      "farmersSubtitle": "ᱯᱚᱥᱚᱱ ᱫᱚᱣᱟᱨᱮ ᱯᱟᱹᱥᱩ ᱥᱩᱥᱛᱷᱟ ᱟᱨ ᱞᱟᱵᱷ ᱵᱮᱥᱤ ᱠᱚᱨᱟᱜ ᱪᱟᱥᱤ।",
+      "insightsBadge": "Verdant ᱠᱷᱮᱛᱤ ᱥᱟᱞᱟᱦ",
+      "insightsTitle": "ᱵᱮᱥᱤ ᱨᱩᱴᱤᱱ। ᱥᱩᱥᱛ ᱯᱟᱹᱥᱩ। ᱵᱮᱥᱤ ᱩᱛᱯᱟᱫᱱ।",
+      "insightsSubtitle": "ᱥᱚᱦᱚᱡ ᱟᱨ ᱯᱨᱚᱵᱷᱟᱵᱤ ᱠᱷᱟᱹᱫᱤ ᱥᱟᱞᱟᱦ।",
+      "quickTipsTitle": "ᱛᱮᱡ ᱥᱟᱞᱟᱦ",
+      "quickTipsSubtitle": "ᱛᱮᱡ ᱵᱮᱵᱚᱦᱟᱨ ᱥᱟᱞᱟᱦ।"
+    }
+  }
+  

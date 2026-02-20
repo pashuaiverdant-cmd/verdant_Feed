@@ -1,0 +1,145 @@
+{
+    "nav": {
+      "home": "ਮੁੱਖ ਪੰਨਾ",
+      "products": "ਪਸ਼ੂਆਂ ਦਾ ਚਾਰਾ ਖਰੀਦੋ",
+      "blog": "ਬਲੌਗ",
+      "dietPlanner": "ਡਾਇਟ ਪਲੈਨਰ",
+      "about": "ਸਾਡੇ ਬਾਰੇ",
+      "genetics": "ਜੈਨੇਟਿਕਸ"
+    },
+    "common": {
+      "featured": "ਖਾਸ",
+      "readFullArticle": "ਪੂਰਾ ਲੇਖ ਪੜ੍ਹੋ",
+      "searchTopics": "ਵਿਸ਼ੇ ਖੋਜੋ...",
+      "recently": "ਹਾਲ ਹੀ ਵਿੱਚ",
+      "minRead": "{{count}} ਮਿੰਟ ਪੜ੍ਹਾਈ",
+      "close": "ਬੰਦ ਕਰੋ",
+      "confirm": "ਪੁਸ਼ਟੀ ਕਰੋ",
+      "submit": "ਜਮ੍ਹਾਂ ਕਰੋ",
+      "loading": "ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ..."
+    },
+    "footer": {
+      "tagline": "ਪ੍ਰੀਮੀਅਮ ਪੋਸ਼ਣ • ਵੱਧ ਉਤਪਾਦਨ • ਤੰਦਰੁਸਤ ਪਸ਼ੂ",
+      "about": "ਤੰਦਰੁਸਤ ਪਸ਼ੂਆਂ ਲਈ ਪ੍ਰੀਮੀਅਮ ਪੋਸ਼ਣ ਪ੍ਰਦਾਨ ਕਰਦੇ ਹਾਂ। ਗੁਣਵੱਤਾ ਵਾਲਾ ਚਾਰਾ, ਭਰੋਸੇਯੋਗ ਮਾਰਗਦਰਸ਼ਨ ਅਤੇ ਵਧੀਆ ਨਤੀਜੇ।",
+      "chips": {
+        "qualityAssured": "ਗੁਣਵੱਤਾ ਯਕੀਨੀ",
+        "farmerTrusted": "ਕਿਸਾਨਾਂ ਦਾ ਭਰੋਸਾ",
+        "nutritionBacked": "ਪੋਸ਼ਣ ਆਧਾਰਿਤ"
+      },
+      "explore": "ਖੋਜੋ",
+      "contact": "ਸੰਪਰਕ ਕਰੋ",
+      "newsletterTitle": "ਚਾਰੇ ਦੇ ਸੁਝਾਅ ਅਤੇ ਆਫ਼ਰ ਪ੍ਰਾਪਤ ਕਰੋ",
+      "newsletterDesc": "ਉਤਪਾਦਨ ਅਤੇ ਪਸ਼ੂ ਸਿਹਤ ਸੁਧਾਰ ਲਈ ਮਹੀਨਾਵਾਰ ਜਾਣਕਾਰੀ।",
+      "emailPlaceholder": "ਆਪਣਾ ਈਮੇਲ ਦਰਜ ਕਰੋ",
+      "subscribe": "ਸਬਸਕ੍ਰਾਈਬ ਕਰੋ",
+      "copyright": "© {{year}} Verdant Impact Private Limited. ਸਭ ਹੱਕ ਰਾਖਵੇਂ ਹਨ।",
+      "privacyPolicy": "ਪਰਾਈਵੇਸੀ ਨੀਤੀ",
+      "terms": "ਵਰਤੋਂ ਦੀਆਂ ਸ਼ਰਤਾਂ",
+      "quickLinks": {
+        "home": "ਮੁੱਖ ਪੰਨਾ",
+        "buyFeed": "ਚਾਰਾ ਖਰੀਦੋ",
+        "dietPlanner": "ਡਾਇਟ ਪਲੈਨਰ",
+        "blog": "ਬਲੌਗ",
+        "about": "ਸਾਡੇ ਬਾਰੇ"
+      },
+      "address": "Verdant Food Park, ਰਾਜਾਵਾਸ, ਜੈਪੁਰ–ਸੀਕਰ ਹਾਈਵੇ, ਜੈਪੁਰ"
+    },
+    "home": {
+      "badge": "Verdant ਦਰਜੇ ਦਾ ਪੋਸ਼ਣ",
+      "heroTitle": "ਤੁਹਾਡੇ ਪਸ਼ੂਆਂ ਦੀ ਵਾਧੇ ਲਈ ਪੋਸ਼ਣ",
+      "heroSubtitle": "ਪਸ਼ੂ ਸਿਹਤ, ਵਾਧੇ ਅਤੇ ਉਤਪਾਦਨ ਸੁਧਾਰ ਲਈ ਵਿਗਿਆਨਕ ਖੁਰਾਕ ਪ੍ਰਣਾਲੀ।",
+      "ctaDiet": "ਡਾਇਟ ਯੋਜਨਾ ਬਣਾਓ",
+      "ctaBrowse": "ਚਾਰਾ ਵੇਖੋ",
+      "trustChips": {
+        "fieldTested": "ਮੈਦਾਨ ਵਿੱਚ ਪਰਖਿਆ ਗਿਆ",
+        "vetFriendly": "ਵੈਟ-ਫ੍ਰੈਂਡਲੀ",
+        "simpleRoutines": "ਸਧਾਰਣ ਰੁਟੀਨ",
+        "betterYield": "ਵੱਧ ਉਤਪਾਦਨ"
+      },
+      "farmersTitle": "ਸਾਡੇ ਕਿਸਾਨਾਂ ਤੋਂ ਸੁਣੋ",
+      "farmersSubtitle": "ਚੰਗੇ ਪੋਸ਼ਣ ਨਾਲ ਵਧੀਆ ਨਤੀਜੇ ਹਾਸਲ ਕਰਨ ਵਾਲੇ ਕਿਸਾਨਾਂ ਦੀਆਂ ਕਹਾਣੀਆਂ।",
+      "insightsBadge": "Verdant ਖੇਤੀਬਾੜੀ ਮਾਰਗਦਰਸ਼ਨ",
+      "insightsTitle": "ਵਧੀਆ ਰੁਟੀਨ। ਤੰਦਰੁਸਤ ਪਸ਼ੂ। ਵੱਧ ਉਤਪਾਦਨ।",
+      "insightsSubtitle": "ਸਧਾਰਣ ਅਤੇ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਖੁਰਾਕ ਮਾਰਗਦਰਸ਼ਨ।",
+      "quickTipsTitle": "ਤੁਰੰਤ ਸੁਝਾਅ",
+      "quickTipsSubtitle": "ਤੁਰੰਤ ਲਾਗੂ ਕਰਨ ਵਾਲੇ ਸੁਝਾਅ।"
+    },
+    "products": {
+      "pageTitle": "ਪਸ਼ੂਆਂ ਦਾ ਚਾਰਾ ਖਰੀਦੋ",
+      "buyNow": "ਹੁਣ ਖਰੀਦੋ",
+      "modalTitle": "{{product}} ਖਰੀਦੋ",
+      "name": "ਨਾਮ *",
+      "mobile": "ਮੋਬਾਈਲ *",
+      "emailOptional": "ਈਮੇਲ (ਵਿਕਲਪਿਕ)",
+      "address": "ਪਤਾ *",
+      "placingOrder": "ਆਰਡਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+      "confirmOrder": "ਆਰਡਰ ਪੁਸ਼ਟੀ ਕਰੋ",
+      "orderPlaced": "ਆਰਡਰ ਸਫਲਤਾਪੂਰਵਕ ਕੀਤਾ ਗਿਆ ✅",
+      "orderId": "ਆਰਡਰ ID",
+      "product": "ਉਤਪਾਦ",
+      "amount": "ਰਕਮ",
+      "alertRequired": "ਕਿਰਪਾ ਕਰਕੇ ਸਾਰੇ ਲੋੜੀਂਦੇ ਵੇਰਵੇ ਭਰੋ",
+      "alertFailed": "ਆਰਡਰ ਕਰਨ ਵਿੱਚ ਅਸਫਲ",
+      "alertGeneric": "ਕੁਝ ਗਲਤ ਹੋ ਗਿਆ"
+    },
+    "about": {
+      "badge": "ਪ੍ਰੀਮੀਅਮ ਪਸ਼ੂ ਪੋਸ਼ਣ • 2020 ਤੋਂ",
+      "title": "Verdant Feed ਬਾਰੇ",
+      "subtitle": "ਕਿਸਾਨਾਂ ਲਈ ਭਰੋਸੇਯੋਗ ਖੁਰਾਕ — ਵਧੀਆ ਸਿਹਤ ਅਤੇ ਉਤਪਾਦਨ ਲਈ।",
+      "stats": {
+        "servingSince": "ਸੇਵਾ ਸ਼ੁਰੂ",
+        "farmersSupported": "ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਕਿਸਾਨ",
+        "livestockTypes": "ਪਸ਼ੂ ਕਿਸਮਾਂ",
+        "transparentLabeling": "ਸਪਸ਼ਟ ਲੇਬਲਿੰਗ"
+      },
+      "missionTitle": "ਵਧੀਆ ਪੋਸ਼ਣ। ਵਧੀਆ ਪਸ਼ੂ। ਵਧੀਆ ਖੇਤੀ।",
+      "missionBody": "ਤੰਦਰੁਸਤ ਪਸ਼ੂ ਸਫਲ ਖੇਤੀ ਦੀ ਨੀਂਹ ਹਨ।",
+      "ctaTitle": "ਆਓ ਮਿਲ ਕੇ ਵਧੀਆ ਖੇਤੀ ਬਣਾਈਏ।",
+      "ctaProducts": "ਉਤਪਾਦ ਵੇਖੋ",
+      "ctaDietPlanner": "ਡਾਇਟ ਪਲੈਨਰ ਅਜ਼ਮਾਓ"
+    },
+    "blog": {
+      "title": "ਖੇਤੀਬਾੜੀ ਗਿਆਨ ਕੇਂਦਰ",
+      "subtitle": "ਪਸ਼ੂ ਪੋਸ਼ਣ ਅਤੇ ਆਧੁਨਿਕ ਖੁਰਾਕ ਪ੍ਰਣਾਲੀ ਲਈ ਮਾਰਗਦਰਸ਼ਨ।",
+      "featured": "ਖਾਸ",
+      "readFull": "ਪੂਰਾ ਲੇਖ ਪੜ੍ਹੋ"
+    },
+    "dietPlanner": {
+      "title": "ਸਮਾਰਟ ਡਾਇਟ ਪਲੈਨਰ",
+      "subtitle": "ਪਸ਼ੂ ਕਿਸਮ, ਵਜ਼ਨ ਅਤੇ ਸਿਹਤ ਅਨੁਸਾਰ ਖੁਰਾਕ ਸੁਝਾਅ ਪ੍ਰਾਪਤ ਕਰੋ।",
+      "cardTitle": "ਪਸ਼ੂ ਵੇਰਵੇ ਦਰਜ ਕਰੋ",
+      "cardDesc": "ਸਹੀ ਨਤੀਜੇ ਲਈ ਸਾਰੇ ਖੇਤਰ ਲਾਜ਼ਮੀ ਹਨ।",
+      "nameLabel": "ਤੁਹਾਡਾ ਨਾਮ",
+      "contactLabel": "ਸੰਪਰਕ ਨੰਬਰ",
+      "contactPlaceholder": "+91...",
+      "cattleTypeLabel": "ਪਸ਼ੂ ਕਿਸਮ",
+      "breedLabel": "ਨਸਲ",
+      "weightLabel": "ਵਜ਼ਨ ਸ਼੍ਰੇਣੀ",
+      "ageLabel": "ਉਮਰ",
+      "healthLabel": "ਸਿਹਤ ਸਥਿਤੀ",
+      "taggedLabel": "ਟੈਗ ਕੀਤਾ ਗਿਆ?",
+      "selectType": "ਕਿਸਮ ਚੁਣੋ",
+      "selectBreed": "ਨਸਲ ਚੁਣੋ",
+      "selectWeight": "ਵਜ਼ਨ ਚੁਣੋ",
+      "selectFirst": "ਪਹਿਲਾਂ ਪਸ਼ੂ ਕਿਸਮ ਚੁਣੋ",
+      "selectStatus": "ਸਥਿਤੀ ਚੁਣੋ",
+      "select": "ਚੁਣੋ...",
+      "cow": "ਗਾਂ",
+      "buffalo": "ਭੈਂਸ",
+      "goat": "ਬੱਕਰੀ",
+      "healthy": "ਤੰਦਰੁਸਤ",
+      "sick": "ਬਿਮਾਰ",
+      "pregnant": "ਗਰਭਵਤੀ",
+      "yes": "ਹਾਂ",
+      "no": "ਨਹੀਂ",
+      "generate": "ਡਾਇਟ ਚਾਰਟ ਬਣਾਓ",
+      "calculating": "ਗਣਨਾ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...",
+      "toastSuccessTitle": "ਡਾਇਟ ਚਾਰਟ ਤਿਆਰ ਹੈ!",
+      "toastSuccessDesc": "ਪੂਰਾ ਚਾਰਟ ਖੋਲ੍ਹਿਆ ਜਾ ਰਿਹਾ ਹੈ।",
+      "toastErrorTitle": "ਗਲਤੀ",
+      "toastErrorDesc": "ਡਾਇਟ ਲਾਗ ਸੇਵ ਨਹੀਂ ਹੋ ਸਕੀ।",
+      "recentLogs": "ਹਾਲੀਆ ਲਾਗ",
+      "noHistory": "ਹਾਲੇ ਕੋਈ ਇਤਿਹਾਸ ਨਹੀਂ।"
+    }
+  }
+  

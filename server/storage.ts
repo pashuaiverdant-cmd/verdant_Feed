@@ -1,5 +1,6 @@
 import {
   products,
+  productTranslations,
   posts,
   dietLogs,
   orders,
@@ -13,11 +14,11 @@ import {
   type InsertOrder,
 } from "@shared/schema";
 import { getDb } from "./db";
-import { eq, desc } from "drizzle-orm";
+import { eq, desc, and, sql } from "drizzle-orm";
 
 export interface IStorage {
-  getProducts(): Promise<Product[]>;
-  getProduct(id: number): Promise<Product | undefined>;
+  getProducts(lang?: string): Promise<Product[]>;
+  getProduct(id: number, lang?: string): Promise<Product | undefined>;
 
   createOrder(order: InsertOrder): Promise<Order>;
   getOrderById(id: number): Promise<Order | undefined>;
@@ -34,18 +35,54 @@ export interface IStorage {
 }
 
 export class DatabaseStorage implements IStorage {
-  async getProducts() {
+  async getProducts(lang: string = "en") {
     const { db } = getDb();
-    return db.select().from(products);
+
+    const rows = await db
+      .select({
+        id: products.id,
+        name: sql<string>`COALESCE(${productTranslations.name}, ${products.name})`,
+        description: sql<string>`COALESCE(${productTranslations.description}, ${products.description})`,
+        price: products.price,
+        category: products.category,
+        imageUrl: products.imageUrl,
+      })
+      .from(products)
+      .leftJoin(
+        productTranslations,
+        and(
+          eq(productTranslations.productId, products.id),
+          eq(productTranslations.lang, lang)
+        )
+      )
+      .orderBy(desc(products.id));
+
+    return rows as Product[];
   }
 
-  async getProduct(id: number) {
+  async getProduct(id: number, lang: string = "en") {
     const { db } = getDb();
-    const [product] = await db
-      .select()
+
+    const rows = await db
+      .select({
+        id: products.id,
+        name: sql<string>`COALESCE(${productTranslations.name}, ${products.name})`,
+        description: sql<string>`COALESCE(${productTranslations.description}, ${products.description})`,
+        price: products.price,
+        category: products.category,
+        imageUrl: products.imageUrl,
+      })
       .from(products)
+      .leftJoin(
+        productTranslations,
+        and(
+          eq(productTranslations.productId, products.id),
+          eq(productTranslations.lang, lang)
+        )
+      )
       .where(eq(products.id, id));
-    return product;
+
+    return (rows[0] as Product) || undefined;
   }
 
   async createOrder(insertOrder: InsertOrder) {
@@ -89,10 +126,7 @@ export class DatabaseStorage implements IStorage {
 
   async createProduct(insertProduct: InsertProduct) {
     const { db } = getDb();
-    const [product] = await db
-      .insert(products)
-      .values(insertProduct)
-      .returning();
+    const [product] = await db.insert(products).values(insertProduct).returning();
     return product;
   }
 

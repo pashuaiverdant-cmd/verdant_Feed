@@ -1,0 +1,145 @@
+{
+    "nav": {
+      "home": "मुख्य पृष्ठ",
+      "products": "पशु चारा किनू",
+      "blog": "ब्लॉग",
+      "dietPlanner": "डाइट प्लानर",
+      "about": "हमर बारे में",
+      "genetics": "जेनेटिक्स"
+    },
+    "common": {
+      "featured": "विशेष",
+      "readFullArticle": "पूरा लेख पढ़ू",
+      "searchTopics": "विषय खोजू...",
+      "recently": "हाल में",
+      "minRead": "{{count}} मिनट पढ़ाई",
+      "close": "बंद करू",
+      "confirm": "पुष्टि करू",
+      "submit": "जमा करू",
+      "loading": "लोड भ रहल अछि..."
+    },
+    "footer": {
+      "tagline": "प्रीमियम पोषण • बेहतर उत्पादन • स्वस्थ पशु",
+      "about": "स्वस्थ पशु खातिर प्रीमियम पोषण प्रदान करैत छी। हम अहाँक पशु के ओतबे ध्यान राखैत छी जतबे अहाँ राखैत छी — गुणवत्ता वाला चारा, भरोसेमंद मार्गदर्शन आ बेहतर परिणाम सं।",
+      "chips": {
+        "qualityAssured": "गुणवत्ता सुनिश्चित",
+        "farmerTrusted": "किसान द्वारा भरोसेमंद",
+        "nutritionBacked": "पोषण आधारित"
+      },
+      "explore": "अन्वेषण करू",
+      "contact": "संपर्क करू",
+      "newsletterTitle": "चारा सुझाव आ ऑफर प्राप्त करू",
+      "newsletterDesc": "उत्पादन आ पशु स्वास्थ्य सुधार खातिर मासिक जानकारी।",
+      "emailPlaceholder": "अपन ईमेल दर्ज करू",
+      "subscribe": "सदस्य बनू",
+      "copyright": "© {{year}} Verdant Impact Private Limited. सभ अधिकार सुरक्षित अछि।",
+      "privacyPolicy": "गोपनीयता नीति",
+      "terms": "उपयोग के शर्त",
+      "quickLinks": {
+        "home": "मुख्य पृष्ठ",
+        "buyFeed": "चारा किनू",
+        "dietPlanner": "डाइट प्लानर",
+        "blog": "ब्लॉग",
+        "about": "हमर बारे में"
+      },
+      "address": "Verdant Food Park, राजावास, जयपुर–सीकर हाईवे, जयपुर"
+    },
+    "home": {
+      "badge": "Verdant स्तर के पोषण",
+      "heroTitle": "अहाँक पशु के बढ़ावे वाला पोषण",
+      "heroSubtitle": "पशु स्वास्थ्य, विकास आ उत्पादन सुधार खातिर वैज्ञानिक रूप से आधारित आहार पद्धति।",
+      "ctaDiet": "डाइट योजना बनाउ",
+      "ctaBrowse": "चारा देखू",
+      "trustChips": {
+        "fieldTested": "मैदान में परीक्षण कएल गेल",
+        "vetFriendly": "पशु चिकित्सक अनुकूल",
+        "simpleRoutines": "सरल दिनचर्या",
+        "betterYield": "बेहतर उत्पादन"
+      },
+      "farmersTitle": "हमर किसान के सुनू",
+      "farmersSubtitle": "बेहतर पोषण सं पशु स्वास्थ्य आ लाभ बढ़ावे वाला किसान के वास्तविक कहानी।",
+      "insightsBadge": "Verdant कृषि मार्गदर्शन",
+      "insightsTitle": "बेहतर दिनचर्या। स्वस्थ पशु। अधिक उत्पादन।",
+      "insightsSubtitle": "सरल आ प्रभावी पशु आहार मार्गदर्शन।",
+      "quickTipsTitle": "त्वरित सुझाव",
+      "quickTipsSubtitle": "तुरंत उपयोग योग्य सुझाव।"
+    },
+    "products": {
+      "pageTitle": "पशु चारा किनू",
+      "buyNow": "अखन किनू",
+      "modalTitle": "{{product}} किनू",
+      "name": "नाम *",
+      "mobile": "मोबाइल *",
+      "emailOptional": "ईमेल (वैकल्पिक)",
+      "address": "पता *",
+      "placingOrder": "ऑर्डर कएल जा रहल अछि...",
+      "confirmOrder": "ऑर्डर पुष्टि करू",
+      "orderPlaced": "ऑर्डर सफलतापूर्वक कएल गेल ✅",
+      "orderId": "ऑर्डर ID",
+      "product": "उत्पाद",
+      "amount": "राशि",
+      "alertRequired": "कृपया सभ आवश्यक जानकारी भरू",
+      "alertFailed": "ऑर्डर करए में विफल",
+      "alertGeneric": "किछु गलत भेल"
+    },
+    "about": {
+      "badge": "प्रीमियम पशु पोषण • 2020 सं",
+      "title": "Verdant Feed के बारे में",
+      "subtitle": "हम एहन चारा बनबैत छी जाहि पर किसान भरोसा क सकैत छथि — बेहतर रोग प्रतिरोधक क्षमता, पाचन आ उत्पादन खातिर वैज्ञानिक रूप से तैयार।",
+      "stats": {
+        "servingSince": "सेवा में",
+        "farmersSupported": "समर्थित किसान",
+        "livestockTypes": "पशु प्रकार",
+        "transparentLabeling": "पारदर्शी लेबलिंग"
+      },
+      "missionTitle": "बेहतर पोषण। बेहतर पशु। बेहतर खेती।",
+      "missionBody": "Verdant Feed में, हम मानैत छी जे स्वस्थ पशु सफल खेती के आधार अछि। हमर लक्ष्य एहन चारा प्रदान करब जे विकास, प्रतिरोधक क्षमता आ उत्पादन सुधार करए।",
+      "ctaTitle": "आउ, एक संग बेहतर खेती बनाबी।",
+      "ctaProducts": "उत्पाद देखू",
+      "ctaDietPlanner": "डाइट प्लानर आजमाउ"
+    },
+    "blog": {
+      "title": "कृषि ज्ञान केंद्र",
+      "subtitle": "पशु पोषण, रोग रोकथाम आ आधुनिक आहार प्रणाली खातिर Verdant मार्गदर्शन।",
+      "featured": "विशेष",
+      "readFull": "पूरा लेख पढ़ू"
+    },
+    "dietPlanner": {
+      "title": "स्मार्ट डाइट प्लानर",
+      "subtitle": "पशु प्रकार, नस्ल, वजन आ स्वास्थ्य के आधार पर आहार सुझाव प्राप्त करू।",
+      "cardTitle": "पशु विवरण दर्ज करू",
+      "cardDesc": "सही गणना खातिर सभ फील्ड आवश्यक अछि।",
+      "nameLabel": "अहाँक नाम",
+      "contactLabel": "संपर्क नंबर",
+      "contactPlaceholder": "+91...",
+      "cattleTypeLabel": "पशु प्रकार",
+      "breedLabel": "नस्ल (क्षेत्र सहित)",
+      "weightLabel": "वजन श्रेणी",
+      "ageLabel": "उम्र (वर्ष)",
+      "healthLabel": "स्वास्थ्य स्थिति",
+      "taggedLabel": "टैग कएल गेल?",
+      "selectType": "प्रकार चुनू",
+      "selectBreed": "नस्ल चुनू",
+      "selectWeight": "वजन चुनू",
+      "selectFirst": "पहिने पशु प्रकार चुनू",
+      "selectStatus": "स्थिति चुनू",
+      "select": "चुनू...",
+      "cow": "गाय",
+      "buffalo": "भैंस",
+      "goat": "बकरी",
+      "healthy": "स्वस्थ",
+      "sick": "बीमार",
+      "pregnant": "गर्भवती",
+      "yes": "हाँ",
+      "no": "नहीं",
+      "generate": "डाइट चार्ट बनाउ",
+      "calculating": "गणना भ रहल अछि...",
+      "toastSuccessTitle": "डाइट चार्ट तैयार भ गेल!",
+      "toastSuccessDesc": "पूरा चार्ट खोलल जा रहल अछि।",
+      "toastErrorTitle": "त्रुटि",
+      "toastErrorDesc": "डाइट लॉग सहेजए में विफल। कृपया फेर प्रयास करू।",
+      "recentLogs": "हाल के लॉग",
+      "noHistory": "अखन तक कोनो इतिहास नहि अछि। अपन पहिल योजना बनाउ!"
+    }
+  }
+  

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
 
 declare global {
@@ -10,43 +10,109 @@ declare global {
   }
 }
 
-function setGoogleLanguage(lang: "en" | "hi") {
+function setGoogleLanguage(lang: string) {
   const combo = document.querySelector(".goog-te-combo") as HTMLSelectElement | null;
   if (!combo) return;
-
   combo.value = lang;
   combo.dispatchEvent(new Event("change"));
 }
 
+function normalizeTranslateLayout() {
+  // Stop layout push
+  document.body.style.setProperty("top", "0px", "important");
+  document.documentElement.style.setProperty("margin-top", "0px", "important");
+  document.documentElement.style.setProperty("top", "0px", "important");
+}
+
+/**
+ * ✅ Hard-force Google banner into a small Verdant box (inline styles win)
+ */
+function forceBannerIntoBox() {
+  const iframe = document.querySelector("iframe.goog-te-banner-frame") as HTMLIFrameElement | null;
+  if (!iframe) return;
+
+  // Make it a compact floating widget
+  iframe.style.setProperty("position", "fixed", "important");
+  iframe.style.setProperty("top", "72px", "important");      // adjust if navbar height differs
+  iframe.style.setProperty("right", "14px", "important");
+  iframe.style.setProperty("left", "auto", "important");
+
+  iframe.style.setProperty("width", "360px", "important");
+  iframe.style.setProperty("height", "56px", "important");
+
+  iframe.style.setProperty("z-index", "999999", "important");
+  iframe.style.setProperty("border-radius", "14px", "important");
+  iframe.style.setProperty("overflow", "hidden", "important");
+  iframe.style.setProperty("box-shadow", "0 16px 44px rgba(0,0,0,0.18)", "important");
+  iframe.style.setProperty("border", "1px solid rgba(0,0,0,0.08)", "important");
+  iframe.style.setProperty("transform", "scale(0.96)", "important");
+  iframe.style.setProperty("transform-origin", "top right", "important");
+
+  // Mobile behavior (bottom sheet style)
+  if (window.matchMedia("(max-width: 640px)").matches) {
+    iframe.style.setProperty("top", "auto", "important");
+    iframe.style.setProperty("bottom", "12px", "important");
+    iframe.style.setProperty("left", "12px", "important");
+    iframe.style.setProperty("right", "12px", "important");
+    iframe.style.setProperty("width", "auto", "important");
+    iframe.style.setProperty("transform", "none", "important");
+    iframe.style.setProperty("border-radius", "16px", "important");
+  }
+}
+
 export function GoogleTranslate() {
   const [ready, setReady] = useState(false);
-  const [lang, setLang] = useState<"en" | "hi">("en");
+  const [lang, setLang] = useState("en");
+
+  const languages = useMemo(
+    () => [
+      { code: "en", label: "English" },
+      { code: "hi", label: "हिन्दी (Hindi)" },
+      { code: "bn", label: "বাংলা (Bengali)" },
+      { code: "te", label: "తెలుగు (Telugu)" },
+      { code: "mr", label: "मराठी (Marathi)" },
+      { code: "ta", label: "தமிழ் (Tamil)" },
+      { code: "gu", label: "ગુજરાતી (Gujarati)" },
+      { code: "kn", label: "ಕನ್ನಡ (Kannada)" },
+      { code: "ml", label: "മലയാളം (Malayalam)" },
+      { code: "or", label: "ଓଡ଼ିଆ (Odia)" },
+      { code: "pa", label: "ਪੰਜਾਬੀ (Punjabi)" },
+      { code: "ur", label: "اردو (Urdu)" },
+      { code: "as", label: "অসমীয়া (Assamese)" },
+      { code: "ne", label: "नेपाली (Nepali)" },
+      { code: "sa", label: "संस्कृतम् (Sanskrit)" },
+      { code: "sd", label: "سنڌي (Sindhi)" },
+      { code: "gom", label: "कोंकणी (Konkani)" },
+      { code: "doi", label: "डोगरी (Dogri)" },
+      { code: "mai", label: "मैथिली (Maithili)" },
+      { code: "bho", label: "भोजपुरी (Bhojpuri)" },
+      { code: "mni-Mtei", label: "ꯃꯤꯇꯩꯂꯣꯟ (Manipuri)" },
+    ],
+    []
+  );
+
+  const includedLanguages = useMemo(
+    () => Array.from(new Set(languages.map((l) => l.code))).join(","),
+    [languages]
+  );
 
   useEffect(() => {
-    
-    const cleanup = () => {
-      const bannerFrame = document.querySelector(
-        "iframe.goog-te-banner-frame"
-      ) as HTMLIFrameElement | null;
+    normalizeTranslateLayout();
+    forceBannerIntoBox();
 
-      if (bannerFrame) bannerFrame.remove();
+    // Keep fixing layout + banner box (Google keeps re-applying styles)
+    const interval = window.setInterval(() => {
+      normalizeTranslateLayout();
+      forceBannerIntoBox();
+    }, 250);
 
-      const tt = document.getElementById("goog-gt-tt");
-      if (tt) tt.remove();
-
-      document.body.style.setProperty("top", "0px", "important");
-      document.documentElement.style.setProperty("margin-top", "0px", "important");
-      document.documentElement.style.setProperty("top", "0px", "important");
-    };
-
-    cleanup();
-
-    const observer = new MutationObserver(() => cleanup());
+    const observer = new MutationObserver(() => {
+      normalizeTranslateLayout();
+      forceBannerIntoBox();
+    });
     observer.observe(document.documentElement, { childList: true, subtree: true });
 
-    const interval = window.setInterval(cleanup, 500);
-
-    // ✅ Load script once
+    // Load script once
     if (!document.getElementById("google-translate-script")) {
       window.googleTranslateElementInit = () => {
         if (!window.google?.translate) return;
@@ -54,16 +120,16 @@ export function GoogleTranslate() {
         new window.google.translate.TranslateElement(
           {
             pageLanguage: "en",
-            includedLanguages: "en,hi",
+            includedLanguages,
             autoDisplay: false,
           },
           "google_translate_element"
         );
 
-       
         setTimeout(() => {
           setReady(true);
-          cleanup();
+          normalizeTranslateLayout();
+          forceBannerIntoBox();
         }, 800);
       };
 
@@ -76,49 +142,58 @@ export function GoogleTranslate() {
     } else {
       setTimeout(() => {
         setReady(true);
-        cleanup();
-      }, 800);
+        normalizeTranslateLayout();
+        forceBannerIntoBox();
+      }, 500);
     }
+
+    // Also re-apply box style on resize
+    const onResize = () => forceBannerIntoBox();
+    window.addEventListener("resize", onResize);
 
     return () => {
       observer.disconnect();
       window.clearInterval(interval);
+      window.removeEventListener("resize", onResize);
     };
-  }, []);
+  }, [includedLanguages]);
 
-  const onSwitch = (next: "en" | "hi") => {
+  const onSwitch = (next: string) => {
     setLang(next);
+
+    // cookie fallback
+    document.cookie = `googtrans=/en/${next}; path=/`;
+    document.cookie = `googtrans=/en/${next}; path=/; domain=${window.location.hostname}`;
+
     setGoogleLanguage(next);
+    setTimeout(() => setGoogleLanguage(next), 600);
+
+    setTimeout(() => {
+      normalizeTranslateLayout();
+      forceBannerIntoBox();
+    }, 50);
   };
 
   return (
     <div className="flex items-center">
-      {/* Hidden google widget mount */}
-      <div id="google_translate_element" className="hidden" />
+      {/* keep mount alive (your CSS keeps it offscreen) */}
+      <div id="google_translate_element" />
 
-      {/* Premium Verdant toggle */}
+      {/* Verdant dropdown */}
       <div className="lang-toggle">
-        <button
-          type="button"
-          onClick={() => onSwitch("en")}
-          className={cn("lang-btn", lang === "en" && "is-active")}
-          aria-pressed={lang === "en"}
+        <select
+          className={cn("lang-select")}
+          value={lang}
+          onChange={(e) => onSwitch(e.target.value)}
           disabled={!ready}
-          title={!ready ? "Loading languages..." : "English"}
+          aria-label="Select language"
         >
-          EN
-        </button>
-
-        <button
-          type="button"
-          onClick={() => onSwitch("hi")}
-          className={cn("lang-btn", lang === "hi" && "is-active")}
-          aria-pressed={lang === "hi"}
-          disabled={!ready}
-          title={!ready ? "Loading languages..." : "हिंदी"}
-        >
-          हिंदी
-        </button>
+          {languages.map((l) => (
+            <option key={l.code} value={l.code}>
+              {l.label}
+            </option>
+          ))}
+        </select>
       </div>
     </div>
   );

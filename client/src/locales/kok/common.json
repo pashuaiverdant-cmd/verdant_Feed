@@ -1,0 +1,145 @@
+{
+    "nav": {
+      "home": "मुखेल पान",
+      "products": "पशू आहार विकत घ्या",
+      "blog": "ब्लॉग",
+      "dietPlanner": "आहार योजना",
+      "about": "आमच्या बद्दल",
+      "genetics": "जनुकशास्त्र"
+    },
+    "common": {
+      "featured": "विशेष",
+      "readFullArticle": "पूर्ण लेख वाचा",
+      "searchTopics": "विषय शोधा...",
+      "recently": "अलीकडे",
+      "minRead": "{{count}} मिनिट वाचन",
+      "close": "बंद करा",
+      "confirm": "पुष्टी करा",
+      "submit": "सबमिट करा",
+      "loading": "लोड होत आहे..."
+    },
+    "footer": {
+      "tagline": "प्रीमियम पोषण • जास्त उत्पादन • निरोगी पशू",
+      "about": "निरोगी पशूंसाठी प्रीमियम पोषण देत आहोत. गुणवत्तापूर्ण आहार, विश्वासार्ह मार्गदर्शन आणि चांगले परिणाम.",
+      "chips": {
+        "qualityAssured": "गुणवत्ता सुनिश्चित",
+        "farmerTrusted": "शेतकऱ्यांचा विश्वास",
+        "nutritionBacked": "पोषण आधारित"
+      },
+      "explore": "अन्वेषण करा",
+      "contact": "संपर्क करा",
+      "newsletterTitle": "आहार टिप्स आणि ऑफर मिळवा",
+      "newsletterDesc": "उत्पादन आणि पशू आरोग्य सुधारण्यासाठी मासिक माहिती.",
+      "emailPlaceholder": "तुमचा ईमेल टाका",
+      "subscribe": "सबस्क्राइब करा",
+      "copyright": "© {{year}} Verdant Impact Private Limited. सर्व हक्क राखीव.",
+      "privacyPolicy": "गोपनीयता धोरण",
+      "terms": "वापर अटी",
+      "quickLinks": {
+        "home": "मुखेल पान",
+        "buyFeed": "आहार विकत घ्या",
+        "dietPlanner": "आहार योजना",
+        "blog": "ब्लॉग",
+        "about": "आमच्या बद्दल"
+      },
+      "address": "Verdant Food Park, राजावास, जयपूर–सीकर महामार्ग, जयपूर"
+    },
+    "home": {
+      "badge": "Verdant दर्जाचे पोषण",
+      "heroTitle": "तुमच्या पशूंची वाढ करणारे पोषण",
+      "heroSubtitle": "पशू आरोग्य आणि उत्पादन सुधारण्यासाठी वैज्ञानिक आहार पद्धती.",
+      "ctaDiet": "आहार योजना करा",
+      "ctaBrowse": "आहार पाहा",
+      "trustChips": {
+        "fieldTested": "क्षेत्रात तपासलेले",
+        "vetFriendly": "पशुवैद्य अनुकूल",
+        "simpleRoutines": "सोपे नियम",
+        "betterYield": "जास्त उत्पादन"
+      },
+      "farmersTitle": "आमच्या शेतकऱ्यांकडून ऐका",
+      "farmersSubtitle": "चांगल्या पोषणामुळे सुधारलेले परिणाम.",
+      "insightsBadge": "Verdant शेती मार्गदर्शन",
+      "insightsTitle": "चांगले नियम. निरोगी पशू. जास्त उत्पादन.",
+      "insightsSubtitle": "सोपे आणि प्रभावी आहार मार्गदर्शन.",
+      "quickTipsTitle": "जलद टिप्स",
+      "quickTipsSubtitle": "ताबडतोब वापरण्यास योग्य टिप्स."
+    },
+    "products": {
+      "pageTitle": "पशू आहार विकत घ्या",
+      "buyNow": "आता विकत घ्या",
+      "modalTitle": "{{product}} विकत घ्या",
+      "name": "नाव *",
+      "mobile": "मोबाइल *",
+      "emailOptional": "ईमेल (पर्यायी)",
+      "address": "पत्ता *",
+      "placingOrder": "ऑर्डर देत आहे...",
+      "confirmOrder": "ऑर्डर पुष्टी करा",
+      "orderPlaced": "ऑर्डर यशस्वीरित्या झाली ✅",
+      "orderId": "ऑर्डर ID",
+      "product": "उत्पादन",
+      "amount": "रक्कम",
+      "alertRequired": "कृपया सर्व आवश्यक माहिती भरा",
+      "alertFailed": "ऑर्डर अयशस्वी",
+      "alertGeneric": "काहीतरी चूक झाली"
+    },
+    "about": {
+      "badge": "प्रीमियम पशू पोषण • 2020 पासून",
+      "title": "Verdant Feed बद्दल",
+      "subtitle": "शेतकऱ्यांसाठी विश्वासार्ह आहार.",
+      "stats": {
+        "servingSince": "सेवा सुरू",
+        "farmersSupported": "समर्थित शेतकरी",
+        "livestockTypes": "पशू प्रकार",
+        "transparentLabeling": "पारदर्शक लेबलिंग"
+      },
+      "missionTitle": "चांगले पोषण. चांगले पशू. चांगली शेती.",
+      "missionBody": "निरोगी पशू म्हणजे यशस्वी शेती.",
+      "ctaTitle": "एकत्र चांगली शेती तयार करूया.",
+      "ctaProducts": "उत्पादने पाहा",
+      "ctaDietPlanner": "आहार योजना वापरा"
+    },
+    "blog": {
+      "title": "शेती ज्ञान केंद्र",
+      "subtitle": "पशू पोषण आणि आधुनिक आहार मार्गदर्शन.",
+      "featured": "विशेष",
+      "readFull": "पूर्ण लेख वाचा"
+    },
+    "dietPlanner": {
+      "title": "स्मार्ट आहार योजना",
+      "subtitle": "पशू माहितीवर आधारित आहार शिफारसी.",
+      "cardTitle": "पशू तपशील भरा",
+      "cardDesc": "अचूक परिणामासाठी सर्व माहिती आवश्यक.",
+      "nameLabel": "तुमचे नाव",
+      "contactLabel": "संपर्क क्रमांक",
+      "contactPlaceholder": "+91...",
+      "cattleTypeLabel": "पशू प्रकार",
+      "breedLabel": "जात",
+      "weightLabel": "वजन श्रेणी",
+      "ageLabel": "वय",
+      "healthLabel": "आरोग्य स्थिती",
+      "taggedLabel": "टॅग केले आहे का?",
+      "selectType": "प्रकार निवडा",
+      "selectBreed": "जात निवडा",
+      "selectWeight": "वजन निवडा",
+      "selectFirst": "प्रथम पशू प्रकार निवडा",
+      "selectStatus": "स्थिती निवडा",
+      "select": "निवडा...",
+      "cow": "गाय",
+      "buffalo": "म्हैस",
+      "goat": "शेळी",
+      "healthy": "निरोगी",
+      "sick": "आजारी",
+      "pregnant": "गर्भवती",
+      "yes": "होय",
+      "no": "नाही",
+      "generate": "आहार चार्ट तयार करा",
+      "calculating": "गणना करत आहे...",
+      "toastSuccessTitle": "आहार चार्ट तयार झाला!",
+      "toastSuccessDesc": "पूर्ण चार्ट उघडत आहे.",
+      "toastErrorTitle": "त्रुटी",
+      "toastErrorDesc": "आहार लॉग सेव्ह करण्यात अयशस्वी.",
+      "recentLogs": "अलीकडील नोंदी",
+      "noHistory": "अद्याप इतिहास नाही."
+    }
+  }
+  

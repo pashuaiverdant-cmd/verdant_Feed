@@ -1,0 +1,589 @@
+{
+  "brand": {
+    "verdantFeed": "Verdant Feed",
+    "Verdant": "Verdant"
+  },
+  "common": {
+    "close": "Close",
+    "yes": "Yes",
+    "no": "No",
+    "somethingWentWrong": "Something went wrong"
+  },
+
+  "nav": {
+    "home": "Home",
+    "products": "Buy Livestock Feed",
+    "blog": "Blog",
+    "dietPlanner": "Diet Planner",
+    "about": "About Us",
+    "genetics": "Genetics"
+  },
+
+  "home": {
+    
+    "hero": {
+      "badge": "Verdant-grade Nutrition",
+      "title": "Nutrition That Grows Your Livestock",
+      "subtitle": "Science-backed feeding practices to improve animal health, growth, and yield — consistently.",
+      "ctaPrimary": "Plan a Diet",
+      "ctaSecondary": "Browse Feed",
+      "imageAlt": "Healthy livestock",
+      "metricLabel": "Growth Rate",
+      "metricValue": "+25% Faster",
+      "chips": ["Field-tested", "Vet-friendly", "Simple routines", "Better yield"]
+    },
+
+    "farmers": {
+      "title": "Hear from our Farmers",
+      "subtitle": "Real stories from farmers who improved animal health and profitability with better nutrition.",
+      "prev": "Previous farmer",
+      "next": "Next farmer"
+    },
+
+    "insights": {
+      "badge": "Verdant Farming Insights",
+      "title": "Better routines. Healthier animals. Higher yield.",
+      "subtitle": "High-impact livestock practices in a clean checklist format — easy to follow, easy to repeat."
+    },
+
+    "bestPractices": {
+      "frequency": "Daily Practice",
+
+      "bp1": {
+        "title": "Balanced Feeding Routine",
+        "summary": "Build a steady ration using dry fodder + green fodder + concentrate as per weight and milk yield. Avoid sudden changes.",
+        "tag": "Nutrition",
+        "points": ["Fixed feeding time daily", "Ration balance by yield", "Store feed dry & clean"]
+      },
+      "bp2": {
+        "title": "Clean Water Access (24/7)",
+        "summary": "Clean water supports digestion, immunity, and milk production. Dehydration quickly reduces intake and output.",
+        "tag": "Hydration",
+        "points": ["Wash trough daily", "Shade near water", "Check smell & dirt daily"]
+      },
+      "bp3": {
+        "title": "Vaccination + Deworming Plan",
+        "summary": "Prevention is cheaper than treatment. Follow a local vet calendar and keep a simple record for every animal.",
+        "tag": "Health",
+        "points": ["Maintain records", "Seasonal deworming", "Vet-guided schedule"]
+      },
+      "bp4": {
+        "title": "Clean Shed & Hygiene",
+        "summary": "Dry bedding and ventilation reduce stress and infections. Comfort improves productivity and fertility.",
+        "tag": "Hygiene",
+        "points": ["Daily dung removal", "Dry bedding", "Airflow + sunlight"]
+      }
+    },
+
+    "note": {
+      "badge": "Verdant Note",
+      "title": "Consistency beats complexity.",
+      "body": "If you follow feeding timing, clean water, hygiene, and a basic health calendar consistently, you’ll usually see better intake, better health, and more stable yield over time.",
+      "tipPrefix": "Tip: Start with",
+      "tipEmphasis": "one habit",
+      "tipSuffix": "today, then add the next habit next week.",
+      "verdantFeed": "Verdant Feed",
+      "Verdant": "Verdant"
+    },
+
+    "quickTips": {
+      "title": "Quick Tips",
+      "subtitle": "Fast wins you can apply immediately.",
+      "items": [
+        { "title": "Mineral Mixture", "desc": "Daily mineral mix helps immunity and milk yield." },
+        { "title": "Salt Lick", "desc": "Improves appetite and electrolyte balance." },
+        { "title": "Clean Milking", "desc": "Wash udder & hands to reduce mastitis risk." },
+        { "title": "Heat Stress", "desc": "Shade + ventilation keeps intake and production stable." },
+        { "title": "Early Signs", "desc": "Low appetite + dullness = check temperature and vet." },
+        { "title": "Record Keeping", "desc": "Track feed, milk, vaccine dates for smart decisions." }
+      ]
+    }
+  },
+
+  "products": {
+    "title": "Buy Livestock Feed",
+    "buyNow": "Buy Now",
+
+    "modal": {
+      "title": "Buy {{product}}"
+    },
+
+    "form": {
+      "requiredAlert": "Please fill all required fields",
+      "name": "Name *",
+      "mobile": "Mobile *",
+      "email": "Email (optional)",
+      "address": "Address *",
+      "confirm": "Confirm Order",
+      "placing": "Placing Order...",
+      "placeOrderFail": "Failed to place order"
+    },
+
+    "receipt": {
+      "title": "Order Placed ✅",
+      "orderId": "Order ID:",
+      "product": "Product:",
+      "name": "Name:",
+      "mobile": "Mobile:",
+      "email": "Email:",
+      "address": "Address:",
+      "amount": "Amount:"
+    }
+  },
+
+  "blog": {
+    "title": "Farming Knowledge Hub",
+    "subtitle": "Verdant-style guides for livestock nutrition, disease prevention, and modern feeding systems.",
+    "search": "Search topics...",
+    "featured": "Featured",
+    "readFull": "Read Full Article",
+
+    "categories": {
+      "nutrition": "Nutrition",
+      "health": "Health",
+      "practices": "Practices"
+    },
+
+    "fallback": [
+      {
+        "title": "Modern Cattle Nutrition: Science Behind Better Milk Production",
+        "summary": "Practical nutrition built on rumen stability: energy–protein balance, effective fiber, minerals, and water access."
+      },
+      {
+        "title": "Common Livestock Diseases Every Farmer Should Know",
+        "summary": "Field-ready health playbook covering mastitis basics, FMD awareness, parasites, hygiene routines and early detection."
+      },
+      {
+        "title": "Sustainable Feeding Practices for Modern Dairy Farms",
+        "summary": "Reduce feed wastage, stabilize rumen health and improve productivity with modern feeding systems."
+      }
+    ]
+  },
+
+  "dietPlanner": {
+    "title": "Smart Diet Planner",
+    "subtitle": "Get feeding recommendations based on cattle type, breed, weight, and health status.",
+
+    "validation": {
+      "name": "Name is required",
+      "contact": "Contact is required",
+      "breed": "Breed is required",
+      "weight": "Weight is required",
+      "age": "Age must be valid"
+    },
+
+    "toast": {
+      "generatedTitle": "Diet Chart Generated!",
+      "generatedDesc": "Opening full chart with details.",
+      "errorTitle": "Error",
+      "errorDesc": "Failed to save diet log. Please try again."
+    },
+
+    "form": {
+      "title": "Enter Cattle Details",
+      "desc": "All fields are required for accurate calculation.",
+      "yourName": "Your Name",
+      "contact": "Contact Number",
+      "contactPlaceholder": "+91...",
+      "cattleType": "Cattle Type",
+      "selectType": "Select type",
+      "breed": "Breed (with region)",
+      "selectBreed": "Select breed",
+      "selectTypeFirst": "Select cattle type first",
+      "weight": "Weight Category",
+      "selectWeight": "Select weight",
+      "age": "Age (Years)",
+      "health": "Health Status",
+      "selectStatus": "Select status",
+      "tagged": "Tagged?",
+      "select": "Select..."
+    },
+
+    "cattle": {
+      "cow": "Cow",
+      "buffalo": "Buffalo",
+      "goat": "Goat"
+    },
+
+    "health": {
+      "healthy": "Healthy",
+      "sick": "Sick",
+      "pregnant": "Pregnant"
+    },
+
+    "breed": {
+      "other": "Other — (Any Region)"
+    },
+
+    "button": {
+      "calculating": "Calculating...",
+      "generate": "Generate Diet Chart"
+    },
+
+    "history": {
+      "title": "Recent Logs",
+      "empty": "No history yet. Generate your first plan!"
+    },
+
+    "log": {
+      "summary": "{{type}} • {{breed}} • {{weight}} • {{health}} — Chart generated"
+    }
+  },
+
+  "about": {
+    "hero": {
+      "badge": "Premium livestock nutrition • Since 2020",
+      "title": "About Verdant Feed",
+      "subtitle": "We build feed that farmers can trust — scientifically formulated for stronger immunity, better digestion, and higher productivity."
+    },
+
+    "stats": [
+      { "label": "Serving since", "value": "2020" },
+      { "label": "Farmers supported", "value": "1M+" },
+      { "label": "Livestock types", "value": "3+" },
+      { "label": "Transparent labeling", "value": "100%" }
+    ],
+
+    "mission": {
+      "imageAlt": "Farmer in field",
+      "title": "Better nutrition. Better livestock. Better farms.",
+      "body": "At Verdant Feed, we believe healthy livestock is the foundation of a thriving farm. Our mission is to provide scientifically formulated feed that supports growth, immunity, and productivity."
+    },
+
+    "highlights": [
+      {
+        "title": "Science-backed nutrition",
+        "desc": "Balanced energy, protein, minerals, and fiber — designed for digestion and immunity."
+      },
+      {
+        "title": "Consistent performance",
+        "desc": "Ingredient checks and batch consistency so farmers get reliable outcomes every time."
+      },
+      {
+        "title": "Farmer-first support",
+        "desc": "Feeding routines, seasonal tips, and diet planning help — beyond just selling bags."
+      }
+    ],
+
+    "values": [
+      {
+        "title": "Quality First",
+        "desc": "We never compromise on ingredients or formulation consistency — results should be predictable."
+      },
+      {
+        "title": "Sustainability",
+        "desc": "We support eco-friendly practices that protect soil health and long-term farm productivity."
+      },
+      {
+        "title": "Community",
+        "desc": "We grow with farmers — sharing knowledge, fair pricing, and practical feeding guidance."
+      },
+      {
+        "title": "Integrity",
+        "desc": "Transparent labeling, honest claims, and clear nutrition — no marketing tricks."
+      }
+    ],
+
+    "timeline": [
+      {
+        "year": "2020",
+        "title": "The beginning",
+        "desc": "We started by listening to farmers — focusing on real problems like low yield, weak immunity, and inconsistent growth."
+      },
+      {
+        "year": "2021–2023",
+        "title": "Smarter formulas",
+        "desc": "We refined mixes for digestibility, mineral balance, and seasonal needs — improving consistency across batches."
+      },
+      {
+        "year": "2024–Now",
+        "title": "Scaling farmer success",
+        "desc": "We expanded support with diet planning and practical guidance to help improve productivity with less waste."
+      }
+    ],
+
+    "process": {
+      "stepPrefix": "Step",
+      "items": [
+        {
+          "title": "Research & formulation",
+          "desc": "We design balanced nutrition with a focus on digestion, immunity, and productivity."
+        },
+        {
+          "title": "Ingredient quality",
+          "desc": "We prioritize clean, consistent inputs to reduce variability and keep results stable."
+        },
+        {
+          "title": "Farmer support",
+          "desc": "We help farmers choose the right feed and routine based on real livestock goals."
+        }
+      ]
+    },
+
+    "cta": {
+      "title": "Let’s build a healthier farm — together.",
+      "primary": "Explore Products",
+      "secondary": "Try Diet Planner"
+    }
+  }
+  ,
+"blogSustainableFeeding": {
+  "backToBlog": "Back to Blog",
+  "badgePracticesIndianDairy": "Practices • Indian dairy",
+
+  "title": "Sustainable Feeding Practices for Modern Indian Dairy Farms",
+  "subtitle": "Sustainability is not “expensive tech.” It is mostly: better fodder planning, lower wastage, improved rumen efficiency, cleaner water, and consistent SOPs.",
+
+  "updatedLabel": "Updated",
+  "tagCostCutting": "Cost cutting",
+  "tagBetterMilkSolids": "Better milk solids",
+  "tagLowerDiseaseRisk": "Lower disease risk",
+
+  "sectionCoreIdeaTitle": "Core idea: make each kg of feed convert into milk (not waste)",
+  "coreIdea": {
+    "b1": "Plan fodder supply across seasons (mix of legume + non-legume).",
+    "b2": "Reduce mould, dust, and spoilage—these reduce intake and raise disease risk.",
+    "b3": "Balance roughage:concentrate to protect rumen and maintain milk fat.",
+    "b4": "Keep water clean and always available."
+  },
+
+  "sectionFodderPlanningTitle": "Fodder planning (Indian context)",
+  "fodder": {
+    "yearRoundTitle": "Year-round strategy",
+    "yearRound": {
+      "b1": "Use a cropping calendar to ensure green fodder availability.",
+      "b2": "Keep dry fodder reserve for lean months.",
+      "b3": "Store fodder off the ground; protect from moisture."
+    },
+    "silageTitle": "Silage basics (high impact)",
+    "silage": {
+      "b1": "Silage helps stabilize fodder availability and reduces spoilage losses.",
+      "b2": "Proper compaction and sealing is critical (air causes mould).",
+      "b3": "Introduce gradually; monitor intake and dung consistency."
+    }
+  },
+
+  "sectionPrecisionFeedingTitle": "Precision feeding (without machines)",
+  "precision": {
+    "b1": "Measure concentrates with a fixed mug/can (standardize per animal).",
+    "b2": "Adjust based on yield and body condition score (thin/ideal/fat).",
+    "b3": "Split concentrate into multiple feedings (3–4 parts/day) for high producers.",
+    "b4": "Avoid sudden changes; adapt over 7–10 days when possible."
+  },
+
+  "sectionWastageChecklistTitle": "Wastage control checklist (biggest hidden money leak)",
+  "wasteTable": {
+    "h1": "Where waste happens",
+    "h2": "What it looks like",
+    "h3": "Fix (simple)",
+    "r1": {
+      "c1": "Feed trough",
+      "c2": "Spilled feed, trampled fodder",
+      "c3": "Use raised trough, correct height, smaller frequent servings"
+    },
+    "r2": {
+      "c1": "Storage",
+      "c2": "Mouldy smell, clumps, insects",
+      "c3": "Keep dry, ventilated, away from moisture; FIFO rotation"
+    },
+    "r3": {
+      "c1": "Chaffing",
+      "c2": "Too long/too fine",
+      "c3": "Uniform chop size; avoid dustiness; wet lightly if needed"
+    },
+    "r4": {
+      "c1": "Water",
+      "c2": "Dirty trough reduces drinking",
+      "c3": "Daily cleaning; ensure continuous supply"
+    }
+  },
+
+  "sectionRumenFriendlyTitle": "Rumen-friendly sustainability (more milk solids, less problems)",
+  "rumen": {
+    "protectTitle": "What to protect",
+    "protect": {
+      "b1": "Adequate fibre for cud chewing and saliva buffering.",
+      "b2": "Stable feeding times (rumen microbes like routine).",
+      "b3": "Avoid over-grain feeding that can cause acidosis and low milk fat."
+    },
+    "waterTitle": "Water is part of feeding",
+    "water": {
+      "b1": "Low water intake reduces dry matter intake → lower milk.",
+      "b2": "Keep water points close to resting area and feeding area.",
+      "b3": "Heat stress months: water access becomes even more critical."
+    }
+  },
+
+  "sectionWhatToDoTitle": "What to do today / this week / this month",
+  "actions": {
+    "todayTitle": "Today",
+    "today": {
+      "b1": "Clean water troughs.",
+      "b2": "Remove spoiled fodder.",
+      "b3": "Check leftover feed amount (adjust serving)."
+    },
+    "weekTitle": "This week",
+    "week": {
+      "b1": "Plan fodder requirement for next 2 weeks.",
+      "b2": "Check concentrate measurement consistency.",
+      "b3": "Inspect storage for moisture and insects."
+    },
+    "monthTitle": "This month",
+    "month": {
+      "b1": "Review milk yield trends and feed cost per litre.",
+      "b2": "Work with vet/extension to adjust minerals and ration balance.",
+      "b3": "Create a seasonal fodder plan (summer/monsoon/winter)."
+    }
+  },
+
+  "sectionVerdantNoteTitle": "Verdant note",
+  "verdantNote": "Sustainability is a system: fodder planning + storage + routine + rumen health + water + minerals. Small improvements compound into big profit."
+}
+,
+"blogLivestockDiseases": {
+  "updatedAt": "February 10, 2026",
+  "updatedLabel": "Updated",
+  "backToBlog": "Back to Blog",
+  "badgeHealthIndianDairy": "Health • Indian dairy",
+
+  "title": "Common Livestock Diseases Every Indian Dairy Farmer Should Track",
+  "subtitle": "This is a field-focused guide: what to watch, what to do first, what to record, and when to call the vet. Fast action saves milk, fertility, and lives.",
+
+  "tagPracticalSOPs": "Practical SOPs",
+  "tagIsolationHygiene": "Isolation & hygiene",
+  "tagRecordkeeping": "Recordkeeping",
+
+  "section60sCheckTitle": "The 60-second health check (do this daily)",
+  "section60sCheck": {
+    "item1": "Appetite + water intake: any sudden drop is a red flag.",
+    "item2": "Dung: very watery / very dry / blood / foul smell → note immediately.",
+    "item3": "Cud chewing: low rumination often means rumen trouble, pain, fever, or acidosis.",
+    "item4": "Body temperature if animal looks dull (normal range varies; fever is a major sign).",
+    "item5": "Milk: clots, watery milk, blood, bad smell → suspect mastitis.",
+    "item6": "Feet/legs: limping, swelling, foul hoof smell → lameness/foot rot.",
+    "item7": "Breathing: coughing, nasal discharge, laboured breathing → respiratory infection."
+  },
+
+  "sectionEmergencyTitle": "Emergency signs — call a vet urgently",
+  "sectionEmergency": {
+    "item1": "Animal down and unable to stand; severe weakness or tremors.",
+    "item2": "Severe bloat (left side distended), breathing difficulty.",
+    "item3": "High fever with mouth lesions / excessive salivation (suspect infectious disease).",
+    "item4": "Blood in milk with udder swelling and pain.",
+    "item5": "Sudden deaths or multiple animals sick at once."
+  },
+
+  "sectionCommonGroupsTitle": "Most common problem groups on Indian dairy farms",
+  "table": {
+    "headers": {
+      "group": "Group",
+      "examples": "Examples",
+      "earlyClues": "Early clues",
+      "firstActions": "First actions (safe)"
+    },
+    "rows": {
+      "udderMilk": {
+        "group": "Udder / Milk",
+        "examples": "Mastitis",
+        "earlyClues": "Clots, watery milk, hot painful udder",
+        "firstActions": "Isolate milker; clean milking routine; strip test; call vet for treatment plan"
+      },
+      "digestiveRumen": {
+        "group": "Digestive / Rumen",
+        "examples": "Bloat, acidosis, diarrhoea",
+        "earlyClues": "Off-feed, less cud chewing, loose dung, belly distension",
+        "firstActions": "Stop sudden concentrate; offer roughage; check water; vet if bloat/fever"
+      },
+      "feetLegs": {
+        "group": "Feet / Legs",
+        "examples": "Lameness, foot rot, injuries",
+        "earlyClues": "Limping, swelling, foul smell, reduced walking",
+        "firstActions": "Clean & dry flooring; hoof hygiene; vet for trimming/antibiotics if needed"
+      },
+      "reproduction": {
+        "group": "Reproduction",
+        "examples": "Anestrus, repeat breeding, metritis",
+        "earlyClues": "No heat, discharge, low conception",
+        "firstActions": "Nutrition + minerals; heat detection; vet exam; manage transition period"
+      },
+      "skinVector": {
+        "group": "Skin / Vector",
+        "examples": "Tick-borne illness, skin lesions",
+        "earlyClues": "Ticks, fever, anaemia signs",
+        "firstActions": "Tick control; shed sanitation; vet for diagnosis"
+      }
+    }
+  },
+
+  "sectionMastitisSOPTitle": "Mastitis SOP (simple & effective)",
+  "mastitis": {
+    "preventionTitle": "Prevention checklist",
+    "prevention": {
+      "item1": "Pre-dip (if used), clean and dry teats; always wipe with separate cloth/tissue per animal.",
+      "item2": "Full hand milking/ proper machine settings (if machine). Avoid teat injuries.",
+      "item3": "Post-milking teat dip (where possible).",
+      "item4": "Keep bedding dry and clean; remove dung frequently.",
+      "item5": "Identify chronic cases and milk them last."
+    },
+    "suspectedTitle": "What to do if suspected",
+    "suspected": {
+      "item1": "Check milk for clots/wateriness; compare quarters.",
+      "item2": "Mark the animal; milk separately; don’t mix milk in bulk can.",
+      "item3": "Record: date, quarter affected, fever yes/no, milk change.",
+      "item4": "Call vet for correct therapy and withdrawal guidance."
+    }
+  },
+
+  "sectionBloatAcidosisTitle": "Bloat & acidosis prevention (feeding-linked diseases)",
+  "bloat": {
+    "title": "Bloat risk reducers",
+    "item1": "Avoid sudden lush legume-heavy grazing without adaptation.",
+    "item2": "Provide dry roughage before turning out to lush fodder.",
+    "item3": "Avoid abrupt concentrate jumps.",
+    "item4": "Observe animals after diet change; early bloat acts fast."
+  },
+  "acidosis": {
+    "title": "Acidosis risk reducers",
+    "item1": "Maintain adequate fibre (roughage) to support rumination and saliva buffering.",
+    "item2": "Split concentrates into multiple feedings rather than one heavy meal.",
+    "item3": "If milk fat suddenly drops + loose dung: suspect rumen imbalance.",
+    "item4": "Review ration with a nutritionist if high producers."
+  },
+
+  "sectionBiosecurityTitle": "Farm biosecurity basics (smallholder-friendly)",
+  "biosecurity": {
+    "item1": "Quarantine new animals (separate pen) before mixing with herd.",
+    "item2": "Separate sick animals; dedicate bucket/rope for them.",
+    "item3": "Footbath at entry (where possible) and regular shed disinfection.",
+    "item4": "Control visitors, vehicles, and shared equipment between farms.",
+    "item5": "Follow local vaccination schedule (ask your vet/department)."
+  },
+
+  "sectionTodayWeekMonthTitle": "What to do today / this week / this month",
+  "plan": {
+    "todayTitle": "Today",
+    "today": {
+      "item1": "Observe appetite + cud chewing.",
+      "item2": "Check udder & milk during milking.",
+      "item3": "Identify limping animals early."
+    },
+    "weekTitle": "This week",
+    "week": {
+      "item1": "Clean bedding + drainage; fix wet areas.",
+      "item2": "Tick control routine; check calves.",
+      "item3": "Review feed changes made recently."
+    },
+    "monthTitle": "This month",
+    "month": {
+      "item1": "Record conception/heat issues and consult vet if repeats.",
+      "item2": "Review vaccination and deworming schedule.",
+      "item3": "Evaluate mastitis repeat cases and milking hygiene SOP."
+    }
+  },
+
+  "noteTitle": "Note",
+  "noteText": "This guide is educational. Exact diagnosis and medicine must be decided with a veterinarian, especially for infectious diseases and milk withdrawal rules."
+}
+
+}
+

@@ -15,62 +15,13 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useState } from "react";
-
+import { useTranslation, Trans } from "react-i18next";
 
 const heroImages = [
   "/img/feed1.jpeg",
   "/img/feed4.jpeg",
   "/img/feed5.jpeg",
   "/img/feed6.jpeg",
-];
-
-
-const bestPractices = [
-  {
-    id: "bp1",
-    title: "Balanced Feeding Routine",
-    summary:
-      "Build a steady ration using dry fodder + green fodder + concentrate as per weight and milk yield. Avoid sudden changes.",
-    tag: "Nutrition",
-    icon: Leaf,
-    points: ["Fixed feeding time daily", "Ration balance by yield", "Store feed dry & clean"],
-  },
-  {
-    id: "bp2",
-    title: "Clean Water Access (24/7)",
-    summary:
-      "Clean water supports digestion, immunity, and milk production. Dehydration quickly reduces intake and output.",
-    tag: "Hydration",
-    icon: Droplets,
-    points: ["Wash trough daily", "Shade near water", "Check smell & dirt daily"],
-  },
-  {
-    id: "bp3",
-    title: "Vaccination + Deworming Plan",
-    summary:
-      "Prevention is cheaper than treatment. Follow a local vet calendar and keep a simple record for every animal.",
-    tag: "Health",
-    icon: ShieldCheck,
-    points: ["Maintain records", "Seasonal deworming", "Vet-guided schedule"],
-  },
-  {
-    id: "bp4",
-    title: "Clean Shed & Hygiene",
-    summary:
-      "Dry bedding and ventilation reduce stress and infections. Comfort improves productivity and fertility.",
-    tag: "Hygiene",
-    icon: ClipboardList,
-    points: ["Daily dung removal", "Dry bedding", "Airflow + sunlight"],
-  },
-];
-
-const quickTips = [
-  { title: "Mineral Mixture", desc: "Daily mineral mix helps immunity and milk yield." },
-  { title: "Salt Lick", desc: "Improves appetite and electrolyte balance." },
-  { title: "Clean Milking", desc: "Wash udder & hands to reduce mastitis risk." },
-  { title: "Heat Stress", desc: "Shade + ventilation keeps intake and production stable." },
-  { title: "Early Signs", desc: "Low appetite + dullness = check temperature and vet." },
-  { title: "Record Keeping", desc: "Track feed, milk, vaccine dates for smart decisions." },
 ];
 
 const fadeUp = {
@@ -83,20 +34,119 @@ const fadeUp = {
 };
 
 export default function Home() {
+  const { t } = useTranslation();
+
+  // ✅ Brand words NEVER translate (hard-coded)
+  const brandFeed = "Verdant Feed";
+  const brandCore = "Verdant";
+
+  const bestPractices = [
+    {
+      id: "bp1",
+      title: t("home.bestPractices.bp1.title", "Balanced Feeding Routine"),
+      summary: t(
+        "home.bestPractices.bp1.summary",
+        "Build a steady ration using dry fodder + green fodder + concentrate as per weight and milk yield. Avoid sudden changes."
+      ),
+      tag: t("home.bestPractices.bp1.tag", "Nutrition"),
+      icon: Leaf,
+      points: [
+        t("home.bestPractices.bp1.points.0", "Fixed feeding time daily"),
+        t("home.bestPractices.bp1.points.1", "Ration balance by yield"),
+        t("home.bestPractices.bp1.points.2", "Store feed dry & clean"),
+      ],
+    },
+    {
+      id: "bp2",
+      title: t("home.bestPractices.bp2.title", "Clean Water Access (24/7)"),
+      summary: t(
+        "home.bestPractices.bp2.summary",
+        "Clean water supports digestion, immunity, and milk production. Dehydration quickly reduces intake and output."
+      ),
+      tag: t("home.bestPractices.bp2.tag", "Hydration"),
+      icon: Droplets,
+      points: [
+        t("home.bestPractices.bp2.points.0", "Wash trough daily"),
+        t("home.bestPractices.bp2.points.1", "Shade near water"),
+        t("home.bestPractices.bp2.points.2", "Check smell & dirt daily"),
+      ],
+    },
+    {
+      id: "bp3",
+      title: t("home.bestPractices.bp3.title", "Vaccination + Deworming Plan"),
+      summary: t(
+        "home.bestPractices.bp3.summary",
+        "Prevention is cheaper than treatment. Follow a local vet calendar and keep a simple record for every animal."
+      ),
+      tag: t("home.bestPractices.bp3.tag", "Health"),
+      icon: ShieldCheck,
+      points: [
+        t("home.bestPractices.bp3.points.0", "Maintain records"),
+        t("home.bestPractices.bp3.points.1", "Seasonal deworming"),
+        t("home.bestPractices.bp3.points.2", "Vet-guided schedule"),
+      ],
+    },
+    {
+      id: "bp4",
+      title: t("home.bestPractices.bp4.title", "Clean Shed & Hygiene"),
+      summary: t(
+        "home.bestPractices.bp4.summary",
+        "Dry bedding and ventilation reduce stress and infections. Comfort improves productivity and fertility."
+      ),
+      tag: t("home.bestPractices.bp4.tag", "Hygiene"),
+      icon: ClipboardList,
+      points: [
+        t("home.bestPractices.bp4.points.0", "Daily dung removal"),
+        t("home.bestPractices.bp4.points.1", "Dry bedding"),
+        t("home.bestPractices.bp4.points.2", "Airflow + sunlight"),
+      ],
+    },
+  ];
+
+  const quickTips = [
+    {
+      title: t("home.quickTips.0.title", "Mineral Mixture"),
+      desc: t("home.quickTips.0.desc", "Daily mineral mix helps immunity and milk yield."),
+    },
+    {
+      title: t("home.quickTips.1.title", "Salt Lick"),
+      desc: t("home.quickTips.1.desc", "Improves appetite and electrolyte balance."),
+    },
+    {
+      title: t("home.quickTips.2.title", "Clean Milking"),
+      desc: t("home.quickTips.2.desc", "Wash udder & hands to reduce mastitis risk."),
+    },
+    {
+      title: t("home.quickTips.3.title", "Heat Stress"),
+      desc: t("home.quickTips.3.desc", "Shade + ventilation keeps intake and production stable."),
+    },
+    {
+      title: t("home.quickTips.4.title", "Early Signs"),
+      desc: t("home.quickTips.4.desc", "Low appetite + dullness = check temperature and vet."),
+    },
+    {
+      title: t("home.quickTips.5.title", "Record Keeping"),
+      desc: t("home.quickTips.5.desc", "Track feed, milk, vaccine dates for smart decisions."),
+    },
+  ];
+
+  const trustChips = [
+    t("home.hero.chips.0", "Field-tested"),
+    t("home.hero.chips.1", "Vet-friendly"),
+    t("home.hero.chips.2", "Simple routines"),
+    t("home.hero.chips.3", "Better yield"),
+  ];
+
   return (
     <div className="flex flex-col min-h-screen font-sans">
-      
       <section className="relative overflow-hidden bg-primary py-12 sm:py-16 md:py-32">
-        
         <div className="pointer-events-none absolute inset-0 opacity-25">
           <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-accent blur-3xl" />
           <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-white blur-3xl" />
         </div>
 
         <div className="container-custom relative z-10">
-         
           <div className="grid gap-10 md:grid-cols-2 md:gap-12 items-center">
-            
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -108,10 +158,8 @@ export default function Home() {
                 h-[260px] xs:h-[300px] sm:h-[360px] md:h-[520px]
               "
             >
-              {/* overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/30 z-10" />
 
-              
               <motion.div
                 className="absolute inset-0 flex will-change-transform"
                 animate={{ x: ["0%", "-50%"] }}
@@ -127,7 +175,7 @@ export default function Home() {
                   >
                     <img
                       src={img}
-                      alt="Healthy livestock"
+                      alt={t("home.hero.imageAlt", "Healthy livestock")}
                       className="h-full w-full object-cover object-center"
                       loading="lazy"
                       draggable={false}
@@ -136,7 +184,6 @@ export default function Home() {
                 ))}
               </motion.div>
 
-              
               <div
                 className="
                   absolute z-20 bg-white/95 backdrop-blur p-4 sm:p-5 md:p-6 rounded-xl shadow-xl ring-1 ring-black/5
@@ -148,14 +195,17 @@ export default function Home() {
                     <TrendingUp className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
-                    <p className="text-xs sm:text-sm text-gray-500 font-sans">Growth Rate</p>
-                    <p className="text-lg sm:text-xl font-bold font-sans">+25% Faster</p>
+                    <p className="text-xs sm:text-sm text-gray-500 font-sans">
+                      {t("home.hero.metricLabel", "Growth Rate")}
+                    </p>
+                    <p className="text-lg sm:text-xl font-bold font-sans">
+                      {t("home.hero.metricValue", "+25% Faster")}
+                    </p>
                   </div>
                 </div>
               </div>
             </motion.div>
 
-            
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
@@ -164,25 +214,36 @@ export default function Home() {
             >
               <div className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white ring-1 ring-inset ring-white/15 font-sans">
                 <Star className="mr-1.5 h-4 w-4 fill-white/80 text-white/80" />
-                Verdant-grade Nutrition
+                {/* ✅ brand NEVER translate */}
+                <span
+                  className="font-sans notranslate"
+                  data-verdant-brand
+                  translate="no"
+                >
+                  {brandCore}
+                </span>
+                <span className="ml-1">{t("home.hero.badgeSuffix", "grade Nutrition")}</span>
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif font-semibold text-white leading-tight tracking-tight">
-                Nutrition That Grows Your Livestock
+                {t("home.hero.title", "Nutrition That Grows Your Livestock")}
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-primary-foreground/90 max-w-lg font-sans">
-                Science-backed feeding practices to improve animal health, growth, and yield — consistently.
+                {t(
+                  "home.hero.subtitle",
+                  "Science-backed feeding practices to improve animal health, growth, and yield — consistently."
+                )}
               </p>
 
-              
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-1 sm:pt-2">
                 <Link href="/diet-planner">
                   <Button
                     size="lg"
                     className="text-base sm:text-lg px-6 sm:px-8 bg-accent text-primary font-bold w-full sm:w-auto font-sans"
                   >
-                    Plan a Diet <ArrowRight className="ml-2 h-5 w-5" />
+                    {t("home.hero.ctaPrimary", "Plan a Diet")}
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
 
@@ -192,19 +253,18 @@ export default function Home() {
                     variant="outline"
                     className="text-base sm:text-lg px-6 sm:px-8 border-white/30 text-white hover:bg-white/10 w-full sm:w-auto font-sans"
                   >
-                    Browse Feed
+                    {t("home.hero.ctaSecondary", "Browse Feed")}
                   </Button>
                 </Link>
               </div>
 
-              {/* Trust chips */}
               <div className="flex flex-wrap gap-2 pt-1 sm:pt-2 font-sans">
-                {["Field-tested", "Vet-friendly", "Simple routines", "Better yield"].map((t) => (
+                {trustChips.map((chip) => (
                   <span
-                    key={t}
+                    key={chip}
                     className="rounded-full bg-white/10 text-white/90 px-3 py-1 text-xs ring-1 ring-inset ring-white/10"
                   >
-                    {t}
+                    {chip}
                   </span>
                 ))}
               </div>
@@ -213,23 +273,24 @@ export default function Home() {
         </div>
       </section>
 
-      
       <section className="py-16 sm:py-20 md:py-24 bg-[#d9e0c8]">
         <div className="container-custom">
           <div className="text-center mb-10 sm:mb-12 md:mb-14 px-2">
             <h2 className="text-3xl sm:text-4xl font-serif font-semibold text-primary mb-3 sm:mb-4 tracking-tight">
-              Hear from our Farmers
+              {t("home.farmers.title", "Hear from our Farmers")}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto font-sans">
-              Real stories from farmers who improved animal health and profitability with better nutrition.
+              {t(
+                "home.farmers.subtitle",
+                "Real stories from farmers who improved animal health and profitability with better nutrition."
+              )}
             </p>
           </div>
 
-          <FarmerCarousel />
+          <FarmerCarousel brandFeed={brandFeed} />
         </div>
       </section>
 
-      
       <section className="relative py-16 sm:py-20 bg-primary/5 overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-accent/20 blur-3xl" />
@@ -239,17 +300,25 @@ export default function Home() {
 
         <div className="container-custom relative">
           <div className="text-center mb-10 sm:mb-12 px-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 text-primary text-sm font-semibold shadow-sm ring-1 ring-primary/10 font-sans">
+            <div
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 text-primary text-sm font-semibold shadow-sm ring-1 ring-primary/10 font-sans notranslate"
+              data-verdant-brand
+              translate="no"
+            >
               <Sparkles className="h-4 w-4" />
-              Verdant Farming Insights
+              {/* ✅ brand NEVER translate */}
+              {brandCore} {t("home.insights.badgeSuffix", "Farming Insights")}
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-primary mt-4 tracking-tight">
-              Better routines. Healthier animals. Higher yield.
+              {t("home.insights.title", "Better routines. Healthier animals. Higher yield.")}
             </h2>
 
             <p className="text-muted-foreground max-w-2xl mx-auto mt-3 font-sans">
-              High-impact livestock practices in a clean checklist format — easy to follow, easy to repeat.
+              {t(
+                "home.insights.subtitle",
+                "High-impact livestock practices in a clean checklist format — easy to follow, easy to repeat."
+              )}
             </p>
           </div>
 
@@ -276,7 +345,7 @@ export default function Home() {
 
                       <div className="flex items-center gap-2 text-xs text-muted-foreground font-sans">
                         <span className="h-2 w-2 rounded-full bg-primary/60" />
-                        Daily Practice
+                        {t("home.bestPractices.frequency", "Daily Practice")}
                       </div>
                     </div>
 
@@ -288,7 +357,9 @@ export default function Home() {
                         <h3 className="text-lg font-serif font-semibold text-foreground leading-snug tracking-tight">
                           {item.title}
                         </h3>
-                        <p className="text-sm text-muted-foreground mt-1 font-sans">{item.summary}</p>
+                        <p className="text-sm text-muted-foreground mt-1 font-sans">
+                          {item.summary}
+                        </p>
                       </div>
                     </div>
 
@@ -317,24 +388,32 @@ export default function Home() {
             >
               <div className="h-1 w-full bg-gradient-to-r from-accent/70 via-primary/50 to-accent/30" />
               <div className="p-6 sm:p-7">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 text-primary text-xs font-semibold ring-1 ring-inset ring-primary/10 font-sans">
+                <div
+                  className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 text-primary text-xs font-semibold ring-1 ring-inset ring-primary/10 font-sans"
+                >
                   <Sparkles className="h-4 w-4" />
-                  Verdant Note
+
+                  {t("home.note.badge", "Verdant Note")}
                 </div>
 
                 <h3 className="text-xl font-serif font-semibold text-primary mt-4 tracking-tight">
-                  Consistency beats complexity.
+                  {t("home.note.title", "Consistency beats complexity.")}
                 </h3>
 
                 <p className="text-muted-foreground mt-2 font-sans">
-                  If you follow feeding timing, clean water, hygiene, and a basic health calendar consistently,
-                  you’ll usually see better intake, better health, and more stable yield over time.
+                  {t(
+                    "home.note.body",
+                    "If you follow feeding timing, clean water, hygiene, and a basic health calendar consistently, you’ll usually see better intake, better health, and more stable yield over time."
+                  )}
                 </p>
 
                 <div className="mt-6 rounded-2xl bg-primary/5 p-4 ring-1 ring-inset ring-primary/10">
                   <p className="text-sm text-muted-foreground font-sans">
-                    Tip: Start with <span className="font-semibold text-primary">one habit</span> today, then add
-                    the next habit next week.
+                    {t("home.note.tipPrefix", "Tip: Start with")}{" "}
+                    <span className="font-semibold text-primary">
+                      {t("home.note.tipEmphasis", "one habit")}
+                    </span>{" "}
+                    {t("home.note.tipSuffix", "today, then add the next habit next week.")}
                   </p>
                 </div>
               </div>
@@ -344,15 +423,17 @@ export default function Home() {
           <div className="mt-12 sm:mt-14">
             <div className="flex items-center justify-between flex-wrap gap-3 mb-5 px-1">
               <h3 className="text-xl sm:text-2xl font-serif font-semibold text-primary tracking-tight">
-                Quick Tips
+                {t("home.quickTips.title", "Quick Tips")}
               </h3>
-              <p className="text-sm text-muted-foreground font-sans">Fast wins you can apply immediately.</p>
+              <p className="text-sm text-muted-foreground font-sans">
+                {t("home.quickTips.subtitle", "Fast wins you can apply immediately.")}
+              </p>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {quickTips.map((t, i) => (
+              {quickTips.map((tip, i) => (
                 <motion.div
-                  key={t.title}
+                  key={tip.title}
                   variants={fadeUp}
                   initial="hidden"
                   whileInView="show"
@@ -360,8 +441,10 @@ export default function Home() {
                   custom={i}
                   className="rounded-2xl bg-white/70 backdrop-blur p-5 shadow-sm hover:shadow-md transition border border-primary/10"
                 >
-                  <h4 className="font-serif font-semibold text-foreground mb-1 tracking-tight">{t.title}</h4>
-                  <p className="text-sm text-muted-foreground font-sans">{t.desc}</p>
+                  <h4 className="font-serif font-semibold text-foreground mb-1 tracking-tight">
+                    {tip.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground font-sans">{tip.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -375,39 +458,32 @@ export default function Home() {
 /* ---------------- Farmer Carousel ---------------- */
 
 const farmers = [
-  {
-    name: "ममता देवी",
-    location: "",
-    image: "/img/farmer002.jpeg",
-    story:
-      "वर्डेन्ट फीड ने न केवल मेरे पशुओं की सेहत सुधारी और दूध का उत्पादन बढ़ाया, बल्कि मेरी आर्थिक स्थिति को भी एक नई मजबूती दी है। आज मैं गर्व के साथ कह सकती हूँ कि मैं आत्मनिर्भर हूँ। अब मेरा लक्ष्य समाज की अन्य महिलाओं को भी जागरूक करना और उन्हें प्रगति की राह पर आगे बढ़ाना है।",
-  },
-  {
-    name: "सतीश कुमार",
-    location: "",
-    image: "/img/farmer5.jpeg",
-    story:
-      "डेयरी के काम में बरसों की मेहनत के बाद भी मैं उस मुनाफे और सुकून की तलाश में था जो अब मिला है। वर्डेन्ट फीड ने मेरे पशुओं का स्वास्थ्य तो सुधारा ही, साथ ही दूध की बेहतरीन क्वालिटी ने बाज़ार में मेरा नाम और दाम दोनों बढ़ा दिए। आज मेरी आमदनी स्थिर है और मैं खुद को एक सफल उद्यमी के रूप में देखता हूँ। अब मेरा संकल्प है कि अपने अनुभव से हर उस किसान भाई की राह आसान करूँ जो सही पोषण की कमी के कारण पीछे रह गया है।",
-  },
-  {
-    name: "जयपाल यादव",
-    location: "",
-    image: "/img/farmer2.jpeg",
-    story:
-      "मेहनत तो हम सब दिन-रात करते हैं, पर असली बरकत तब आती है जब पशुओं को वर्डेन्ट फीड जैसा शुद्ध और सही खान-पान मिले। आज मुझे अपने पशुओं की फिक्र करने की जरूरत नहीं पड़ती, उनकी सेहत की हर खबर अब मेरे पास रहती है। मैं तो आत्मनिर्भर बन गया और अपने गाँव की सूरत भी बदल रहा हूँ—अब समय है कि आप भी अपनी किस्मत खुद लिखें! — जयपाल यादव",
-  },
-  {
-    name: "शंभू",
-    location: "",
-    image: "/img/farmer003.jpeg",
-    story:
-      "बरसों तक मैंने डेयरी को सिर्फ किस्मत का खेल समझा, पर वर्डेन्ट फीड ने मेरी सोच और मेरे फार्म की सूरत, दोनों बदल दीं। आज न पशुओं की बीमारी का डर है, न दूध घटने की चिंता; क्योंकि मेरे पास उनकी सेहत का सटीक हिसाब और वर्डेन्ट फीड का बेजोड़ पोषण है। इस भरोसे ने मेरी जेब भी भरी और परिवार का भविष्य भी सुरक्षित कर दिया। आज मैं मजबूती में नहीं, बल्कि गर्व से डेयरी चलाता हूँ और चाहता हूँ कि गाँव का हर युवा इस आधुनिक बदलाव का हिस्सा बने।",
-  },
-];
+  { key: "f0", name: "ममता देवी", location: "", image: "/img/farmer002.jpeg" },
+  { key: "f1", name: "सतीश कुमार", location: "", image: "/img/farmer5.jpeg" },
+  { key: "f2", name: "जयपाल यादव", location: "", image: "/img/farmer2.jpeg" },
+  { key: "f3", name: "शंभू", location: "", image: "/img/farmer003.jpeg" },
+] as const;
 
-function FarmerCarousel() {
+function FarmerCarousel({ brandFeed }: { brandFeed: string }) {
+  const { t } = useTranslation();
   const [index, setIndex] = useState(0);
   const farmer = farmers[index];
+
+  // ✅ Brand NEVER translate
+  const Brand = (
+    <span className="notranslate" data-verdant-brand translate="no">
+      {brandFeed}
+    </span>
+  );
+
+  const defaultStory =
+    farmer.key === "f0"
+      ? `${brandFeed} ने न केवल मेरे पशुओं की सेहत सुधारी और दूध का उत्पादन बढ़ाया, बल्कि मेरी आर्थिक स्थिति को भी एक नई मजबूती दी है। आज मैं गर्व के साथ कह सकती हूँ कि मैं आत्मनिर्भर हूँ। अब मेरा लक्ष्य समाज की अन्य महिलाओं को भी जागरूक करना और उन्हें प्रगति की राह पर आगे बढ़ाना है।`
+      : farmer.key === "f1"
+        ? `डेयरी के काम में बरसों की मेहनत के बाद भी मैं उस मुनाफे और सुकून की तलाश में था जो अब मिला है। <brand /> ने मेरे पशुओं का स्वास्थ्य तो सुधारा ही, साथ ही दूध की बेहतरीन क्वालिटी ने बाज़ार में मेरा नाम और दाम दोनों बढ़ा दिए। आज मेरी आमदनी स्थिर है और मैं खुद को एक सफल उद्यमी के रूप में देखता हूँ। अब मेरा संकल्प है कि अपने अनुभव से हर उस किसान भाई की राह आसान करूँ जो सही पोषण की कमी के कारण पीछे रह गया है।`
+        : farmer.key === "f2"
+          ? `मेहनत तो हम सब दिन-रात करते हैं, पर असली बरकत तब आती है जब पशुओं को <brand /> जैसा शुद्ध और सही खान-पान मिले। आज मुझे अपने पशुओं की फिक्र करने की जरूरत नहीं पड़ती, उनकी सेहत की हर खबर अब मेरे पास रहती है। मैं तो आत्मनिर्भर बन गया और अपने गाँव की सूरत भी बदल रहा हूँ—अब समय है कि आप भी अपनी किस्मत खुद लिखें!`
+          : `बरसों तक मैंने डेयरी को सिर्फ किस्मत का खेल समझा, पर <brand /> ने मेरी सोच और मेरे फार्म की सूरत, दोनों बदल दीं। आज न पशुओं की बीमारी का डर है, न दूध घटने की चिंता; क्योंकि मेरे पास उनकी सेहत का सटीक हिसाब और <brand /> का बेजोड़ पोषण है। इस भरोसे ने मेरी जेब भी भरी और परिवार का भविष्य भी सुरक्षित कर दिया। आज मैं मजबूती में नहीं, बल्कि गर्व से डेयरी चलाता हूँ और चाहता हूँ कि गाँव का हर युवा इस आधुनिक बदलाव का हिस्सा बने।`;
 
   return (
     <div className="max-w-5xl mx-auto px-2 sm:px-0 font-sans">
@@ -420,8 +496,13 @@ function FarmerCarousel() {
 
         <div className="relative md:w-2/3">
           <p className="text-base sm:text-lg text-muted-foreground mb-5 sm:mb-6 font-sans">
-            {farmer.story}
+            <Trans
+              i18nKey={`home.farmers.items.${farmer.key}.story`}
+              components={{ brand: Brand }}
+              defaults={defaultStory}
+            />
           </p>
+
           <h4 className="text-lg sm:text-xl font-serif font-semibold text-primary tracking-tight">
             {farmer.name}
           </h4>
@@ -433,7 +514,7 @@ function FarmerCarousel() {
         <button
           onClick={() => setIndex((index - 1 + farmers.length) % farmers.length)}
           className="p-2 rounded-full border font-sans"
-          aria-label="Previous farmer"
+          aria-label={t("home.farmers.prev", "Previous farmer")}
         >
           <ChevronLeft />
         </button>
@@ -445,7 +526,7 @@ function FarmerCarousel() {
         <button
           onClick={() => setIndex((index + 1) % farmers.length)}
           className="p-2 rounded-full border font-sans"
-          aria-label="Next farmer"
+          aria-label={t("home.farmers.next", "Next farmer")}
         >
           <ChevronRight />
         </button>

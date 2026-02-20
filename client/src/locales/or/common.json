@@ -1,0 +1,145 @@
+{
+    "nav": {
+      "home": "ମୁଖ୍ୟ ପୃଷ୍ଠା",
+      "products": "ପଶୁ ଖାଦ୍ୟ କିଣନ୍ତୁ",
+      "blog": "ବ୍ଲଗ୍",
+      "dietPlanner": "ଡାଇଏଟ୍ ପ୍ଲାନର୍",
+      "about": "ଆମ ବିଷୟରେ",
+      "genetics": "ଜିନେଟିକ୍ସ"
+    },
+    "common": {
+      "featured": "ବିଶେଷ",
+      "readFullArticle": "ପୁରା ଲେଖା ପଢନ୍ତୁ",
+      "searchTopics": "ବିଷୟ ଖୋଜନ୍ତୁ...",
+      "recently": "ସମ୍ପ୍ରତି",
+      "minRead": "{{count}} ମିନିଟ୍ ପଢା",
+      "close": "ବନ୍ଦ କରନ୍ତୁ",
+      "confirm": "ନିଶ୍ଚିତ କରନ୍ତୁ",
+      "submit": "ସମର୍ପଣ କରନ୍ତୁ",
+      "loading": "ଲୋଡ୍ ହେଉଛି..."
+    },
+    "footer": {
+      "tagline": "ପ୍ରିମିୟମ ପୋଷଣ • ଅଧିକ ଉତ୍ପାଦନ • ସୁସ୍ଥ ପଶୁ",
+      "about": "ସୁସ୍ଥ ପଶୁ ପାଇଁ ପ୍ରିମିୟମ ପୋଷଣ ପ୍ରଦାନ କରୁଛୁ। ଗୁଣସ୍ତରୀୟ ଖାଦ୍ୟ, ବିଶ୍ୱସନୀୟ ପରାମର୍ଶ ଏବଂ ଭଲ ପରିଣାମ ସହିତ।",
+      "chips": {
+        "qualityAssured": "ଗୁଣସ୍ତର ନିଶ୍ଚିତ",
+        "farmerTrusted": "ଚାଷୀଙ୍କ ଭରସା",
+        "nutritionBacked": "ପୋଷଣ ଆଧାରିତ"
+      },
+      "explore": "ଅନୁସନ୍ଧାନ କରନ୍ତୁ",
+      "contact": "ଯୋଗାଯୋଗ କରନ୍ତୁ",
+      "newsletterTitle": "ଖାଦ୍ୟ ପରାମର୍ଶ ଏବଂ ଅଫର୍ ପାଆନ୍ତୁ",
+      "newsletterDesc": "ଉତ୍ପାଦନ ଏବଂ ପଶୁ ସ୍ୱାସ୍ଥ୍ୟ ସୁଧାର ପାଇଁ ମାସିକ ସୂଚନା।",
+      "emailPlaceholder": "ଆପଣଙ୍କ ଇମେଲ୍ ଲେଖନ୍ତୁ",
+      "subscribe": "ସବସ୍କ୍ରାଇବ୍ କରନ୍ତୁ",
+      "copyright": "© {{year}} Verdant Impact Private Limited. ସମସ୍ତ ଅଧିକାର ସଂରକ୍ଷିତ।",
+      "privacyPolicy": "ଗୋପନୀୟତା ନୀତି",
+      "terms": "ବ୍ୟବହାର ନୀତି",
+      "quickLinks": {
+        "home": "ମୁଖ୍ୟ ପୃଷ୍ଠା",
+        "buyFeed": "ଖାଦ୍ୟ କିଣନ୍ତୁ",
+        "dietPlanner": "ଡାଇଏଟ୍ ପ୍ଲାନର୍",
+        "blog": "ବ୍ଲଗ୍",
+        "about": "ଆମ ବିଷୟରେ"
+      },
+      "address": "Verdant Food Park, ରାଜାୱାସ, ଜୟପୁର–ସୀକର ହାଇୱେ, ଜୟପୁର"
+    },
+    "home": {
+      "badge": "Verdant ମାନଙ୍କ ପୋଷଣ",
+      "heroTitle": "ଆପଣଙ୍କ ପଶୁ ବୃଦ୍ଧି ପାଇଁ ପୋଷଣ",
+      "heroSubtitle": "ପଶୁ ସ୍ୱାସ୍ଥ୍ୟ, ବୃଦ୍ଧି ଏବଂ ଉତ୍ପାଦନ ସୁଧାର ପାଇଁ ବୈଜ୍ଞାନିକ ଭିତ୍ତିକ ଖାଦ୍ୟ ପ୍ରଣାଳୀ।",
+      "ctaDiet": "ଡାଇଏଟ୍ ପ୍ଲାନ କରନ୍ତୁ",
+      "ctaBrowse": "ଖାଦ୍ୟ ଦେଖନ୍ତୁ",
+      "trustChips": {
+        "fieldTested": "କ୍ଷେତ୍ରରେ ପରୀକ୍ଷିତ",
+        "vetFriendly": "ଭେଟ୍-ଫ୍ରେଣ୍ଡଲି",
+        "simpleRoutines": "ସରଳ ପ୍ରଣାଳୀ",
+        "betterYield": "ଅଧିକ ଉତ୍ପାଦନ"
+      },
+      "farmersTitle": "ଆମ ଚାଷୀଙ୍କ କଥା",
+      "farmersSubtitle": "ଭଲ ପୋଷଣ ଦ୍ୱାରା ଉତ୍ତମ ପରିଣାମ ପାଇଥିବା ଚାଷୀଙ୍କ ସତ୍ୟ କଥା।",
+      "insightsBadge": "Verdant କୃଷି ପରାମର୍ଶ",
+      "insightsTitle": "ଭଲ ପ୍ରଣାଳୀ। ସୁସ୍ଥ ପଶୁ। ଅଧିକ ଉତ୍ପାଦନ।",
+      "insightsSubtitle": "ସରଳ ଏବଂ ପ୍ରଭାବଶୀଳ ଖାଦ୍ୟ ପରାମର୍ଶ।",
+      "quickTipsTitle": "ତୁରନ୍ତ ପରାମର୍ଶ",
+      "quickTipsSubtitle": "ତୁରନ୍ତ ବ୍ୟବହାର କରିପାରିବା ପରାମର୍ଶ।"
+    },
+    "products": {
+      "pageTitle": "ପଶୁ ଖାଦ୍ୟ କିଣନ୍ତୁ",
+      "buyNow": "ଏବେ କିଣନ୍ତୁ",
+      "modalTitle": "{{product}} କିଣନ୍ତୁ",
+      "name": "ନାମ *",
+      "mobile": "ମୋବାଇଲ୍ *",
+      "emailOptional": "ଇମେଲ୍ (ଇଚ୍ଛାନୁସାରେ)",
+      "address": "ଠିକଣା *",
+      "placingOrder": "ଅର୍ଡର୍ କରୁଛି...",
+      "confirmOrder": "ଅର୍ଡର୍ ନିଶ୍ଚିତ କରନ୍ତୁ",
+      "orderPlaced": "ଅର୍ଡର୍ ସଫଳ ହୋଇଛି ✅",
+      "orderId": "ଅର୍ଡର୍ ID",
+      "product": "ପ୍ରୋଡକ୍ଟ",
+      "amount": "ରାଶି",
+      "alertRequired": "ଦୟାକରି ସମସ୍ତ ଆବଶ୍ୟକ ବିବରଣୀ ଭରନ୍ତୁ",
+      "alertFailed": "ଅର୍ଡର୍ ବିଫଳ ହୋଇଛି",
+      "alertGeneric": "କିଛି ଭୁଲ୍ ହୋଇଛି"
+    },
+    "about": {
+      "badge": "ପ୍ରିମିୟମ ପଶୁ ପୋଷଣ • 2020 ଠାରୁ",
+      "title": "Verdant Feed ବିଷୟରେ",
+      "subtitle": "ଚାଷୀମାନେ ଭରସା କରିପାରିବା ଖାଦ୍ୟ — ଭଲ ସ୍ୱାସ୍ଥ୍ୟ ଏବଂ ଅଧିକ ଉତ୍ପାଦନ ପାଇଁ।",
+      "stats": {
+        "servingSince": "ସେବା ଆରମ୍ଭ",
+        "farmersSupported": "ସମର୍ଥିତ ଚାଷୀ",
+        "livestockTypes": "ପଶୁ ପ୍ରକାର",
+        "transparentLabeling": "ସ୍ପଷ୍ଟ ଲେବଲିଂ"
+      },
+      "missionTitle": "ଭଲ ପୋଷଣ। ଭଲ ପଶୁ। ଭଲ କୃଷି।",
+      "missionBody": "ସୁସ୍ଥ ପଶୁ ହେଉଛି ସଫଳ କୃଷିର ଭିତ୍ତି।",
+      "ctaTitle": "ଆସନ୍ତୁ ଏକାସାଥିରେ ଭଲ କୃଷି ଗଢ଼ିବା।",
+      "ctaProducts": "ପ୍ରୋଡକ୍ଟ ଦେଖନ୍ତୁ",
+      "ctaDietPlanner": "ଡାଇଏଟ୍ ପ୍ଲାନର୍ ବ୍ୟବହାର କରନ୍ତୁ"
+    },
+    "blog": {
+      "title": "କୃଷି ଜ୍ଞାନ କେନ୍ଦ୍ର",
+      "subtitle": "ପଶୁ ପୋଷଣ ଏବଂ ଆଧୁନିକ ଖାଦ୍ୟ ପ୍ରଣାଳୀ ପାଇଁ ପରାମର୍ଶ।",
+      "featured": "ବିଶେଷ",
+      "readFull": "ପୁରା ଲେଖା ପଢନ୍ତୁ"
+    },
+    "dietPlanner": {
+      "title": "ସ୍ମାର୍ଟ ଡାଇଏଟ୍ ପ୍ଲାନର୍",
+      "subtitle": "ପଶୁ ପ୍ରକାର, ଓଜନ ଏବଂ ସ୍ୱାସ୍ଥ୍ୟ ଆଧାରରେ ପରାମର୍ଶ ପାଆନ୍ତୁ.",
+      "cardTitle": "ପଶୁ ବିବରଣୀ ଦିଅନ୍ତୁ",
+      "cardDesc": "ଠିକ୍ ଫଳାଫଳ ପାଇଁ ସମସ୍ତ ଫିଲ୍ଡ ଆବଶ୍ୟକ.",
+      "nameLabel": "ଆପଣଙ୍କ ନାମ",
+      "contactLabel": "ଯୋଗାଯୋଗ ନମ୍ବର",
+      "contactPlaceholder": "+91...",
+      "cattleTypeLabel": "ପଶୁ ପ୍ରକାର",
+      "breedLabel": "ଜାତି",
+      "weightLabel": "ଓଜନ ବର୍ଗ",
+      "ageLabel": "ବୟସ",
+      "healthLabel": "ସ୍ୱାସ୍ଥ୍ୟ ସ୍ଥିତି",
+      "taggedLabel": "ଟ୍ୟାଗ୍ ହୋଇଛି କି?",
+      "selectType": "ପ୍ରକାର ବାଛନ୍ତୁ",
+      "selectBreed": "ଜାତି ବାଛନ୍ତୁ",
+      "selectWeight": "ଓଜନ ବାଛନ୍ତୁ",
+      "selectFirst": "ପ୍ରଥମେ ପଶୁ ପ୍ରକାର ବାଛନ୍ତୁ",
+      "selectStatus": "ସ୍ଥିତି ବାଛନ୍ତୁ",
+      "select": "ବାଛନ୍ତୁ...",
+      "cow": "ଗାଈ",
+      "buffalo": "ମହିଷ",
+      "goat": "ଛେଳି",
+      "healthy": "ସୁସ୍ଥ",
+      "sick": "ରୋଗୀ",
+      "pregnant": "ଗର୍ଭବତୀ",
+      "yes": "ହଁ",
+      "no": "ନା",
+      "generate": "ଡାଇଏଟ୍ ଚାର୍ଟ ସୃଷ୍ଟି କରନ୍ତୁ",
+      "calculating": "ଗଣନା ହେଉଛି...",
+      "toastSuccessTitle": "ଡାଇଏଟ୍ ଚାର୍ଟ ପ୍ରସ୍ତୁତ!",
+      "toastSuccessDesc": "ପୂରା ଚାର୍ଟ ଖୋଲୁଛି.",
+      "toastErrorTitle": "ତ୍ରୁଟି",
+      "toastErrorDesc": "ଡାଇଏଟ୍ ଲଗ୍ ସେଭ୍ ହୋଇନି.",
+      "recentLogs": "ସମ୍ପ୍ରତି ଲଗ୍",
+      "noHistory": "ଇତିହାସ ନାହିଁ."
+    }
+  }
+  

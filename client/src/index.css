@@ -1,13 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* =========================
+   ROOT VARIABLES
+========================= */
 :root {
   --font-display: "Fraunces", ui-serif, Georgia, serif;
-  --font-body: "Noto Sans", "Noto Sans Devanagari", ui-sans-serif, system-ui, sans-serif;
 
+  --font-body: "DM Sans", "Noto Sans Devanagari", "Noto Sans", ui-sans-serif, system-ui,
+    -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 
   --background: 45 30% 96%;
   --foreground: 120 40% 10%;
@@ -34,8 +38,9 @@
   --radius: 0.75rem;
 }
 
-
-
+/* =========================
+   BASE TYPOGRAPHY
+========================= */
 @layer base {
   html {
     font-family: var(--font-body);
@@ -46,22 +51,22 @@
     font-family: var(--font-body);
   }
 
-  .font-serif {
-    font-family: var(--font-body) !important;
-  }
-
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-body);
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
     @apply tracking-tight text-foreground font-semibold;
   }
 
-  h1 { @apply text-4xl sm:text-5xl md:text-6xl font-semibold; }
-  h2 { @apply text-3xl sm:text-4xl md:text-5xl font-semibold; }
-  h3 { @apply text-2xl sm:text-3xl font-semibold; }
-  h4 { @apply text-xl sm:text-2xl font-semibold; }
-  h5 { @apply text-lg sm:text-xl font-semibold; }
-  h6 { @apply text-base sm:text-lg font-semibold; }
+  h1 { @apply text-4xl sm:text-5xl md:text-6xl; }
+  h2 { @apply text-3xl sm:text-4xl md:text-5xl; }
+  h3 { @apply text-2xl sm:text-3xl; }
+  h4 { @apply text-xl sm:text-2xl; }
+  h5 { @apply text-lg sm:text-xl; }
+  h6 { @apply text-base sm:text-lg; }
 
   p {
     @apply text-base leading-relaxed text-foreground;
@@ -72,8 +77,9 @@
   }
 }
 
-
-
+/* =========================
+   UTILITIES
+========================= */
 @layer utilities {
   .verdant-display {
     font-family: var(--font-display);
@@ -96,15 +102,18 @@
   }
 }
 
-
-
+/* =========================
+   COMPONENTS
+========================= */
 @layer components {
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .btn-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 rounded-lg px-6 py-3 font-semibold;
+    @apply bg-primary text-primary-foreground hover:bg-primary/90
+    shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5
+    transition-all duration-300 rounded-lg px-6 py-3 font-semibold;
   }
 
   .card-hover {
@@ -112,27 +121,12 @@
   }
 }
 
+/* =========================
+   GOOGLE TRANSLATE
+   Verdant Floating Box Mode
+========================= */
 
-
-
-
-
-iframe.goog-te-banner-frame,
-.goog-te-banner-frame,
-.goog-te-banner-frame.skiptranslate {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  width: 0 !important;
-}
-
-
-#goog-gt-tt,
-.goog-te-balloon-frame {
-  display: none !important;
-}
-
-
+/* Prevent layout shift */
 html,
 body {
   margin-top: 0 !important;
@@ -140,25 +134,74 @@ body {
 }
 
 
-.goog-logo-link {
-  display: none !important;
+
+/* Keep widget alive but invisible */
+#google_translate_element {
+  position: fixed !important;
+  left: -9999px !important;
+  top: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
-.goog-te-gadget {
-  font-size: 0px !important;
+/* Convert full-width bar → Verdant floating card */
+iframe.goog-te-banner-frame {
+  position: fixed !important;
+
+  top: 72px !important;   /* adjust based on navbar height */
+  right: 16px !important;
+  left: auto !important;
+
+  width: 340px !important;
+  height: 56px !important;
+
+  z-index: 999999 !important;
+
+  border-radius: 14px !important;
+  overflow: hidden !important;
+
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18) !important;
+
+  transform: scale(0.96) !important;
+  transform-origin: top right !important;
+
+  backdrop-filter: blur(10px);
 }
 
-
-.goog-te-combo {
-  display: none !important;
+/* Sometimes Google applies wrapper class */
+.goog-te-banner-frame.skiptranslate {
+  position: fixed !important;
+  top: 72px !important;
+  right: 16px !important;
+  left: auto !important;
+  z-index: 999999 !important;
 }
 
+/* Mobile mode */
+@media (max-width: 640px) {
+  iframe.goog-te-banner-frame {
+    top: auto !important;
+    bottom: 12px !important;
+    right: 12px !important;
+    left: 12px !important;
+    width: auto !important;
+    height: 56px !important;
+    border-radius: 16px !important;
+    transform: none !important;
+  }
+}
 
+/* =========================
+   VERDANT LANGUAGE DROPDOWN
+========================= */
 
 .lang-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
   padding: 4px;
   border-radius: 999px;
   border: 1px solid hsl(var(--border));
@@ -166,30 +209,24 @@ body {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 
-.lang-btn {
-  padding: 7px 12px;
+.lang-select {
+  height: 34px;
+  padding: 0 12px;
   border-radius: 999px;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1;
+  border: none;
+  background: transparent;
   color: hsl(var(--foreground));
-  opacity: 0.75;
-  transition: all 0.2s ease;
+  font-weight: 700;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
 }
 
-.lang-btn:hover {
-  opacity: 1;
+.lang-select:hover {
   background: hsl(var(--secondary));
 }
 
-.lang-btn.is-active {
-  opacity: 1;
-  color: hsl(var(--primary-foreground));
-  background: hsl(var(--primary));
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-}
-
-.lang-btn:disabled {
-  opacity: 0.45;
+.lang-select:disabled {
+  opacity: 0.55;
   cursor: not-allowed;
 }

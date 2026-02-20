@@ -1,0 +1,145 @@
+{
+    "nav": {
+      "home": "মুখ্য পৃষ্ঠা",
+      "products": "পশুখাদ্য কিনক",
+      "blog": "ব্লগ",
+      "dietPlanner": "ডায়েট প্ল্যানাৰ",
+      "about": "আমাৰ বিষয়ে",
+      "genetics": "জেনেটিক্স"
+    },
+    "common": {
+      "featured": "বিশেষ",
+      "readFullArticle": "সম্পূৰ্ণ প্ৰবন্ধ পঢ়ক",
+      "searchTopics": "বিষয় বিচাৰক...",
+      "recently": "শেহতীয়া",
+      "minRead": "{{count}} মিনিট পঢ়া",
+      "close": "বন্ধ কৰক",
+      "confirm": "নিশ্চিত কৰক",
+      "submit": "জমা দিয়ক",
+      "loading": "লোড হৈ আছে..."
+    },
+    "footer": {
+      "tagline": "প্ৰিমিয়াম পুষ্টি • অধিক উৎপাদন • সুস্থ পশু",
+      "about": "সুস্থ পশুৰ বাবে প্ৰিমিয়াম পুষ্টি প্ৰদান কৰোঁ। গুণগত মানৰ খাদ্য, বিশ্বাসযোগ্য পৰামৰ্শ আৰু উন্নত ফলাফল।",
+      "chips": {
+        "qualityAssured": "গুণগত মান নিশ্চিত",
+        "farmerTrusted": "চাষীৰ বিশ্বাস",
+        "nutritionBacked": "পুষ্টি ভিত্তিক"
+      },
+      "explore": "অন্বেষণ কৰক",
+      "contact": "যোগাযোগ কৰক",
+      "newsletterTitle": "খাদ্য পৰামৰ্শ আৰু অফাৰ লাভ কৰক",
+      "newsletterDesc": "উৎপাদন আৰু পশুৰ স্বাস্থ্য উন্নত কৰাৰ বাবে মাহিলী তথ্য।",
+      "emailPlaceholder": "আপোনাৰ ইমেইল লিখক",
+      "subscribe": "সাবস্ক্ৰাইব কৰক",
+      "copyright": "© {{year}} Verdant Impact Private Limited. সকলো অধিকাৰ সংৰক্ষিত।",
+      "privacyPolicy": "গোপনীয়তা নীতি",
+      "terms": "ব্যৱহাৰৰ নিয়ম",
+      "quickLinks": {
+        "home": "মুখ্য পৃষ্ঠা",
+        "buyFeed": "খাদ্য কিনক",
+        "dietPlanner": "ডায়েট প্ল্যানাৰ",
+        "blog": "ব্লগ",
+        "about": "আমাৰ বিষয়ে"
+      },
+      "address": "Verdant Food Park, ৰাজাৱাস, জয়পুৰ–চিকাৰ হাইৱে, জয়পুৰ"
+    },
+    "home": {
+      "badge": "Verdant স্তৰৰ পুষ্টি",
+      "heroTitle": "আপোনাৰ পশুৰ বৃদ্ধি কৰা পুষ্টি",
+      "heroSubtitle": "পশুৰ স্বাস্থ্য, বৃদ্ধি আৰু উৎপাদন উন্নত কৰাৰ বাবে বৈজ্ঞানিক খাদ্য পদ্ধতি।",
+      "ctaDiet": "ডায়েট পৰিকল্পনা কৰক",
+      "ctaBrowse": "খাদ্য চাওক",
+      "trustChips": {
+        "fieldTested": "ক্ষেত্ৰত পৰীক্ষিত",
+        "vetFriendly": "ভেট-বন্ধু",
+        "simpleRoutines": "সহজ নিয়ম",
+        "betterYield": "অধিক উৎপাদন"
+      },
+      "farmersTitle": "আমাৰ চাষীৰ পৰা শুনক",
+      "farmersSubtitle": "উন্নত পুষ্টিৰে উন্নত ফলাফল লাভ কৰা চাষীৰ কাহিনী।",
+      "insightsBadge": "Verdant কৃষি পৰামৰ্শ",
+      "insightsTitle": "উন্নত নিয়ম। সুস্থ পশু। অধিক উৎপাদন।",
+      "insightsSubtitle": "সহজ আৰু কাৰ্যকৰী খাদ্য পৰামৰ্শ।",
+      "quickTipsTitle": "দ্ৰুত পৰামৰ্শ",
+      "quickTipsSubtitle": "তৎক্ষণাত ব্যৱহাৰযোগ্য পৰামৰ্শ।"
+    },
+    "products": {
+      "pageTitle": "পশুখাদ্য কিনক",
+      "buyNow": "এতিয়াই কিনক",
+      "modalTitle": "{{product}} কিনক",
+      "name": "নাম *",
+      "mobile": "মোবাইল *",
+      "emailOptional": "ইমেইল (ঐচ্ছিক)",
+      "address": "ঠিকনা *",
+      "placingOrder": "অৰ্ডাৰ কৰা হৈছে...",
+      "confirmOrder": "অৰ্ডাৰ নিশ্চিত কৰক",
+      "orderPlaced": "অৰ্ডাৰ সফলভাৱে কৰা হৈছে ✅",
+      "orderId": "অৰ্ডাৰ ID",
+      "product": "উৎপাদন",
+      "amount": "ৰাশি",
+      "alertRequired": "অনুগ্ৰহ কৰি সকলো প্ৰয়োজনীয় তথ্য পূৰণ কৰক",
+      "alertFailed": "অৰ্ডাৰ কৰিব নোৱাৰিলে",
+      "alertGeneric": "কিবা ভুল হৈছে"
+    },
+    "about": {
+      "badge": "প্ৰিমিয়াম পশু পুষ্টি • 2020ৰ পৰা",
+      "title": "Verdant Feed বিষয়ে",
+      "subtitle": "চাষীৰ বাবে বিশ্বাসযোগ্য খাদ্য — উন্নত স্বাস্থ্য আৰু উৎপাদনৰ বাবে।",
+      "stats": {
+        "servingSince": "সেৱা আৰম্ভ",
+        "farmersSupported": "সহায় পোৱা চাষী",
+        "livestockTypes": "পশুৰ ধৰণ",
+        "transparentLabeling": "স্বচ্ছ লেবেলিং"
+      },
+      "missionTitle": "উন্নত পুষ্টি। উন্নত পশু। উন্নত কৃষি।",
+      "missionBody": "সুস্থ পশু সফল কৃষিৰ ভিত্তি।",
+      "ctaTitle": "একেলগে উন্নত কৃষি গঢ়ো।",
+      "ctaProducts": "উৎপাদন চাওক",
+      "ctaDietPlanner": "ডায়েট প্ল্যানাৰ ব্যৱহাৰ কৰক"
+    },
+    "blog": {
+      "title": "কৃষি জ্ঞান কেন্দ্ৰ",
+      "subtitle": "পশু পুষ্টি আৰু আধুনিক খাদ্য পদ্ধতিৰ বাবে পৰামৰ্শ।",
+      "featured": "বিশেষ",
+      "readFull": "সম্পূৰ্ণ প্ৰবন্ধ পঢ়ক"
+    },
+    "dietPlanner": {
+      "title": "স্মাৰ্ট ডায়েট প্ল্যানাৰ",
+      "subtitle": "পশুৰ ধৰণ, ওজন আৰু স্বাস্থ্য অনুসৰি খাদ্য পৰামৰ্শ লাভ কৰক।",
+      "cardTitle": "পশুৰ তথ্য লিখক",
+      "cardDesc": "সঠিক ফলাফলৰ বাবে সকলো ক্ষেত্ৰ প্ৰয়োজন।",
+      "nameLabel": "আপোনাৰ নাম",
+      "contactLabel": "যোগাযোগ নম্বৰ",
+      "contactPlaceholder": "+91...",
+      "cattleTypeLabel": "পশুৰ ধৰণ",
+      "breedLabel": "জাত",
+      "weightLabel": "ওজন শ্ৰেণী",
+      "ageLabel": "বয়স",
+      "healthLabel": "স্বাস্থ্য অৱস্থা",
+      "taggedLabel": "টেগ কৰা হৈছে নে?",
+      "selectType": "ধৰণ বাছক",
+      "selectBreed": "জাত বাছক",
+      "selectWeight": "ওজন বাছক",
+      "selectFirst": "প্ৰথমে পশুৰ ধৰণ বাছক",
+      "selectStatus": "অৱস্থা বাছক",
+      "select": "বাছক...",
+      "cow": "গৰু",
+      "buffalo": "মহিষ",
+      "goat": "ছাগলী",
+      "healthy": "সুস্থ",
+      "sick": "অসুস্থ",
+      "pregnant": "গৰ্ভৱতী",
+      "yes": "হয়",
+      "no": "নাই",
+      "generate": "ডায়েট চাৰ্ট সৃষ্টি কৰক",
+      "calculating": "গণনা কৰা হৈছে...",
+      "toastSuccessTitle": "ডায়েট চাৰ্ট সৃষ্টি হৈছে!",
+      "toastSuccessDesc": "সম্পূৰ্ণ চাৰ্ট খোলা হৈছে।",
+      "toastErrorTitle": "ত্ৰুটি",
+      "toastErrorDesc": "ডায়েট লগ সংৰক্ষণ কৰিব নোৱাৰিলে।",
+      "recentLogs": "শেহতীয়া লগ",
+      "noHistory": "এতিয়াও কোনো ইতিহাস নাই।"
+    }
+  }
+  
