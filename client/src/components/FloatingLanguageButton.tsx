@@ -4,17 +4,12 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import i18n, { SUPPORTED_LANGS } from "@/lib/i18n";
 import { Languages, X, Check } from "lucide-react";
 
-/**
- * ✅ Only Hindi + English enabled for now
- * 🔒 Other languages are kept (commented) for later use
- */
+
 const LANGS: { code: (typeof SUPPORTED_LANGS)[number]; label: string }[] = [
-  // ✅ enabled
+
   { code: "hi", label: "हिन्दी" },
   { code: "en", label: "English" },
-
-  // 🔒 disabled for now (do not remove)
-  // { code: "bn", label: "বাংলা" },
+   { code: "bn", label: "বাংলা" },
   // { code: "te", label: "తెలుగు" },
   // { code: "mr", label: "मराठी" },
   // { code: "ta", label: "தமிழ்" },
@@ -27,7 +22,7 @@ const LANGS: { code: (typeof SUPPORTED_LANGS)[number]; label: string }[] = [
   // { code: "as", label: "অসমীয়া" },
   // { code: "kok", label: "कोंकणी" },
   // { code: "doi", label: "डोगरी" },
-  // ⚠️ keep only languages you actually support in i18n resources
+  
 ];
 
 const STORAGE_KEY = "verdant_lang";
@@ -64,19 +59,19 @@ export default function FloatingLanguageButton() {
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
 
-    // ✅ If saved is valid, use it
+
     if (saved && isSupportedLang(saved) && saved !== active) {
       setActive(saved);
       i18n.changeLanguage(saved).catch(() => {});
     } else if (!saved) {
-      // ✅ No saved language -> set Hindi by default
+
       localStorage.setItem(STORAGE_KEY, "hi");
       if (active !== "hi") {
         setActive("hi");
         i18n.changeLanguage("hi").catch(() => {});
       }
     } else if (saved && !isSupportedLang(saved)) {
-      // ✅ invalid saved value -> reset to Hindi
+  
       localStorage.setItem(STORAGE_KEY, "hi");
       if (active !== "hi") {
         setActive("hi");
@@ -85,7 +80,7 @@ export default function FloatingLanguageButton() {
     }
 
     enforceNoTranslateForBrand();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+   
   }, []);
 
   useEffect(() => {

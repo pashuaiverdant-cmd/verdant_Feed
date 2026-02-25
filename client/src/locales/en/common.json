@@ -1,7 +1,9 @@
 {
   "brand": {
+    "verdant": "Verdant",
     "verdantFeed": "Verdant Feed",
-    "Verdant": "Verdant"
+    "verdantImpact": "Verdant Impact",
+    "verdantNotes": "Verdant Notes"
   },
   "common": {
     "close": "Close",

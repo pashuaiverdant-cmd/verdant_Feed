@@ -56,13 +56,17 @@ type Faq = {
 type TabKey = "standards" | "semen" | "breeding";
 
 export default function Genetics() {
-  const { t } = useTranslation();
+  // ✅ IMPORTANT: make sure this page reads from common.json
+  const { t } = useTranslation("common");
+
   const [tab, setTab] = useState<TabKey>("standards");
 
+  // ✅ Brand keys (now translatable as you asked)
   const BRAND = {
-    verdant: "Verdant",
-    verdantImpact: "Verdant Impact",
-    verdantNotes: "Verdant Notes",
+    verdant: t("brand.verdant"),
+    verdantFeed: t("brand.verdantFeed"),
+    verdantImpact: t("brand.verdantImpact"),
+    verdantNotes: t("brand.verdantNotes"),
   } as const;
 
   const indiaStandards: Metric[] = [
@@ -93,7 +97,10 @@ export default function Genetics() {
         "genetics.metrics.standards.doseConcentration.label",
         "Dose concentration"
       ),
-      value: t("genetics.metrics.standards.doseConcentration.value", "≥ 20 million"),
+      value: t(
+        "genetics.metrics.standards.doseConcentration.value",
+        "≥ 20 million"
+      ),
       hint: t(
         "genetics.metrics.standards.doseConcentration.hint",
         "Minimum sperm count per frozen semen dose referenced in MSP."
@@ -198,7 +205,10 @@ export default function Genetics() {
     },
     {
       icon: ShieldCheck,
-      title: t("genetics.valueProps.planning.title", "Genetic Improvement (Planned)"),
+      title: t(
+        "genetics.valueProps.planning.title",
+        "Genetic Improvement (Planned)"
+      ),
       description: t(
         "genetics.valueProps.planning.desc",
         "Breeding works when you define a goal → select strategy → match cows → keep records → refine season by season."
@@ -299,7 +309,10 @@ export default function Genetics() {
           "Bull/Sire ID or Code, breed, semen station or lab code"
         ),
         t("genetics.straw.label.p2", "Batch/collection date, straw/dose number"),
-        t("genetics.straw.label.p3", "Sometimes: quality info or certification references"),
+        t(
+          "genetics.straw.label.p3",
+          "Sometimes: quality info or certification references"
+        ),
       ],
     },
     {
@@ -334,7 +347,10 @@ export default function Genetics() {
     },
     {
       iconKey: "thawing",
-      title: t("genetics.straw.thawing.title", "Thawing & handling (farmer checklist)"),
+      title: t(
+        "genetics.straw.thawing.title",
+        "Thawing & handling (farmer checklist)"
+      ),
       points: [
         t(
           "genetics.straw.thawing.p1",
@@ -402,7 +418,10 @@ export default function Genetics() {
       ),
     },
     {
-      q: t("genetics.faq.q4.q", "Why do farmers get poor conception even with good semen?"),
+      q: t(
+        "genetics.faq.q4.q",
+        "Why do farmers get poor conception even with good semen?"
+      ),
       a: t(
         "genetics.faq.q4.a",
         "Most common reasons are wrong timing (heat detection), poor thawing/handling, nutrition/BCS issues, and infections or uterine health problems."
@@ -417,7 +436,9 @@ export default function Genetics() {
   }, [tab, indiaStandards, semenBasics, breedingBasics]);
 
   const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const BulletItem = ({ text }: { text: string }) => (
@@ -464,21 +485,24 @@ export default function Genetics() {
           >
             <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-3 sm:px-4 py-2 rounded-full text-emerald-300 font-semibold tracking-wide uppercase text-[10px] sm:text-xs font-sans">
               <Dna className="h-4 w-4" />
-              <span>{t("genetics.hero.kicker", "Genetics • Semen Samples • AI • Quality")}</span>
+              <span>
+                {t("genetics.hero.kicker", "Genetics • Semen Samples • AI • Quality")}
+              </span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-semibold leading-tight tracking-tight">
-              <span className="text-white/80">{t("genetics.hero.title1", "Genetics & Semen")}</span>
+              <span className="text-white/80">
+                {t("genetics.hero.title1", "Genetics & Semen")}
+              </span>
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-100 via-green-100 to-emerald-200">
                 {t("genetics.hero.title2", "Explained Simply")}
               </span>
             </h1>
 
+            {/* ✅ Brand now translates (no notranslate) */}
             <p className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed max-w-xl font-sans">
-              <span className="notranslate" translate="no">
-                {BRAND.verdantImpact}
-              </span>{" "}
+              {BRAND.verdantImpact}{" "}
               {t(
                 "genetics.hero.subtitleRest",
                 "’s premium guide to semen samples (straws), quality testing, cryo handling, and genetics planning — built for real farm outcomes."
@@ -577,12 +601,9 @@ export default function Genetics() {
                     "“Good semen + wrong timing = poor results. Heat detection and handling matter.”"
                   )}
                 </p>
-                <p className="text-xs font-bold mt-2 font-sans">
-                  —{" "}
-                  <span className="notranslate" translate="no">
-                    {BRAND.verdantNotes}
-                  </span>
-                </p>
+
+                {/* ✅ This is the exact text you showed in screenshot: now it translates */}
+                <p className="text-xs font-bold mt-2 font-sans">— {BRAND.verdantNotes}</p>
               </div>
             </div>
           </div>
@@ -632,16 +653,10 @@ export default function Genetics() {
                   <Droplets className="h-6 w-6" />
                   <h3 className="text-xl sm:text-2xl font-serif font-semibold tracking-tight">
                     {tab === "standards"
-                      ? t(
-                          "genetics.numbers.cardTitle.standards",
-                          "Quality Benchmarks Snapshot"
-                        )
+                      ? t("genetics.numbers.cardTitle.standards", "Quality Benchmarks Snapshot")
                       : tab === "semen"
-                        ? t("genetics.numbers.cardTitle.semen", "Semen Quality Basics")
-                        : t(
-                            "genetics.numbers.cardTitle.breeding",
-                            "Breeding Success Basics"
-                          )}
+                      ? t("genetics.numbers.cardTitle.semen", "Semen Quality Basics")
+                      : t("genetics.numbers.cardTitle.breeding", "Breeding Success Basics")}
                   </h3>
                 </div>
 
@@ -683,28 +698,16 @@ export default function Genetics() {
                 <div className="flex items-center gap-3 text-primary">
                   <ClipboardList className="h-6 w-6" />
                   <h3 className="text-xl sm:text-2xl font-serif font-semibold tracking-tight">
-                    <span className="notranslate" translate="no">
-                      {BRAND.verdant}
-                    </span>{" "}
-                    {t("genetics.checklist.titleRest", "Field Checklist")}
+                    {BRAND.verdant} {t("genetics.checklist.titleRest", "Field Checklist")}
                   </h3>
                 </div>
 
                 <ul className="space-y-3">
                   {[
-                    t(
-                      "genetics.checklist.i1",
-                      "Confirm heat signs and do AI at the right time window."
-                    ),
-                    t(
-                      "genetics.checklist.i2",
-                      "Thaw properly as per technician/provider instructions."
-                    ),
+                    t("genetics.checklist.i1", "Confirm heat signs and do AI at the right time window."),
+                    t("genetics.checklist.i2", "Thaw properly as per technician/provider instructions."),
                     t("genetics.checklist.i3", "Keep tools warm, dry and clean."),
-                    t(
-                      "genetics.checklist.i4",
-                      "Record cow ID, AI time, semen code, outcome."
-                    ),
+                    t("genetics.checklist.i4", "Record cow ID, AI time, semen code, outcome."),
                     t("genetics.checklist.i5", "Review outcomes and improve next cycle."),
                   ].map((item) => (
                     <BulletItem key={item} text={item} />
@@ -888,10 +891,7 @@ export default function Genetics() {
             <div className="relative z-10 px-5 sm:px-8 py-12 sm:py-16 md:p-24 text-white">
               <div className="max-w-3xl space-y-5 sm:space-y-6">
                 <div className="inline-block px-4 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] sm:text-xs font-bold uppercase tracking-widest font-sans">
-                  <span className="notranslate" translate="no">
-                    {BRAND.verdant}
-                  </span>{" "}
-                  {t("genetics.cta.badgeRest", "Learning")}
+                  {BRAND.verdant} {t("genetics.cta.badgeRest", "Learning")}
                 </div>
 
                 <h3 className="text-3xl sm:text-4xl md:text-6xl font-serif font-semibold tracking-tight italic leading-tight">
